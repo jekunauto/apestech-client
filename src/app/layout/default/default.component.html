@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="router-progress-bar" *ngIf="isFetching"></div>
+
+    <!--界面的头部 -->
+    <app-header class="header"></app-header>
+
+    <!-- 菜单 -->
+    <app-sidebar class="aside"></app-sidebar>
+
+    <!-- 核心区域 -->
+    <section class="content">
+        <reuse-tab></reuse-tab>
+        <router-outlet></router-outlet>
+    </section>
+</div>

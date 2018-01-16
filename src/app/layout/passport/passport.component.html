@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="top">
+        <div class="head">
+            <a [routerLink]="['/']">
+                <img class="logo" src="./assets/img/logo-color.svg">
+                <span class="title">YYERP</span>
+            </a>
+        </div>
+        <p class="desc">只给您提供最具价值的服务</p>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <global-footer [links]="links">
+        <ng-template #copyright>
+            Copyright <nz-icon nzType="copyright"></nz-icon> 2017 <a href="#" target="_blank">猿原软件</a>出品
+        </ng-template>
+    </global-footer>
+</div>

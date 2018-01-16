@@ -1,0 +1,260 @@
+<div class="content__title">
+    <h1>
+        模版例子2
+        <small>简单的模版例子</small>
+    </h1>
+</div>
+
+
+<form nz-form>
+
+    <div nz-col [nzMd]="12">
+        <nz-card nzTitle="会员信息">
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>
+                        会员名称
+                        <nz-tooltip [nzTitle]="'What do you want other to call you'">
+                            <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+                        </nz-tooltip>
+                    </label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>王先森</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>会员积分</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>1000</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>会员等级</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>一般会员</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>会员电话</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>132****1234</span>
+                </div>
+            </div>
+
+        </nz-card>
+    </div>
+
+    <div nz-col [nzMd]="12">
+        <nz-card nzTitle="门店信息">
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>
+                        门店名称
+                        <nz-tooltip [nzTitle]="'What do you want other to call you'">
+                            <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+                        </nz-tooltip>
+                    </label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>墩和店</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>门店类型</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>社区店</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>门店等级</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>优秀门店</span>
+                </div>
+            </div>
+
+            <div nz-form-item nz-col [nzSpan]="12">
+                <div nz-form-label nz-col [nzSm]="8">
+                    <label>门店电话</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16">
+                    <span nz-form-text>888-888</span>
+                </div>
+            </div>
+
+        </nz-card>
+    </div>
+
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <nz-card nzTitle="">
+
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Select</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-select [(ngModel)]="selectValue" name="selectValue" nzAllowClear>
+                            <nz-option
+                                *ngFor="let option of options"
+                                [nzLabel]="option.label"
+                                [nzValue]="option"
+                                [nzDisabled]="option.disabled">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Select[multiple]</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-select [nzMode]="'multiple'" nzAllowClear>
+                            <nz-option
+                                *ngFor="let option of options"
+                                [nzLabel]="option.label"
+                                [nzValue]="option">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Switch</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-switch [nzSize]="'large'" class="mr-sm"></nz-switch>
+                        <nz-switch class="mr-sm"></nz-switch>
+                        <nz-switch [nzSize]="'small'"></nz-switch>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Slider</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="8">
+                        <nz-slider [nzMarks]="marks"></nz-slider>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Rate</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-rate [(ngModel)]="rate" name="rate" nzAllowHalf></nz-rate>
+                        <span class="ant-rate-text">{{rate}} 星</span>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Tag</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-tag [nzColor]="'pink'">pink</nz-tag>
+                        <nz-tag [nzColor]="'red'">red</nz-tag>
+                        <nz-tag [nzColor]="'orange'">orange</nz-tag>
+                        <nz-tag [nzColor]="'green'">green</nz-tag>
+                        <nz-tag [nzColor]="'cyan'" [nzClosable]="true">cyan</nz-tag>
+                        <nz-tag [nzColor]="'blue'" [nzClosable]="true">blue</nz-tag>
+                        <nz-tag [nzColor]="'purple'" [nzClosable]="true">purple</nz-tag>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>Categories Tag</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-checkable-tag *ngFor="let tag of hotTags"
+                                          [nzChecked]="selectedTags.indexOf(tag) > -1"
+                                          (nzChange)="handleChange($event, tag)">
+                            {{tag}}
+                        </nz-checkable-tag>
+                    </div>
+                </div>
+
+                <div nz-form-item nz-row>
+                    <div nz-form-label nz-col [nzSm]="4">
+                        <label>radio button style</label>
+                    </div>
+                    <div nz-form-control nz-col [nzSm]="20">
+                        <nz-radio-group>
+                            <label nz-radio-button [nzValue]="'A'">
+                                <span>Hangzhou</span>
+                            </label>
+                            <label nz-radio-button [nzValue]="'B'">
+                                <span>Shanghai</span>
+                            </label>
+                            <label nz-radio-button [nzValue]="'C'">
+                                <span>Beijing</span>
+                            </label>
+                            <label nz-radio-button [nzValue]="'D'">
+                                <span>Chengdu</span>
+                            </label>
+                        </nz-radio-group>
+                        <div class="mt-sm">
+                            <nz-radio-group>
+                                <label nz-radio-button [nzValue]="'A'">
+                                    <span>Hangzhou</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'B'" [nzDisabled]="true">
+                                    <span>Shanghai</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'C'">
+                                    <span>Beijing</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'D'">
+                                    <span>Chengdu</span>
+                                </label>
+                            </nz-radio-group>
+                        </div>
+                        <div class="mt-sm">
+                            <nz-radio-group [nzSize]="'small'">
+                                <label nz-radio-button [nzValue]="'A'" [nzDisabled]="true">
+                                    <span>Hangzhou</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'B'" [nzDisabled]="true">
+                                    <span>Shanghai</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'C'" [nzDisabled]="true">
+                                    <span>Beijing</span>
+                                </label>
+                                <label nz-radio-button [nzValue]="'D'" [nzDisabled]="true">
+                                    <span>Chengdu</span>
+                                </label>
+                            </nz-radio-group>
+                        </div>
+                    </div>
+                </div>
+
+
+            </nz-card>
+        </div>
+    </div>
+
+    <nz-footer>
+        <button nz-button [nzType]="'primary'" nzSize="large">提交</button>
+    </nz-footer>
+
+</form>
+
+
+

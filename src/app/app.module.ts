@@ -53,9 +53,8 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         CoreModule,
         LayoutModule,
         RoutesModule,
-        // mock
         ...MOCKMODULE,
-        // auth
+        // 登录
         AlainAuthModule.forRoot({
             login_url: `/passport/login`
         }),

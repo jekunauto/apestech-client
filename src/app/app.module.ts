@@ -16,8 +16,7 @@ import { LayoutModule } from './layout/layout.module';
 import {InitService} from "@core/services/init.service";
 import {UserAuthService} from "@core/services/user-auth.service";
 import { DefaultInterceptor } from '@core/net/default.interceptor';
-
-// mock
+ 
 import { DelonMockModule } from '@delon/mock';
 import * as MOCKDATA from '../../_mock';
 import { environment } from '../environments/environment';
@@ -53,9 +52,8 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         CoreModule,
         LayoutModule,
         RoutesModule,
-        // mock
         ...MOCKMODULE,
-        // auth
+        // 登录
         AlainAuthModule.forRoot({
             login_url: `/passport/login`
         }),

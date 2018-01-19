@@ -10,3 +10,6 @@
 ## Code scaffolding
 
 运行 `ng generate component component-name` 生成一个新的组件. 你可以使用 `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+#配置开发服务器使用的默认HTTP主机和端口
+ng serve --host 0.0.0.0 --port 4201

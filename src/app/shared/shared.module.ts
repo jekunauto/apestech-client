@@ -1,23 +1,23 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
 
 import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
 import { AlainThemeModule } from '@delon/theme';
-import { AlainABCModule, SimpleTableConfig, ReuseTabService, ReuseTabStrategy, FullContentService, XlsxService, DA_XLSX_CONFIG, LazyService, ZipService, DA_ZIP_CONFIG } from '@delon/abc';
+import { SimpleTableConfig, ReuseTabService, ReuseTabStrategy, FullContentService, XlsxService, DA_XLSX_CONFIG, LazyService, ZipService, DA_ZIP_CONFIG } from '@delon/abc';
 import { AlainACLModule } from '@delon/acl';
 
 // third libs
 import { CountdownModule } from 'ngx-countdown';
+import {FormlyModule} from '@ngx-formly/core';
+import {FormlyBootstrapModule} from './ui-bootstrap';
 
 // i18n
 import { TranslateModule } from '@ngx-translate/core';
-import { I18NService } from '@core/i18n/i18n.service';
 
 // region: zorro modules
-
 import {
     // LoggerModule,
     // NzLocaleModule,
@@ -69,6 +69,7 @@ import {
     NzNotificationService,
     NzMessageService
 } from 'ng-zorro-antd';
+
 const ZORROMODULES = [
     // LoggerModule,
     // NzLocaleModule,
@@ -199,6 +200,13 @@ const ABCMODULES = [
         AlainACLModule.forRoot(),
         // third libs
         CountdownModule,
+
+        //dynamicForm
+        FormlyModule.forRoot({
+
+        }),
+        FormlyBootstrapModule,
+
         AgGridModule.withComponents([
             DateComponent,
             GridHeaderComponent,
@@ -220,6 +228,10 @@ const ABCMODULES = [
         TranslateModule,
         // third libs
         CountdownModule,
+
+        //dynamicForm
+        FormlyModule,
+        FormlyBootstrapModule,
         AgGridModule,
 
     ]

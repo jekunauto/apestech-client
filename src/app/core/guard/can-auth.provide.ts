@@ -32,8 +32,5 @@ export class CanAuthProvide implements CanActivate {
             observer.next(false);
             observer.complete();
         });
-
-
     }
-
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FieldType } from '@ngx-formly/core';
+import {Component} from '@angular/core';
+import {FieldType} from '@ngx-formly/core';
 
 @Component({
     selector: 'formly-field-input',
@@ -11,7 +11,9 @@ import { FieldType } from '@ngx-formly/core';
             </div>
             <div nz-form-control nz-col [nzSm]="to.inputCol">
                 <nz-input [nzPlaceHolder]="to.placeholder" [formControl]="formControl" [formlyAttributes]="field"></nz-input>
-                <div nz-form-explain *ngIf="to.explain">{{to.explain}}</div>
+                <div nz-form-explain *ngIf="showError" role="alert" [id]="validationId">
+                    <formly-validation-message [fieldForm]="formControl" [field]="field"></formly-validation-message>
+                </div>
             </div>
 
         </div>

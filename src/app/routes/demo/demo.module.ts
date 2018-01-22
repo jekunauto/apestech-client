@@ -16,6 +16,7 @@ import { Demo6Component } from './demo6/demo6.component';
 import { Demo7Component } from './demo7/demo7.component';
 
 import {RichGridComponent} from "./gridComponent/rich-grid-example/rich-grid.component";
+import { Demo8Component } from './demo8/demo8.component';
 
 @NgModule({
     imports: [ SharedModule, DemoRoutingModule ],
@@ -27,6 +28,7 @@ import {RichGridComponent} from "./gridComponent/rich-grid-example/rich-grid.com
         Demo5Component,
         Demo6Component,
         Demo7Component,
+        Demo8Component,
 
         AgGridDemoComponent,
         RichGridComponent,

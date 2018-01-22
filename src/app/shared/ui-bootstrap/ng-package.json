@@ -6,6 +6,6 @@
         "@ngx-formly/core": "@ngx-formly/core"
       }
   },
-  "dest": "../../dist/bootstrap",
+  "dest": "../../dist/zorro",
   "workingDirectory": "../../.ng_build"
 }

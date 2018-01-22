@@ -180,7 +180,21 @@ const ABCMODULES = [
     AdZipModule
 ];
 // endregion
+export function minlengthValidationMessage(err, field) {
+    return `至少${field.templateOptions.minLength}个字符`;
+}
 
+export function maxlengthValidationMessage(err, field) {
+    return `不能超过${field.templateOptions.maxLength}个字符`;
+}
+
+export function minValidationMessage(err, field) {
+    return `应小于${field.templateOptions.min}`;
+}
+
+export function maxValidationMessage(err, field) {
+    return `不能大于${field.templateOptions.max}`;
+}
 @NgModule({
     declarations:[
         DateComponent,
@@ -203,7 +217,13 @@ const ABCMODULES = [
 
         //dynamicForm
         FormlyModule.forRoot({
-
+            validationMessages: [
+                { name: 'required', message: '该项为必填项目' },
+                { name: 'minlength', message: minlengthValidationMessage },
+                { name: 'maxlength', message: maxlengthValidationMessage },
+                { name: 'min', message: minValidationMessage },
+                { name: 'max', message: maxValidationMessage },
+            ],
         }),
         FormlyBootstrapModule,
 

@@ -1,74 +1,104 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, RouteReuseStrategy } from '@angular/router';
+import {ModuleWithProviders, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {RouteReuseStrategy, RouterModule} from '@angular/router';
 
-import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
-import { AlainThemeModule } from '@delon/theme';
-import { SimpleTableConfig, ReuseTabService, ReuseTabStrategy, FullContentService, XlsxService, DA_XLSX_CONFIG, LazyService, ZipService, DA_ZIP_CONFIG } from '@delon/abc';
-import { AlainACLModule } from '@delon/acl';
-
+import {NgZorroAntdExtraModule} from 'ng-zorro-antd-extra';
+import {AlainThemeModule} from '@delon/theme';
+// endregion
+// region: @delon/abc modules
+import {
+    AdAvatarListModule,
+    AdChartsModule,
+    AdCountDownModule,
+    AdDescListModule,
+    AdDownFileModule,
+    AdEllipsisModule,
+    AdErrorCollectModule,
+    AdExceptionModule,
+    AdFooterToolbarModule,
+    AdFullContentModule,
+    AdGlobalFooterModule,
+    AdImageModule,
+    AdNoticeIconModule,
+    AdNumberInfoModule,
+    AdProHeaderModule,
+    AdResultModule,
+    AdReuseTabModule,
+    AdSidebarNavModule,
+    AdSimpleTableModule,
+    AdStandardFormRowModule,
+    AdTagSelectModule,
+    AdTrendModule,
+    AdUtilsModule,
+    AdXlsxModule,
+    AdZipModule,
+    DA_XLSX_CONFIG,
+    DA_ZIP_CONFIG,
+    FullContentService,
+    LazyService,
+    ReuseTabService,
+    ReuseTabStrategy,
+    SimpleTableConfig,
+    XlsxService,
+    ZipService
+} from '@delon/abc';
+import {AlainACLModule} from '@delon/acl';
 // third libs
-import { CountdownModule } from 'ngx-countdown';
+import {CountdownModule} from 'ngx-countdown';
 import {FormlyModule} from '@ngx-formly/core';
 import {FormlyBootstrapModule} from './ui-bootstrap';
-
 // i18n
-import { TranslateModule } from '@ngx-translate/core';
-
+import {TranslateModule} from '@ngx-translate/core';
 // region: zorro modules
 import {
-    // LoggerModule,
-    // NzLocaleModule,
-    NzButtonModule,
     NzAlertModule,
+    NzAvatarModule,
     NzBadgeModule,
-    // NzCalendarModule,
+    NzBreadCrumbModule,
+    NzButtonModule,
+    NzCarouselModule,
     NzCascaderModule,
     NzCheckboxModule,
+    NzCollapseModule,
     NzDatePickerModule,
+    NzDropDownModule,
     NzFormModule,
+    NzGridModule,
     NzInputModule,
     NzInputNumberModule,
-    NzGridModule,
+    NzLayoutModule,
+    NzMenuModule,
     NzMessageModule,
+    NzMessageService,
     NzModalModule,
     NzNotificationModule,
+    NzNotificationService,
     NzPaginationModule,
     NzPopconfirmModule,
     NzPopoverModule,
+    NzProgressModule,
     NzRadioModule,
     NzRateModule,
+    NzRootModule,
     NzSelectModule,
-    NzSpinModule,
     NzSliderModule,
+    NzSpinModule,
+    NzStepsModule,
     NzSwitchModule,
-    NzProgressModule,
     NzTableModule,
     NzTabsModule,
     NzTagModule,
-    NzTimePickerModule,
-    NzUtilModule,
-    NzStepsModule,
-    NzDropDownModule,
-    NzMenuModule,
-    NzBreadCrumbModule,
-    NzLayoutModule,
-    NzRootModule,
-    NzCarouselModule,
-    // NzCardModule,
-    NzCollapseModule,
     NzTimelineModule,
+    NzTimePickerModule,
     NzToolTipModule,
-    // NzBackTopModule,
-    // NzAffixModule,
-    // NzAnchorModule,
-    NzAvatarModule,
-    // SERVICES
-    NzNotificationService,
-    NzMessageService
+    NzUtilModule
 } from 'ng-zorro-antd';
+import {HeaderGroupComponent} from '../routes/demo/gridComponent/header-group-component/header-group.component';
+import {DateComponent} from '../routes/demo/gridComponent/date-component/date.component';
+import {AgGridModule} from 'ag-grid-angular';
+import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component/header.component';
 
 const ZORROMODULES = [
     // LoggerModule,
@@ -118,40 +148,6 @@ const ZORROMODULES = [
     // NzAnchorModule,
     NzAvatarModule
 ];
-// endregion
-
-// region: @delon/abc modules
-import {
-    AdSimpleTableModule,
-    AdReuseTabModule,
-    AdAvatarListModule,
-    AdChartsModule,
-    AdCountDownModule,
-    AdDescListModule,
-    AdEllipsisModule,
-    AdErrorCollectModule,
-    AdExceptionModule,
-    AdFooterToolbarModule,
-    AdGlobalFooterModule,
-    AdNoticeIconModule,
-    AdNumberInfoModule,
-    AdProHeaderModule,
-    AdResultModule,
-    AdSidebarNavModule,
-    AdStandardFormRowModule,
-    AdTagSelectModule,
-    AdTrendModule,
-    AdDownFileModule,
-    AdImageModule,
-    AdUtilsModule,
-    AdFullContentModule,
-    AdXlsxModule,
-    AdZipModule
-} from '@delon/abc';
-import {HeaderGroupComponent} from "../routes/demo/gridComponent/header-group-component/header-group.component";
-import {DateComponent} from "../routes/demo/gridComponent/date-component/date.component";
-import {AgGridModule} from "ag-grid-angular";
-import {GridHeaderComponent} from "../routes/demo/gridComponent/header-component/header.component";
 const ABCMODULES = [
     AdSimpleTableModule,
     AdReuseTabModule,
@@ -180,15 +176,15 @@ const ABCMODULES = [
     AdZipModule
 ];
 // endregion
-export function minlengthValidationMessage(err, field) {
+export function minlengthValidationMessage(field) {
     return `至少${field.templateOptions.minLength}个字符`;
 }
 
-export function maxlengthValidationMessage(err, field) {
+export function maxlengthValidationMessage(field) {
     return `不能超过${field.templateOptions.maxLength}个字符`;
 }
 
-export function minValidationMessage(err, field) {
+export function minValidationMessage(field) {
     return `应小于${field.templateOptions.min}`;
 }
 
@@ -196,7 +192,7 @@ export function maxValidationMessage(err, field) {
     return `不能大于${field.templateOptions.max}`;
 }
 @NgModule({
-    declarations:[
+    declarations: [
         DateComponent,
         GridHeaderComponent,
         HeaderGroupComponent
@@ -215,7 +211,7 @@ export function maxValidationMessage(err, field) {
         // third libs
         CountdownModule,
 
-        //dynamicForm
+        // dynamicForm
         FormlyModule.forRoot({
             validationMessages: [
                 { name: 'required', message: '该项为必填项目' },
@@ -248,8 +244,7 @@ export function maxValidationMessage(err, field) {
         TranslateModule,
         // third libs
         CountdownModule,
-
-        //dynamicForm
+        // dynamicform
         FormlyModule,
         FormlyBootstrapModule,
         AgGridModule,

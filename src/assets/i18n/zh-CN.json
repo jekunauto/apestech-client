@@ -95,5 +95,10 @@
     "pro-user": "账户",
     "pro-login": "登录",
     "pro-register": "注册",
-    "pro-register-result": "注册结果"
+    "pro-register-result": "注册结果",
+    "MDM": "主数据管理",
+    "CRM": "客户关系管理",
+    "SCM": "供应链管理",
+    "HR": "人力资源管理",
+    "FI": "财务系统"
 }

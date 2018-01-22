@@ -45,6 +45,7 @@ const routes: Routes = [
 
             //模块
             { path: 'crm', loadChildren: './crm/crm.module#CrmModule'},
+            { path: 'mdm', loadChildren: './mdm/mdm.module#MdmModule'},
 
             //例子
             { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },

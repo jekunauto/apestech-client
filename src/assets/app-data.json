@@ -59,7 +59,7 @@
             "children": [{
                 "text": "定义公司",
                 "link": "/mdm/defineCompany",
-                "translate": "VIP"
+                "translate": "defineCompany"
             }]
         }]
     }, {

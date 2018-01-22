@@ -49,7 +49,6 @@
         }]
     }, {
         "text" : "MDM",
-        "translate": "MDM",
         "group": true,
         "children": [{
             "text": "主数据管理",
@@ -64,7 +63,6 @@
         }]
     }, {
         "text" : "CRM",
-        "translate": "CRM",
         "group": true,
         "children": [{
             "text": "客户关系管理",
@@ -79,7 +77,6 @@
         }]
     }, {
         "text" : "SCM",
-        "translate": "SCM",
         "group": true,
         "children": [{
             "text": "供应链管理",
@@ -91,7 +88,6 @@
 
     }, {
         "text" : "HR",
-        "translate": "HR",
         "group": true,
         "children": [{
             "text": "人力资源管理",
@@ -103,7 +99,6 @@
 
     }, {
         "text" : "OA",
-        "translate": "OA",
         "group": true,
         "children": [{
             "text": "客户关系管理",
@@ -115,7 +110,6 @@
 
     }, {
         "text" : "FI",
-        "translate": "FI",
         "group": true,
         "children": [{
             "text": "财务系统",

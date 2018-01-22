@@ -1,3 +1,192 @@
-<p>
-  define-company works!
-</p>
+<pro-header [title]="pagetitle"></pro-header>
+
+<form nz-form>
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <nz-card nzTitle="表单区域">
+
+                <div nz-form-item nz-row [nzGutter]="8">
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>公司编码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司编码'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>公司名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>简称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司简称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>公司英文名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司英文名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>国家名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入国家名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>省份名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入省份名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>城市名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入城市名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>注册地址</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入注册地址'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>邮政编码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入邮政编码'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>税号</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入税号'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>开户银行</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入开户银行'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>帐号</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入帐号'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>联系人</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入联系人'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>联系电话</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入联系电话'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>手机号码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入手机号码'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>供应商编码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入供应商编码'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>客户编码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入客户编码'"></nz-input>
+                        </div>
+                    </div>
+
+
+                    <div nz-form-item nz-col [nzSpan]="24">
+                        <div nz-form-label nz-col [nzSm]="2">
+                            <label>有效标记</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="22">
+                            <label nz-checkbox>
+                                <span>有效</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div nz-form-item nz-col [nzSpan]="16">
+                        <div nz-form-label nz-col [nzSm]="3">
+                            <label>备注</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="21">
+                            <nz-input [nzPlaceHolder]="'请输入字段'"></nz-input>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </nz-card>
+        </div>
+    </div>
+
+</form>

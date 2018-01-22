@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefineCompanyComponent implements OnInit {
 
+  pagetitle: string = "定义公司";
+
   constructor() { }
 
   ngOnInit() {

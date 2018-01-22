@@ -1,12 +1,12 @@
 {
     "app": {
         "name": "YYERP",
-        "description": "Ng-zorro admin panel front-end framework"
+        "description": "the Apestek's ERP Software"
     },
     "user": {
         "name": "Admin",
         "avatar": "./assets/img/zorro.svg",
-        "email": "cipchk@qq.com"
+        "email": "admin@apestek.com"
     },
     "menu": [{
         "text": "主导航",
@@ -19,19 +19,19 @@
             "icon": "icon-speedometer",
             "children": [{
                 "text": "仪表盘V1",
-                "link": "/home/dashboard/v1",
+                "link": "/dashboard/v1",
                 "translate": "dashboard_v1"
             }, {
                 "text": "分析页",
-                "link": "/home/dashboard/analysis",
+                "link": "/dashboard/analysis",
                 "translate": "dashboard_analysis"
             }, {
                 "text": "Monitor",
-                "link": "/home/dashboard/monitor",
+                "link": "/dashboard/monitor",
                 "translate": "dashboard_monitor"
             }, {
                 "text": "Workplace",
-                "link": "/home/dashboard/workplace",
+                "link": "/dashboard/workplace",
                 "translate": "dashboard_workplace"
             }]
         }, {
@@ -43,9 +43,24 @@
         }, {
             "text": "小部件",
             "translate": "widgets",
-            "link": "/home/widgets",
+            "link": "/widgets",
             "icon": "icon-grid",
             "badge": 2
+        }]
+    }, {
+        "text" : "MDM",
+        "translate": "MDM",
+        "group": true,
+        "children": [{
+            "text": "主数据管理",
+            "translate": "MDM",
+            "link": "MDM",
+            "icon": "anticon anticon-database",
+            "children": [{
+                "text": "定义公司",
+                "link": "/mdm/defineCompany",
+                "translate": "VIP"
+            }]
         }]
     }, {
         "text" : "CRM",
@@ -54,13 +69,60 @@
         "children": [{
             "text": "客户关系管理",
             "translate": "CRM",
-            "link": "crm",
+            "link": "/crm",
             "icon": "icon-people",
             "children": [{
                 "text": "会员",
-                "link": "/home/crm/vip",
+                "link": "/crm/vip",
                 "translate": "VIP"
             }]
+        }]
+    }, {
+        "text" : "SCM",
+        "translate": "SCM",
+        "group": true,
+        "children": [{
+            "text": "供应链管理",
+            "translate": "SCM",
+            "link": "scm",
+            "icon": "icon-note",
+            "children": []
+        }]
+
+    }, {
+        "text" : "HR",
+        "translate": "HR",
+        "group": true,
+        "children": [{
+            "text": "人力资源管理",
+            "translate": "HR",
+            "link": "hr",
+            "icon": "icon-note",
+            "children": []
+        }]
+
+    }, {
+        "text" : "OA",
+        "translate": "OA",
+        "group": true,
+        "children": [{
+            "text": "客户关系管理",
+            "translate": "OA",
+            "link": "ao",
+            "icon": "icon-note",
+            "children": []
+        }]
+
+    }, {
+        "text" : "FI",
+        "translate": "FI",
+        "group": true,
+        "children": [{
+            "text": "财务系统",
+            "translate": "FI",
+            "link": "fi",
+            "icon": "fa fa-yen",
+            "children": []
         }]
 
     }, {
@@ -70,40 +132,40 @@
         "children": [ {
             "text": "Pages",
             "translate": "pages",
-            "link": "/home/pages",
+            "link": "/pages",
             "icon": "icon-doc",
             "acl": "admin",
             "children": [{
                 "text": "Login",
-                "link": "/home/pages/login",
+                "link": "/pages/login",
                 "translate": "m-login",
                 "reuse": false
             }, {
                 "text": "Register",
-                "link": "/home/pages/register",
+                "link": "/pages/register",
                 "translate": "m-register",
                 "reuse": false
             }, {
                 "text": "Forget",
-                "link": "/home/pages/forget",
+                "link": "/pages/forget",
                 "translate": "m-forget",
                 "reuse": false
             }, {
                 "text": "Lock",
-                "link": "/home/pages/lock",
+                "link": "/pages/lock",
                 "translate": "m-lock",
                 "reuse": false
             }, {
                 "text": "404",
-                "link": "/home/pages/404",
+                "link": "/pages/404",
                 "reuse": false
             }, {
                 "text": "500",
-                "link": "/home/pages/500",
+                "link": "/pages/500",
                 "reuse": false
             }, {
                 "text": "Maintenance",
-                "link": "/home/pages/maintenance",
+                "link": "/pages/maintenance",
                 "translate": "maintenance",
                 "reuse": false
             }]
@@ -114,39 +176,39 @@
             "group": true,
             "children": [{
                 "text": "demo",
-                "link": "/home/demo",
+                "link": "/demo",
                 "translate": "模版例子",
                 "children": [{
                     "text": "demo1",
-                    "link": "/home/demo/demo1",
+                    "link": "/demo/demo1",
                     "translate": "模版例子1"
                 }, {
                     "text": "demo2",
-                    "link": "/home/demo/demo2",
+                    "link": "/demo/demo2",
                     "translate": "模版例子2"
                 }, {
                     "text": "demo3",
-                    "link": "/home/demo/demo3",
+                    "link": "/demo/demo3",
                     "translate": "模版例子3"
                 }, {
                     "text": "demo4",
-                    "link": "/home/demo/demo4",
+                    "link": "/demo/demo4",
                     "translate": "模版例子4"
                 }, {
                     "text": "demo5",
-                    "link": "/home/demo/demo5",
+                    "link": "/demo/demo5",
                     "translate": "模版例子5"
                 }, {
                     "text": "demo6",
-                    "link": "/home/demo/demo6",
+                    "link": "/demo/demo6",
                     "translate": "模版例子6"
                 }, {
                     "text": "demo7",
-                    "link": "/home/demo/demo7",
+                    "link": "/demo/demo7",
                     "translate": "模版例子7"
                 }, {
                     "text": "demo8",
-                    "link": "/home/demo/demo8",
+                    "link": "/demo/demo8",
                     "translate": "模版例子8"
                 }]
             }]

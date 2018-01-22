@@ -1,0 +1,33 @@
+<pro-header></pro-header>
+
+<form [formGroup]="form" (ngSubmit)="submit(model)">
+
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <nz-card nzTitle="动态表单区域">
+
+                <nz-card-tab nzTabHeading="操作日志一">
+                    <div nz-form-item nz-row [nzGutter]="8">
+                        <formly-form [model]="model" [fields]="feild1" [options]="options" [form]="form.at(0)">
+                        </formly-form>
+                    </div>
+                </nz-card-tab>
+
+                <nz-card-tab nzTabHeading="操作日志二">
+                    <div nz-form-item nz-row [nzGutter]="8">
+                        <formly-form [model]="model" [fields]="feild2" [options]="options" [form]="form.at(1)">
+                        </formly-form>
+                    </div>
+                </nz-card-tab>
+
+            </nz-card>
+
+        </div>
+    </div>
+
+    <pre>{{model  | json}}</pre>
+    <footer-toolbar errorCollect style="z-index: 0">
+        <button nz-button [nzType]="'primary'" [disabled]="!form.valid" nzSize="large">提交</button>
+    </footer-toolbar>
+
+</form>

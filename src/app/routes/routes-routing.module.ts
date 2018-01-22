@@ -28,7 +28,7 @@ import {CanAuthProvide} from "@core/guard/can-auth.provide";
 
 const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: LayoutDefaultComponent,
         canActivate : [CanAuthProvide],
         children: [
@@ -70,8 +70,7 @@ const routes: Routes = [
             { path: 'register-result', component: UserRegisterResultComponent }
         ]
     },
-    // 登录路由
-    { path: '', redirectTo: 'passport/login', pathMatch: 'full' },
+
     //异常
     { path: '403', component: Exception403Component },
     { path: '404', component: Exception404Component },

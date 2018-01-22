@@ -98,7 +98,7 @@ export class UserLoginComponent implements OnDestroy {
             //加载菜单
             this.initService.loadAppData();
 
-            this.router.navigate(['/home']);
+            this.router.navigate(['']);
         }, 1000);
     }
 

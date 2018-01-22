@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { FormGroup, FormArray } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { Observable } from 'rxjs/Rx';
+import {FormArray, FormGroup} from '@angular/forms';
+import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'app-demo8',
@@ -115,6 +115,25 @@ export class Demo8Component implements OnInit{
             lblCol: 6,
             inputCol: 18
         }
+    }, {
+        key: 'ip',
+        type: 'input',
+        templateOptions: {
+            label: 'IP Address (pattern = /(\d{1,3}\.){3}\d{1,3}/)',
+            pattern: /(\d{1,3}\.){3}\d{1,3}/,
+            required: true,
+            divCol: 24,
+            lblCol: 2,
+            inputCol: 22,
+            keyup: function () {
+                console.log('abc');
+            }
+        },
+        validation: {
+            messages: {
+                pattern: (error, field: FormlyFieldConfig) => `"${field.formControl.value}" 不是一个有效得IP地址`,
+            },
+        },
     }, {
         key: 'marvel3',
         type: 'select',

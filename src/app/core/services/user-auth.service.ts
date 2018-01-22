@@ -45,10 +45,10 @@ export class UserAuthService {
     return !!this.getUserInfo() ? this.getUserInfo().token : null;
   }
 
-    /**
-     * 获取到登录界面路径
-     * @returns {string | null}
-     */
+  /**
+    * 获取到登录界面路径
+    * @returns {string | null}
+    */
   public getLoginUrl(){
      return !!this.getUserInfo() ? this.getUserInfo().loginUrl : null;
   }

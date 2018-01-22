@@ -27,7 +27,7 @@ export class CanAuthProvide implements CanActivate {
             }
 
             this.msg.error('请先登录');
-            this.router.navigateByUrl("");
+            this.router.navigateByUrl("/passport");
 
             observer.next(false);
             observer.complete();

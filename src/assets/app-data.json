@@ -59,6 +59,10 @@
                 "text": "定义公司",
                 "link": "/mdm/defineCompany",
                 "translate": "defineCompany"
+            }, {
+                "text": "定义地点",
+                "link": "/mdm/defineAddress",
+                "translate": "defineAddress"
             }]
         }]
     }, {

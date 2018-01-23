@@ -187,10 +187,13 @@ export class AreaSelectComponent implements ControlValueAccessor, OnInit, OnDest
 
     onProvinceChange() {
         this._province.next(this._address.province);
+        this._address.city = '';
+        this._address.district = '';
     }
 
     onCityChange() {
         this._city.next(this._address.city);
+        this._address.district = '';
     }
 
     onDistrictChange() {

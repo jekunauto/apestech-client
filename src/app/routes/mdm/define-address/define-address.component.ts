@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormGroup} from "@angular/forms";
-import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
+import { FormGroup } from "@angular/forms";
+import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: 'app-define-address',
@@ -10,6 +10,7 @@ import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 export class DefineAddressComponent implements OnInit {
 
     form: FormGroup = new FormGroup({});
+    model: any = {};
     options: FormlyFormOptions = {};
 
     feild: FormlyFieldConfig[] = [{
@@ -73,11 +74,40 @@ export class DefineAddressComponent implements OnInit {
             ]
         }
     }, {
-        key: 'startDate',
-        type: 'date',
+        key: 'isValid',
+        type: 'checkbox',
         templateOptions: {
-            label: '开始时间',
-            placeholder: '结束时间',
+            label: '有效标记',
+            required: true,
+            divCol: 8,
+            lblCol: 6,
+            inputCol: 18
+        }
+    }, {
+        key: 'isWarehouse',
+        type: 'checkbox',
+        templateOptions: {
+            label: '仓库标记',
+            required: true,
+            divCol: 8,
+            lblCol: 6,
+            inputCol: 18
+        }
+    }, {
+        key: 'isStore',
+        type: 'checkbox',
+        templateOptions: {
+            label: '门店标记',
+            required: true,
+            divCol: 8,
+            lblCol: 6,
+            inputCol: 18
+        }
+    }, {
+        key: 'isBase',
+        type: 'checkbox',
+        templateOptions: {
+            label: '基地标记',
             required: true,
             divCol: 8,
             lblCol: 6,
@@ -88,10 +118,14 @@ export class DefineAddressComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+      this.model.companyName = "集群车宝";
+      this.model.warehouseLevel;
+
   }
 
   _submit(){
-
+      console.log(this.model);
   }
 
 }

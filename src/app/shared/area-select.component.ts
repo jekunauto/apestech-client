@@ -56,7 +56,7 @@ import {Address} from '../domain/address';
                 </nz-select>
             </div>
             <div class="street">
-                <input mdInput placeholder="街道地址" [(ngModel)]="_address.street" (change)="onStreetChange()">
+                <input placeholder="街道地址" [(ngModel)]="_address.street" (change)="onStreetChange()">
             </div>
         </div>
     `,

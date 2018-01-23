@@ -10,7 +10,7 @@ import { FieldType } from '@ngx-formly/core';
               <label *ngIf="!to.required" [title]="to.label">{{to.label}}</label>
           </div>
           <div nz-form-control nz-col [nzSm]="to.inputCol">
-              <nz-select [nzMode]="to.selectMode" [formlyAttributes]="field" [formControl]="formControl" nzAllowClear>
+              <nz-select [nzMode]="to.selectMode" [formlyAttributes]="field" [nzPlaceHolder]="to.placeholder" [formControl]="formControl" nzAllowClear>
                   
                   <nz-option *ngFor="let option of to.options"
                       [nzLabel]="option.label"

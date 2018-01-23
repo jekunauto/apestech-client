@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-ag-grid',
@@ -34,11 +34,11 @@ export class AgGridDemoComponent {
   private gridApi;
   private gridColumnApi;
 
-  private columnDefs;
-  private rowData;
-  private rowSelection;
-  private pinnedBottomRowData;
-  private navigateToNextCell;
+    columnDefs;
+    rowData;
+    rowSelection;
+    pinnedBottomRowData;
+    navigateToNextCell;
   constructor() {
     this.columnDefs = [
       {

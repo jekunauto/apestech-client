@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -34,7 +34,8 @@ export class Demo4Component implements OnInit {
             approver2 : [null, [Validators.required]],
             time : [null, [Validators.required]],
             type2 : [null, [Validators.required]],
-            items: this.fb.array([])
+            items: this.fb.array([]),
+            address: ['', Validators.maxLength(80)]
         });
         const userList = [
             {

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormArray, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 import {Observable} from 'rxjs/Rx';
@@ -8,11 +8,10 @@ import {Observable} from 'rxjs/Rx';
     templateUrl: './demo8.component.html',
     styles: []
 })
-export class Demo8Component implements OnInit{
+export class Demo8Component {
 
     form = new FormArray([0, 1].map(() => new FormGroup({}) ));
     model: any = {};
-    model1: any = {};
     options: FormlyFormOptions = {};
     feild1: FormlyFieldConfig[] = [{
         key: 'name',
@@ -142,7 +141,7 @@ export class Demo8Component implements OnInit{
             // selectMode: "multiple",
             options: [],
             change: () => {
-                console.log("点击事件");
+                console.log('点击事件');
             },
             divCol: 8,
             lblCol: 6,
@@ -173,7 +172,7 @@ export class Demo8Component implements OnInit{
             lblCol: 6,
             inputCol: 18,
             click: () => {
-                console.log("点击事件");
+                console.log('点击事件');
             }
         }
     }, {
@@ -182,11 +181,11 @@ export class Demo8Component implements OnInit{
         templateOptions: {
             label: '购买的险种',
             options : [
-                {label: '划痕险', key :"iron_man", vaule: 'iron_man', name: "insurance1"},
-                {label: '自燃险', key :"captain_america", vaule: 'captain_america', name:"insurance2"},
-                {label: '第三者险', key :"black_widow", vaule: 'black_widow', name:"insurance3",disabled: true},
-                {label: '玻璃险', key :"hulk", vaule: 'hulk', name:"insurance4"},
-                {label: '第三者不急免赔', key :"captain_marvel", vaule: 'captain_marvel', name:"insurance5"},
+                {label: '划痕险', key: 'iron_man', vaule: 'iron_man', name: 'insurance1'},
+                {label: '自燃险', key: 'captain_america', vaule: 'captain_america', name: 'insurance2'},
+                {label: '第三者险', key: 'black_widow', vaule: 'black_widow', name: 'insurance3', disabled: true},
+                {label: '玻璃险', key: 'hulk', vaule: 'hulk', name: 'insurance4'},
+                {label: '第三者不急免赔', key: 'captain_marvel', vaule: 'captain_marvel', name: 'insurance5'}
             ],
             required: true,
             divCol: 24,
@@ -195,9 +194,9 @@ export class Demo8Component implements OnInit{
         }
     }];
 
-    ngOnInit(): void {
-
-    }
+    // ngOnInit(): void {
+    //
+    // }
 
     submit() {
         alert(JSON.stringify(this.model));

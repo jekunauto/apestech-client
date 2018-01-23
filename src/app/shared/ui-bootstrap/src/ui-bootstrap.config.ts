@@ -1,25 +1,20 @@
-import { ConfigOption } from '@ngx-formly/core';
-import { FormlyWrapperAddons } from './wrappers/addons';
-import { TemplateDescription } from './run/description';
-import { TemplateValidation } from './run/validation';
-import { TemplateAddons } from './run/addon';
+import {ConfigOption} from '@ngx-formly/core';
+import {FormlyWrapperAddons} from './wrappers/addons';
+import {TemplateDescription} from './run/description';
+//import { TemplateValidation } from './run/validation';
+import {TemplateAddons} from './run/addon';
 
 import {
-  FormlyFieldInput,
-  FormlyFieldCheckbox,
-  FormlyFieldRadio,
-  FormlyFieldSelect,
-  FormlyFieldTextArea,
-  FormlyFieldMultiCheckbox,
-  FormlyFieldDate,
+    FormlyFieldCheckbox,
+    FormlyFieldDate,
+    FormlyFieldInput,
+    FormlyFieldMultiCheckbox,
+    FormlyFieldRadio,
+    FormlyFieldSelect,
+    FormlyFieldTextArea,
 } from './types/types';
 
-import {
-  FormlyWrapperLabel,
-  FormlyWrapperDescription,
-  FormlyWrapperValidationMessages,
-  FormlyWrapperFieldset,
-} from './wrappers/wrappers';
+import {FormlyWrapperDescription, FormlyWrapperFieldset, FormlyWrapperLabel,} from './wrappers/wrappers';
 
 export const FIELD_TYPE_COMPONENTS = [
   // types
@@ -34,7 +29,7 @@ export const FIELD_TYPE_COMPONENTS = [
   // wrappers
   FormlyWrapperLabel,
   FormlyWrapperDescription,
-  FormlyWrapperValidationMessages,
+    // FormlyWrapperValidationMessages,
   FormlyWrapperFieldset,
   FormlyWrapperAddons,
 ];
@@ -100,13 +95,13 @@ export const BOOTSTRAP_FORMLY_CONFIG: ConfigOption = {
   wrappers: [
     {name: 'label', component: FormlyWrapperLabel},
     {name: 'description', component: FormlyWrapperDescription},
-    {name: 'validation-message', component: FormlyWrapperValidationMessages},
+      //{name: 'validation-message', component: FormlyWrapperValidationMessages},
     {name: 'fieldset', component: FormlyWrapperFieldset},
     {name: 'addons', component: FormlyWrapperAddons},
   ],
   manipulators: [
     {class: TemplateDescription, method: 'run'},
-    {class: TemplateValidation, method: 'run'},
+      //{class: TemplateValidation, method: 'run'},
     {class: TemplateAddons, method: 'run'},
   ],
 };

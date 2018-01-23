@@ -100,6 +100,7 @@ import {DateComponent} from '../routes/demo/gridComponent/date-component/date.co
 import {AgGridModule} from 'ag-grid-angular';
 import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component/header.component';
 
+
 const ZORROMODULES = [
     // LoggerModule,
     // NzLocaleModule,
@@ -176,15 +177,15 @@ const ABCMODULES = [
     AdZipModule
 ];
 // endregion
-export function minlengthValidationMessage(field) {
+export function minlengthValidationMessage(err, field) {
     return `至少${field.templateOptions.minLength}个字符`;
 }
 
-export function maxlengthValidationMessage(field) {
+export function maxlengthValidationMessage(err, field) {
     return `不能超过${field.templateOptions.maxLength}个字符`;
 }
 
-export function minValidationMessage(field) {
+export function minValidationMessage(err, field) {
     return `应小于${field.templateOptions.min}`;
 }
 
@@ -247,8 +248,7 @@ export function maxValidationMessage(err, field) {
         // dynamicform
         FormlyModule,
         FormlyBootstrapModule,
-        AgGridModule,
-
+        AgGridModule
     ]
 })
 export class SharedModule {

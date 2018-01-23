@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-demo7',
@@ -7,6 +7,19 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styles: []
 })
 export class Demo7Component implements OnInit {
+//设置控件是否可以输入
+    isDisabled: boolean = true;
+
+    //日期控件相关定义
+    _dateRange = [null, null];
+    _startDate;
+    _endDate;
+    _endTime;
+    _disabledStartDate: boolean = false;
+    _disabledEndDate: boolean = false;
+    _startValueChange: any;
+    _endValueChange: any;
+    current = 1;
 
     feildList = [{
         "name": "companyId",

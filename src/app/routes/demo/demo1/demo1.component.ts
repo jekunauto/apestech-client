@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-demo1',
@@ -15,6 +15,7 @@ export class Demo1Component implements OnInit {
     _dateRange = [null, null];
     _startDate;
     _endDate;
+    _endTime;
     _disabledStartDate: boolean = false;
     _disabledEndDate:boolean = false;
 

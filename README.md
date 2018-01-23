@@ -2,6 +2,9 @@
 
 这个项目使用[angular-cli](https://github.com/angular/angular-cli) version 1.6.2.
 
+# 安装依赖包
+当download 项目之后，需要使用 npm install 安装依赖包
+
 ## 开发服务器
 
 运行 `ng serve` 作为一个开发服务器. 浏览器访问 `http://localhost:4200/`. 如果更改任何源文件，该应用程序将自动重新加载

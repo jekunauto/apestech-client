@@ -3,6 +3,7 @@ import {SharedModule} from "@shared/shared.module";
 
 import { MdmRoutingModule } from './mdm-routing.module';
 import {DefineCompanyComponent} from "./define-company/define-company.component";
+import { DefineAddressComponent } from './define-address/define-address.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {DefineCompanyComponent} from "./define-company/define-company.component"
       MdmRoutingModule
   ],
   declarations: [
-      DefineCompanyComponent
+      DefineCompanyComponent,
+      DefineAddressComponent
   ]
 })
 export class MdmModule { }

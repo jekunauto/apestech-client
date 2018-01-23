@@ -101,5 +101,6 @@
     "SCM": "供应链管理",
     "HR": "人力资源管理",
     "FI": "财务系统",
-    "defineCompany": "定义公司"
+    "defineCompany": "定义公司",
+    "defineAddress": "定义地点"
 }

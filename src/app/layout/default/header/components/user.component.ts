@@ -40,7 +40,7 @@ export class HeaderUserComponent implements OnInit {
             token: 'nothing',
             name: 'Admin',
             avatar: './assets/img/zorro.svg',
-            email: 'cipchk@qq.com'
+            email: 'admin@apestek.com'
         };
         this.tokenService.set(token);
     }

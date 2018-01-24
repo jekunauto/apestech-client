@@ -10,7 +10,7 @@ import {FieldType} from '@ngx-formly/core';
                 <label *ngIf="!to.required" [title]="to.label">{{to.label}}</label>
             </div>
             <div nz-form-control nz-col [nzSm]="to.inputCol">
-                <nz-datepicker [nzPlaceHolder]="to.placeholder" [formControl]="formControl" [formlyAttributes]="field"></nz-datepicker>
+                <nz-datepicker [nzPlaceHolder]="to.placeholder" [formControl]="formControl" [formlyAttributes]="field" style="width:100%"></nz-datepicker>
                 <div nz-form-explain *ngIf="showError" role="alert" [id]="validationId">
                     <formly-validation-message [fieldForm]="formControl" [field]="field"></formly-validation-message>
                 </div>

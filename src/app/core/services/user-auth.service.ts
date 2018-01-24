@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {UserInfoModel, UserKeyType} from './../../model/user-model/user-info-model';
+import {UserInfoModel, UserKeyType} from '../../domain/user-info-model';
 
 @Injectable()
 export class UserAuthService {

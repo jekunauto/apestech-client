@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
-import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
+import {Component} from '@angular/core';
+import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {FieldType, FormlyFieldConfig} from '@ngx-formly/core';
 
 @Component({
   selector: 'formly-field-multicheckbox',
   template: `
-      <div nz-form-item nz-col [nzSpan]="to.divCol">
+      <div nz-form-item nz-col [nzSpan]="to.divCol" style="margin-bottom:6px; height: 42px;">
           <div nz-form-label nz-col [nzSm]="to.lblCol">
               <label *ngIf="to.required" [title]="to.label" nz-form-item-required>{{to.label}}</label>
               <label *ngIf="!to.required" [title]="to.label">{{to.label}}</label>

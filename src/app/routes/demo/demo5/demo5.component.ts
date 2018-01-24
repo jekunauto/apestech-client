@@ -34,6 +34,34 @@ export class Demo5Component implements OnInit {
             feild9: ['', [Validators.required]],
             feild10: ['', [Validators.required]],
             feild11: ['', [Validators.required]],
+            Test1: ['', [Validators.required]],
+            Test2: ['', [Validators.required]],
+            Test3: ['', [Validators.required]],
+            Test4: ['', [Validators.required]],
+            Test5: ['', [Validators.required]],
+            Test6: ['', [Validators.required]],
+            Test7: ['', [Validators.required]],
+            companyId: ['', [Validators.required,
+                Validators.pattern("^[0-9]*$")]
+            ],
+            companyName: ['', [Validators.required]],
+            shortName: ['', [Validators.required]],
+            countryName: ['', [Validators.required]],
+            provinceName: ['', [Validators.required]],
+            cityName: ['', [Validators.required]],
+            registerAddress: ['', [Validators.required]],
+            taxId: ['', [Validators.required]],
+            bankName: ['', [Validators.required]],
+            accountId: ['', [Validators.required]],
+            contactName: ['', [Validators.required]],
+            contactPhone: ['', [Validators.required]],
+            cellPhoneNumber: ['', [Validators.required]],
+            isValid: [''],
+            englishName: [''],
+            postalCode: [''],
+            supplierCode: [''],
+            customerCode: [''],
+            comments: [''],
         });
     }
 
@@ -49,6 +77,24 @@ export class Demo5Component implements OnInit {
     get feild9() { return this.formGroupModel.controls.feild9; }
     get feild10() { return this.formGroupModel.controls.feild10; }
     get feild11() { return this.formGroupModel.controls.feild11; }
+    get Test1() { return this.formGroupModel.controls.Test1; }
+    get Test2() { return this.formGroupModel.controls.Test2; }
+    get Test3() { return this.formGroupModel.controls.Test3; }
+    get Test4() { return this.formGroupModel.controls.Test4; }
+    get Test5() { return this.formGroupModel.controls.Test5; }
+    get Test6() { return this.formGroupModel.controls.Test6; }
+    get Test7() { return this.formGroupModel.controls.Test7; }
+
+    get companyId() { return this.formGroupModel.controls.companyId; }
+    get companyName() { return this.formGroupModel.controls.companyName; }
+    get shortName() { return this.formGroupModel.controls.shortName; }
+    get countryName() { return this.formGroupModel.controls.countryName; }
+    get provinceName() { return this.formGroupModel.controls.provinceName; }
+    get cityName() { return this.formGroupModel.controls.cityName; }
+    get registerAddress() { return this.formGroupModel.controls.registerAddress; }
+    get taxId() { return this.formGroupModel.controls.taxId; }
+    get bankName() { return this.formGroupModel.controls.bankName; }
+    get accountId() { return this.formGroupModel.controls.accountId; }
 
 
     ngOnInit() {

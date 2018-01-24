@@ -1,9 +1,10 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NzMessageService } from 'ng-zorro-antd';
+import {Component, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {NzMessageService} from 'ng-zorro-antd';
 import {InitService} from "@core/services/init.service";
 import {UserAuthService} from "@core/services/user-auth.service";
+import {ApiService} from '../../../core/services/api.service';
 
 @Component({
     selector: 'passport-login',
@@ -22,7 +23,8 @@ export class UserLoginComponent implements OnDestroy {
         private router: Router,
         public msg: NzMessageService,
         private initService: InitService,
-        private userAuthService : UserAuthService) {
+        private userAuthService: UserAuthService,
+        private apiService: ApiService) {
 
         this.form = fb.group({
             userName: [null, [Validators.required, Validators.minLength(5)]],
@@ -93,15 +95,31 @@ export class UserLoginComponent implements OnDestroy {
                     name: this.userName.value
                 }
             };
-            this.userAuthService.setUserInfo(JSON.stringify(userInfo));
+            this.userAuthService.storeUserInfo(JSON.stringify(userInfo));
 
-            //加载菜单
+            //加载菜单..setUserInfo(JSON.stringify(userInfo));
             this.initService.loadAppData();
 
             this.router.navigate(['']);
         }, 1000);
     }
 
+    login(): void {
+        const userModel = {
+            userid: this.userName.value,
+            password: this.password.value
+        };
+        this.apiService.post('aut.user.login', {'body': JSON.stringify(userModel)}).subscribe((res) => {
+            if (res.header.code) {
+                const userInfo = {'token': res.body.sessionId, 'userAccount': res.body.user};
+                const storageInfo = JSON.stringify(userInfo);
+                this.userAuthService.storeUserInfo(storageInfo);
+                this.router.navigate(['home']);
+            } else {
+                console.log(res.message);
+            }
+        });
+    }
     // endregion
     ngOnDestroy(): void {
         if (this.interval$) clearInterval(this.interval$);

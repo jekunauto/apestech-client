@@ -4,7 +4,7 @@ import {FieldType} from '@ngx-formly/core';
 @Component({
     selector: 'formly-field-input',
     template: `
-        <div nz-form-item nz-col [nzSpan]="to.divCol" style="margin-bottom:6px; height: 42px;">
+        <div nz-form-item nz-col [nzSpan]="to.divCol" [ngStyle]="{'margin-bottom':'6px','height': '42px'}">
             <div nz-form-label nz-col [nzSm]="to.lblCol">
                 <label *ngIf="to.required" [title]="to.label" nz-form-item-required>{{to.label}}</label>
                 <label *ngIf="!to.required" [title]="to.label">{{to.label}}</label>

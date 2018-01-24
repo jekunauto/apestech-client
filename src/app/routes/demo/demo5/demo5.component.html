@@ -268,51 +268,140 @@
 
         <nz-card-tab nzTabHeading="操作日志二">
             <div nz-row [nzGutter]="16">
+
                 <div nz-col nzMd="6" nzSm="12" nzXs="24">
                     <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>任务名二</label></div>
-                        <div nz-form-control nz-col nzHasFeedback >
-                            <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
-
-                        </div>
-                    </div>
-                </div>
-                <div nz-col nzMd="6" nzSm="12" nzXs="24">
-                    <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>任务描述二</label></div>
-                        <div nz-form-control nz-col nzHasFeedback >
-                            <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
-
-                        </div>
-                    </div>
-                </div>
-                <div nz-col nzMd="6" nzSm="24" nzXs="24">
-                    <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>执行人二</label></div>
-                        <div nz-form-control nz-col >
-                            <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
+                        <div nz-form-label nz-col><label>字段一</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild1">
+                            <nz-input formControlName="feild1" nzPlaceHolder="字段一" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild1.dirty || feild1.touched) && feild1.errors?.required">
+                                请输入字段一
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div nz-col nzMd="6" nzSm="12" nzXs="24">
                     <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>任务名</label></div>
-                        <div nz-form-control nz-col nzHasFeedback >
-                            <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
-
+                        <div nz-form-label nz-col><label>字段二</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild2">
+                            <nz-input formControlName="feild2" nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild2.dirty || feild2.touched) && feild2.errors?.required">
+                                请输入字段二
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div nz-col nzMd="6" nzSm="24" nzXs="24">
                     <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>执行人</label></div>
-                        <div nz-form-control nz-col >
-                            <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
+                        <div nz-form-label nz-col><label>字段三</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild3">
+                            <nz-input formControlName="feild3" nzPlaceHolder="请输入字段三" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild3.dirty || feild3.touched) && feild3.errors?.required">
+                                请输入字段三
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div nz-col nzMd="6" nzSm="12" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段四</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild4">
+                            <nz-input formControlName="feild4" nzPlaceHolder="请输入字段四" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild4.dirty || feild4.touched) && feild4.errors?.required">
+                                请输入字段四
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="12" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段五</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild5">
+                            <nz-input formControlName="feild5" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild5.dirty || feild5.touched) && feild5.errors?.required">
+                                请输入字段五
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="12" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段六</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild6">
+                            <nz-input formControlName="feild6" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild6.dirty || feild6.touched) && feild6.errors?.required">
+                                请输入字段六
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="18" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段七</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild7">
+                            <nz-input formControlName="feild7" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild7.dirty || feild7.touched) && feild7.errors?.required">
+                                请输入字段七
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="6" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段八</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild8">
+                            <nz-input formControlName="feild8" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild8.dirty || feild8.touched) && feild8.errors?.required">
+                                请输入字段八
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="24" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段九</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild9">
+                            <nz-input formControlName="feild9" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild9.dirty || feild9.touched) && feild9.errors?.required">
+                                请输入字段九
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div nz-col nzMd="6" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段十</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild10">
+                            <nz-input formControlName="feild10" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild10.dirty || feild10.touched) && feild10.errors?.required">
+                                请输入字段十
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div nz-col nzMd="6" nzSm="24" nzXs="24">
+                    <div nz-form-item nz-row>
+                        <div nz-form-label nz-col><label>字段十一</label></div>
+                        <div nz-form-control nz-col nzHasFeedback [nzValidateStatus]="feild11">
+                            <nz-input formControlName="feild11" nzPlaceHolder="请输入字段五" nzSize="large"></nz-input>
+                            <div nz-form-explain *ngIf="(feild11.dirty || feild11.touched) && feild11.errors?.required">
+                                请输入字段十一
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </nz-card-tab>
 
@@ -320,7 +409,9 @@
             <div nz-row [nzGutter]="16">
                 <div nz-col nzMd="8" nzSm="12" nzXs="24">
                     <div nz-form-item nz-row>
-                        <div nz-form-label nz-col><label>任务名三</label></div>
+                        <div nz-form-label nz-col>
+                            <label>任务名三</label>
+                        </div>
                         <div nz-form-control nz-col nzHasFeedback >
                             <nz-input nzPlaceHolder="请输入任务名" nzSize="large"></nz-input>
 

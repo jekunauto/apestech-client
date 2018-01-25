@@ -2,18 +2,148 @@
 
 <form [formGroup]="form" (ngSubmit)="_submit()">
 
-    <div nz-row [nzGutter]="16">
-        <div nz-col [nzMd]="24">
-            <nz-card>
-
+    <nz-card>
+        <div nz-row [nzGutter]="8">
+            <div nz-col [nzMd]="24">
                 <div nz-form-item nz-row [nzGutter]="8">
-                    <formly-form [model]="model" [fields]="feild" [options]="options" [form]="form">
-                    </formly-form>
-                </div>
 
-            </nz-card>
+                    <fieldset>
+                        <legend>输入类</legend>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>地点编码</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" [nzValidateStatus]="addressId">
+                                <nz-input formControlName="addressId" [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <div nz-form-explain *ngIf="(addressId.dirty || addressId.touched) && addressId.errors?.required">
+                                    请输入地点编码
+                                </div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>地点名称</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" [nzValidateStatus]="addressName">
+                                <nz-input formControlName="addressName" [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <div nz-form-explain *ngIf="(addressName.dirty || addressName.touched) && addressName.errors?.required">
+                                    请输入地点名称
+                                </div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>公司编码</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" [nzValidateStatus]="companyId">
+                                <nz-input formControlName="companyId" [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <div nz-form-explain *ngIf="(companyId.dirty || companyId.touched) && companyId.errors?.required">
+                                    请输公司编码
+                                </div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>公司名称</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" [nzValidateStatus]="companyName">
+                                <nz-input formControlName="companyName" [nzPlaceHolder]="'请输公司名称'" ></nz-input>
+                                <div nz-form-explain *ngIf="(companyName.dirty || companyName.touched) && companyName.errors?.required">
+                                    请输公司名称
+                                </div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>仓库级别</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+
+                                <nz-select formControlName="warehouseLevel" [nzPlaceHolder]="'请选择仓库级别'" nzAllowClear>
+                                    <nz-option *ngFor="let option of options"
+                                               [nzLabel]="option.label"
+                                               [nzValue]="option.value"
+                                               [nzDisabled]="option.disabled">
+                                    </nz-option>
+                                </nz-select>
+
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>合作方式</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+
+                                <select formControlName="hzfs" placeholder="请选择合作方式" nzAllowClear>
+                                    <option *ngFor="let option of options"
+                                               [value]= "option.value"
+                                               [disabled]="option.disabled">{{option.label}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>勾选类</legend>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>有效标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox formControlName="isValid">
+                                    <span>有效</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>仓库标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox formControlName="isWarehouse">
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>门店标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox formControlName="isStore">
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>基地标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox formControlName="isBase">
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
         </div>
-    </div>
+    </nz-card>
 
     <footer-toolbar errorCollect style="z-index: 0">
         <button nz-button [nzType]="'primary'" [disabled]="!form.valid" nzSize="large">提交</button>

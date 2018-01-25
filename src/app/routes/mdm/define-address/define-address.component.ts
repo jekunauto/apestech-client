@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
@@ -9,7 +9,21 @@ import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 })
 export class DefineAddressComponent implements OnInit {
 
-    form: FormGroup = new FormGroup({});
+    form: FormGroup;
+
+    options = [
+        {label: '中心仓', value : 1},
+        {label: '区域中心仓', value: 2},
+        {label: '门店仓库', value : 3, disabled: true}
+     ];
+
+    // options = [
+    //     { value: 'jack', label: 'Jack' },
+    //     { value: 'lucy', label: 'Lucy' },
+    //     { value: 'disabled', label: 'Disabled', disabled: true }
+    // ];
+
+    /*form: FormGroup = new FormGroup({});
     model: any = {};
     options: FormlyFormOptions = {};
 
@@ -113,19 +127,50 @@ export class DefineAddressComponent implements OnInit {
             lblCol: 6,
             inputCol: 18
         }
-    }];
+    }];*/
 
-  constructor() { }
-
-  ngOnInit() {
-
-      this.model.companyName = "集群车宝";
-      this.model.warehouseLevel;
+  constructor(private fb: FormBuilder) {
 
   }
 
+  ngOnInit() {
+      this.form  = this.fb.group({
+          addressId: ['', [Validators.required] ],
+          addressName: ['', [Validators.required]],
+          companyId: ['', [Validators.required]],
+          companyName: ['', [Validators.required]],
+          warehouseLevel: ['', [Validators.required]],
+          isValid: [false],
+          isWarehouse: [false],
+          isStore: [false],
+          isBase: [false],
+
+          hzfs:[]
+      });
+
+
+      setTimeout( ()=> {
+          //给form 设置值
+          this.form.patchValue({addressId: " 1243436 ", isStore: true});
+          let option={value :"2",label: '区域中心仓'};
+          this.form.patchValue({warehouseLevel: {value: 3} });
+
+          this.form.patchValue({hzfs: 3})
+         // this.form.controls['warehouseLevel'].setValue({value :"2",label: '区域中心仓'});
+
+      } , 5000);
+
+
+  }
+
+  get addressId() { return this.form.controls.addressId };
+  get addressName() { return this.form.controls.addressName };
+  get companyId() { return this.form.controls.companyId };
+  get companyName() { return this.form.controls.companyName };
+  get warehouseLevel() { return this.form.controls.warehouseLevel };
+
   _submit(){
-      console.log(this.model);
+    console.log(this.form.value);
   }
 
 }

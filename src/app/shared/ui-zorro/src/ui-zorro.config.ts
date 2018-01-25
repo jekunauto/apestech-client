@@ -33,7 +33,7 @@ export const FIELD_TYPE_COMPONENTS = [
   FormlyWrapperAddons,
 ];
 
-export const BOOTSTRAP_FORMLY_CONFIG: ConfigOption = {
+export const ZORRO_FORMLY_CONFIG: ConfigOption = {
   types: [
     {
       name: 'input',

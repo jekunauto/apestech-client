@@ -1,4 +1,4 @@
-import { FormlyConfig } from '@ngx-formly/core';
+import {FormlyConfig} from '@ngx-formly/core';
 
 export class TemplateAddons {
   run(fc: FormlyConfig) {

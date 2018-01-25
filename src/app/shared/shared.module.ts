@@ -48,7 +48,7 @@ import {AlainACLModule} from '@delon/acl';
 // third libs
 import {CountdownModule} from 'ngx-countdown';
 import {FormlyModule} from '@ngx-formly/core';
-import {FormlyBootstrapModule} from './ui-bootstrap';
+import {FormlyZorroModule} from './ui-zorro';
 // i18n
 import {TranslateModule} from '@ngx-translate/core';
 // region: zorro modules
@@ -222,7 +222,7 @@ export function maxValidationMessage(err, field) {
                 { name: 'max', message: maxValidationMessage },
             ],
         }),
-        FormlyBootstrapModule,
+        FormlyZorroModule,
 
         AgGridModule.withComponents([
             DateComponent,
@@ -247,7 +247,7 @@ export function maxValidationMessage(err, field) {
         CountdownModule,
         // dynamicform
         FormlyModule,
-        FormlyBootstrapModule,
+        FormlyZorroModule,
         AgGridModule
     ]
 })

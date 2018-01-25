@@ -1,4 +1,4 @@
-import { FormlyFieldConfig, FormlyConfig } from '@ngx-formly/core';
+import {FormlyConfig, FormlyFieldConfig} from '@ngx-formly/core';
 
 export class TemplateDescription {
   run(fc: FormlyConfig) {

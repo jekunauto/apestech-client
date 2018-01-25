@@ -102,5 +102,6 @@
     "HR": "人力资源管理",
     "FI": "财务系统",
     "defineCompany": "定义公司",
-    "defineAddress": "定义地点"
+    "defineAddress": "定义地点",
+    "defineDepartment": "定义部门"
 }

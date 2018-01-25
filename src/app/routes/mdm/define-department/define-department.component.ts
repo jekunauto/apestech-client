@@ -16,6 +16,7 @@ export class DefineDepartmentComponent implements OnInit {
     feild: FormlyFieldConfig[] = [{
         key: 'deptId',
         type: 'input',
+        defaultValue: "111",
         templateOptions: {
             label: '部门编码',
             placeholder: '请输入部门编码',
@@ -60,9 +61,9 @@ export class DefineDepartmentComponent implements OnInit {
     }, {
         key: 'isValid',
         type: 'checkbox',
+        defaultValue: true,
         templateOptions: {
             label: '有效标记',
-            required: true,
             divCol: 8,
             lblCol: 6,
             inputCol: 18
@@ -72,6 +73,14 @@ export class DefineDepartmentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout( () => {
+        this.form.patchValue({deptName: "无线事业部"});
+
+    }, 3000)
   }
+
+    _submit(){
+      console.log(this.model);
+    }
 
 }

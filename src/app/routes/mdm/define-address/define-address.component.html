@@ -62,8 +62,7 @@
                             <div nz-form-label nz-col [nzSm]="8">
                                 <label nz-form-item-required>仓库级别</label>
                             </div>
-                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
-
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" [nzValidateStatus]="warehouseLevel">
                                 <nz-select formControlName="warehouseLevel" [nzPlaceHolder]="'请选择仓库级别'" nzAllowClear>
                                     <nz-option *ngFor="let option of options"
                                                [nzLabel]="option.label"
@@ -71,25 +70,11 @@
                                                [nzDisabled]="option.disabled">
                                     </nz-option>
                                 </nz-select>
-
+                                <div nz-form-explain *ngIf="(warehouseLevel.dirty || warehouseLevel.touched) && warehouseLevel.errors?.required">
+                                    请选择仓库级别
+                                </div>
                             </div>
                         </div>
-
-                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
-                            <div nz-form-label nz-col [nzSm]="8">
-                                <label nz-form-item-required>合作方式</label>
-                            </div>
-                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
-
-                                <select formControlName="hzfs" placeholder="请选择合作方式" nzAllowClear>
-                                    <option *ngFor="let option of options"
-                                               [value]= "option.value"
-                                               [disabled]="option.disabled">{{option.label}}
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-
                     </fieldset>
 
                     <fieldset>

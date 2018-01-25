@@ -1,0 +1,22 @@
+<pro-header></pro-header>
+
+<form [formGroup]="form" (ngSubmit)="_submit()">
+
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <nz-card>
+
+                <div nz-form-item nz-row [nzGutter]="8">
+                    <formly-form [model]="model" [fields]="feild" [options]="options" [form]="form">
+                    </formly-form>
+                </div>
+
+            </nz-card>
+        </div>
+    </div>
+
+    <footer-toolbar errorCollect style="z-index: 0">
+        <button nz-button [nzType]="'primary'" [disabled]="!form.valid" nzSize="large">提交</button>
+    </footer-toolbar>
+
+</form>

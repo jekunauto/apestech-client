@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { FormlyFieldConfig, FormlyFormOptions } from "@ngx-formly/core";
 
 @Component({
   selector: 'app-define-address',
@@ -151,9 +152,10 @@ export class DefineAddressComponent implements OnInit {
       setTimeout( ()=> {
           //给form 设置值
           this.form.patchValue({addressId: " 1243436 ", isStore: true});
-          this.form.patchValue({warehouseLevel: 2});
+          let option={value :"2",label: '区域中心仓'};
+          this.form.patchValue({warehouseLevel: {value: 3} });
 
-          this.form.patchValue({hzfs: 3});
+          this.form.patchValue({hzfs: 3})
          // this.form.controls['warehouseLevel'].setValue({value :"2",label: '区域中心仓'});
 
       } , 5000);

@@ -1,3 +1,3 @@
 export * from './types/types';
 export * from './wrappers/wrappers';
-export { FormlyBootstrapModule } from './ui-bootstrap.module';
+export {FormlyZorroModule} from './ui-zorro.module';

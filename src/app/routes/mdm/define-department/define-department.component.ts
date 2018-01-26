@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup} from "@angular/forms";
-import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
+import { FormGroup} from "@angular/forms";
+import { FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 
 @Component({
   selector: 'app-define-department',
@@ -9,11 +9,21 @@ import {FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 })
 export class DefineDepartmentComponent implements OnInit {
 
-    form: FormGroup = new FormGroup({});
-    model: any = {};
+    loading: boolean = false;
+
+    form = new FormGroup({});
+
+    queryForm = new FormGroup({});
+    editForm = new FormGroup({});
+
+    queryModel: any = {};
+    editModel: any = {};
+
+    advancedOperation3 = [];
+
     options: FormlyFormOptions = {};
 
-    feild: FormlyFieldConfig[] = [{
+    feidlArray = [{
         key: 'deptId',
         type: 'input',
         defaultValue: "111",
@@ -70,17 +80,31 @@ export class DefineDepartmentComponent implements OnInit {
         }
     }];
 
+    formFeild0: FormlyFieldConfig[] = this.feidlArray;
+    formFeild1: FormlyFieldConfig[] = this.feidlArray;
+
+
   constructor() { }
 
   ngOnInit() {
-    setTimeout( () => {
-        this.form.patchValue({deptName: "无线事业部"});
 
-    }, 3000)
   }
 
+    resetForm(){
+        this.queryForm.reset();
+    }
+
+    _search(){
+      console.log( "_search" );
+      console.log(this.queryForm.value);
+
+
+    }
+
     _submit(){
-      console.log(this.model);
+      console.log("_submit");
+      console.log(this.queryModel.value);
+      console.log(this.editModel.value);
     }
 
 }

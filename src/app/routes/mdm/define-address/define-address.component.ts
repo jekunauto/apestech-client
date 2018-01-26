@@ -49,9 +49,14 @@ export class DefineAddressComponent implements OnInit {
   get companyName() { return this.form.controls.companyName };
   get warehouseLevel() { return this.form.controls.warehouseLevel };
 
+    changeWarehouseLevel(event: Event){
+        console.log(this.form.value);
+    }
+
   _submit(){
     let data = this.form.value;
-
   }
+
+
 
 }

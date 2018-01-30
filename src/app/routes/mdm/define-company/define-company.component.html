@@ -1,9 +1,11 @@
 <pro-header></pro-header>
 
 <form nz-form [formGroup]="form" (ngSubmit)="_submitForm()">
-    <div nz-row [nzGutter]="16">
-        <div nz-col [nzMd]="24">
-            <nz-card>
+
+    <nz-card>
+        <div nz-row [nzGutter]="16">
+            <div nz-col [nzMd]="24">
+
                 <div nz-form-item nz-row [nzGutter]="8">
 
                     <fieldset>
@@ -189,7 +191,7 @@
                             </div>
                         </div>
 
-                        <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
                             <div nz-form-label nz-col [nzSm]="6">
                                 <label>供应商编码</label>
                             </div>
@@ -198,7 +200,7 @@
                             </div>
                         </div>
 
-                        <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
                             <div nz-form-label nz-col [nzSm]="6">
                                 <label>客户编码</label>
                             </div>
@@ -207,7 +209,7 @@
                             </div>
                         </div>
 
-                        <div nz-form-item nz-col [nzSpan]="16">
+                        <div nz-form-item nz-col [nzSpan]="16" style="margin-bottom:6px; height: 42px;">
                             <div nz-form-label nz-col [nzSm]="3">
                                 <label>备注</label>
                             </div>
@@ -217,9 +219,10 @@
                         </div>
                     </fieldset>
                 </div>
-            </nz-card>
+            </div>
         </div>
-    </div>
+
+    </nz-card>
 
     <footer-toolbar errorCollect style="z-index: 0">
         <button nz-button [nzType]="'primary'" nzSize="large">提交</button>

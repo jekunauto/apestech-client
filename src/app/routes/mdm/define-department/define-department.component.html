@@ -1,17 +1,73 @@
 <pro-header></pro-header>
 
-<form [formGroup]="form" (ngSubmit)="_submit()">
+<form nz-form [formGroup]="form">
 
     <div nz-row [nzGutter]="16">
         <div nz-col [nzMd]="24">
+
             <nz-card>
+                <nz-tabset [nzSelectedIndex]="selectIndex">
+                    <nz-tab (nzClick)="_onQueryTabClick()">
+                        <ng-template #nzTabHeading>查询</ng-template>
 
-                <div nz-form-item nz-row [nzGutter]="8">
-                    <formly-form [model]="model" [fields]="feild" [options]="options" [form]="form">
-                    </formly-form>
-                </div>
+                        <div nz-form-item nz-row [nzGutter]="8" class="mb-md">
+                            <formly-form [model]="queryModel" [fields]="formFeild0" [options]="queryOptions" [form]="queryForm">
+                            </formly-form>
+                        </div>
 
+                        <div class="mb-md" nz-row>
+                            <div nz-col [nzSpan]="24" class="text-left">
+                                <button nz-button [nzType]="'primary'" (click)="_search()" [nzSize]="'large'">查询</button>
+                                <button nz-button (click)="resetForm()" class="mx-sm" [nzSize]="'large'">重置</button>
+                            </div>
+                        </div>
+
+                        <nz-table [nzDataSource]="advancedOperation3" [nzIsPagination]="true">
+                            <thead nz-thead>
+                            <tr>
+                                <th nz-th><span>编号</span></th>
+                                <th nz-th><span>部门编码</span></th>
+                                <th nz-th><span>部门名称</span></th>
+                                <th nz-th><span>公司编码</span></th>
+                                <th nz-th><span>公司名称</span></th>
+                                <th nz-th><span>是否有效</span></th>
+                                <th nz-th><span>录入人</span></th>
+                                <th nz-th><span>录入时间</span></th>
+                                <th nz-th><span>操作</span></th>
+                            </tr>
+                            </thead>
+                            <tbody nz-tbody>
+                            <tr nz-tbody-tr *ngFor="let i of advancedOperation3">
+                                <td nz-td>{{i.index}}</td>
+                                <td nz-td>{{i.deptId}}</td>
+                                <td nz-td>{{i.deptName}}</td>
+                                <td nz-td>{{i.companyId}}</td>
+                                <td nz-td>{{i.companyName}}</td>
+                                <td nz-td>
+                                    <nz-badge *ngIf="i.isValid === true" [nzStatus]="'success'" [nzText]="'有效'"></nz-badge>
+                                    <nz-badge *ngIf="i.isValid === false" [nzStatus]="'error'" [nzText]="'无效'"></nz-badge>
+                                </td>
+                                <td nz-td>{{i.inputPerson}}</td>
+                                <td nz-td>{{i.inputDate}}</td>
+                                <td nz-td><a (click)="_editRowData(i)">编辑</a></td>
+                            </tr>
+                            </tbody>
+                        </nz-table>
+
+                    </nz-tab>
+
+                    <nz-tab (nzClick)="_onEditTabClick()">
+                        <ng-template #nzTabHeading>编辑</ng-template>
+
+                        <div nz-form-item nz-row [nzGutter]="8">
+                            <formly-form [model]="editModel" [fields]="formFeild1" [options]="editOptions" [form]="editForm">
+                            </formly-form>
+                        </div>
+
+                    </nz-tab>
+                </nz-tabset>
             </nz-card>
+
         </div>
     </div>
 

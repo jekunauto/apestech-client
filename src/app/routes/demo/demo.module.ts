@@ -17,6 +17,8 @@ import {Demo7Component} from './demo7/demo7.component';
 import {RichGridComponent} from './gridComponent/rich-grid-example/rich-grid.component';
 import {Demo8Component} from './demo8/demo8.component';
 import {SharedModule} from '@shared/shared.module';
+import { Demo9Component } from './demo9/demo9.component';
+import {DialogOverviewDialog} from "./dialog/dialog-overview-dialog";
 
 @NgModule({
     imports: [ SharedModule, DemoRoutingModule ],
@@ -29,13 +31,18 @@ import {SharedModule} from '@shared/shared.module';
         Demo6Component,
         Demo7Component,
         Demo8Component,
+        Demo9Component,
         AreaSelectComponent,
         AgGridDemoComponent,
         RichGridComponent,
+
+        //dialog
         ModelCustomComponent,
+        DialogOverviewDialog
     ],
     entryComponents: [
-        ModelCustomComponent
+        ModelCustomComponent,
+        DialogOverviewDialog
     ]
 
 })

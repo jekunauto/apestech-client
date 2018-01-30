@@ -6,7 +6,7 @@
             </div>
             <div nz-form-control nz-col [nzSm]='6'>
                 <nz-select [ngStyle]="{'width':'100%'}" [(ngModel)]='item.operator'>
-                    <nz-option * ngFor='let operator of getOperators(item.field)' nzLabel='{{operator |translate}}' [nzValue]='operator'>
+                    <nz-option *ngFor='let operator of getOperators(item.field)' nzLabel='{{operator |translate}}' [nzValue]='operator'>
                     </nz-option>
                 </nz-select>
             </div>

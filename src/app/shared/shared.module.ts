@@ -25,6 +25,9 @@ import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component
 import {QueryBuilderModule} from '@shared/querybuilder';
 import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
+//Material UI
+import {MatDialogModule} from "@angular/material";
+
 // endregion
 export function minlengthValidationMessage(err, field) {
     return `至少${field.templateOptions.minLength}个字符`;
@@ -41,6 +44,7 @@ export function minValidationMessage(err, field) {
 export function maxValidationMessage(err, field) {
     return `不能大于${field.templateOptions.max}`;
 }
+
 @NgModule({
     declarations: [
         DateComponent,
@@ -60,6 +64,9 @@ export function maxValidationMessage(err, field) {
         AlainACLModule.forRoot(),
         // third libs
         CountdownModule,
+
+        //Material UI
+        MatDialogModule,
 
         // dynamicForm
         FormlyModule.forRoot({
@@ -95,6 +102,10 @@ export function maxValidationMessage(err, field) {
         TranslateModule,
         // third libs
         CountdownModule,
+
+        //Material UI
+        MatDialogModule,
+
         // dynamicform
         FormlyModule,
         FormlyZorroModule,

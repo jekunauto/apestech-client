@@ -1,0 +1,238 @@
+<pro-header></pro-header>
+
+<form nz-form [formGroup]="form" (ngSubmit)="_submit()">
+
+    <nz-card>
+        <div nz-row [nzGutter]="8">
+            <div nz-col [nzMd]="24">
+                <div nz-form-item nz-row [nzGutter]="8">
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>地点编码</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+                                <nz-input [nzPlaceHolder]="'输入地点编码'" formControlName="addressId">
+                                    <ng-template #suffix>
+                                        <i class="anticon anticon-search" (click)="onSearchAddress()"></i>
+                                    </ng-template>
+                                </nz-input>
+                                <div nz-form-explain>请输入地点编码</div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>地点名称</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+                                <nz-input [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <div nz-form-explain>请输入地点名称</div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>公司编码</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+                                <nz-input [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <div nz-form-explain>请输公司编码</div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>公司名称</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16" >
+                                <nz-input [nzPlaceHolder]="'请输公司名称'" ></nz-input>
+                                <div nz-form-explain>请输公司名称</div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>仓库级别</label>
+                            </div>
+                            <div nz-form-control nz-col nzHasFeedback [nzSm]="16">
+                                <nz-select [nzPlaceHolder]="'请选择仓库级别'"
+                                           (ngModelChange)="changeWarehouseLevel($event)"
+                                           nzAllowClear>
+                                    <nz-option *ngFor="let option of options"
+                                               [nzLabel]="option.label"
+                                               [nzValue]="option.value"
+                                               [nzDisabled]="option.disabled">
+                                    </nz-option>
+                                </nz-select>
+                                <div nz-form-explain>请选择仓库级别</div>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>有效标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox>
+                                    <span>有效</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>仓库标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox>
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>门店标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox>
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div nz-form-item nz-col [nzSpan]="6" style="margin-bottom:6px; height: 42px;">
+                            <div nz-form-label nz-col [nzSm]="8">
+                                <label nz-form-item-required>基地标记</label>
+                            </div>
+                            <div nz-form-control nz-col [nzSm]="16">
+                                <label nz-checkbox>
+                                    <span>是</span>
+                                </label>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </nz-card>
+
+    <nz-card>
+        <div nz-row [nzGutter]="16">
+            <div nz-col [nzMd]="24">
+
+                <div nz-form-item nz-row [nzGutter]="8">
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>公司编码</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                            <div nz-form-explain>
+                                请输公司编码
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>公司名称</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司名称'"></nz-input>
+                            <div nz-form-explain>
+                                请输公司名称
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>简称</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司简称'"></nz-input>
+                            <div nz-form-explain>
+                                请输公司简称
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>国家名称</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入国家名称'"></nz-input>
+                            <div nz-form-explain>
+                                请输国家名称
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>省份名称</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入省份名称'"></nz-input>
+                            <div nz-form-explain>
+                                请输省份名称
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>城市名称</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入城市名称'"></nz-input>
+                            <div nz-form-explain>
+                                请输城市名称
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8" style="margin-bottom:6px; height: 42px;">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label nz-form-item-required>注册地址</label>
+                        </div>
+                        <div nz-form-control nz-col nzHasFeedback [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入注册地址'"></nz-input>
+                            <div nz-form-explain>
+                                请输入注册地址
+                            </div>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>公司英文名称</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入公司英文名称'"></nz-input>
+                        </div>
+                    </div>
+
+                    <div nz-form-item nz-col [nzSpan]="8">
+                        <div nz-form-label nz-col [nzSm]="6">
+                            <label>邮政编码</label>
+                        </div>
+                        <div nz-form-control nz-col [nzSm]="18">
+                            <nz-input [nzPlaceHolder]="'请输入邮政编码'"></nz-input>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </nz-card>
+
+    <footer-toolbar errorCollect style="z-index: 0">
+        <button nz-button [nzType]="'primary'" [disabled]="!form.valid" nzSize="large">提交</button>
+    </footer-toolbar>
+</form>

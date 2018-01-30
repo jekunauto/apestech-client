@@ -212,6 +212,10 @@
                     "text": "demo8",
                     "link": "/demo/demo8",
                     "translate": "模版例子8"
+                }, {
+                    "text": "demo9",
+                    "link": "/demo/demo9",
+                    "translate": "模版例子9"
                 }]
             }]
         }]

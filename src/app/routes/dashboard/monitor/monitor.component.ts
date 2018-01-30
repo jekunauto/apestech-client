@@ -17,28 +17,8 @@ export class DashboardMonitorComponent implements OnInit, OnDestroy {
         start: null,
         end: null
     };
-
-    constructor(private http: _HttpClient, public msg: NzMessageService) {}
-
-    ngOnInit() {
-        zip(
-            this.http.get('/chart'),
-            this.http.get('/chart/tags')
-        ).subscribe(([ res, tags ]) => {
-            this.data = res;
-            tags.list[Math.floor(Math.random() * tags.list.length) + 1].value = 1000;
-            this.tags = tags.list;
-            this.loading = false;
-        });
-
-        // active chart
-        this.genActiveData();
-        this.activeTime$ = setInterval(() => this.genActiveData(), 1000);
-    }
-
-    // region: active chart
-
-    activeTime$: any;
+   // region: active chart
+   activeTime$: any;
 
     activeYAxis = {
         tickCount: 3,
@@ -56,6 +36,23 @@ export class DashboardMonitorComponent implements OnInit, OnDestroy {
         t1: '',
         t2: ''
     };
+    constructor(private http: _HttpClient, public msg: NzMessageService) {}
+
+    ngOnInit() {
+        zip(
+            this.http.get('/chart'),
+            this.http.get('/chart/tags')
+        ).subscribe(([ res, tags ]: [ any, any ]) => {
+            this.data = res;
+            tags.list[Math.floor(Math.random() * tags.list.length) + 1].value = 1000;
+            this.tags = tags.list;
+            this.loading = false;
+        });
+
+        // active chart
+        this.genActiveData();
+        this.activeTime$ = setInterval(() => this.genActiveData(), 1000);
+    }
 
     genActiveData() {
         const activeData = [];

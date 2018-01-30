@@ -30,6 +30,7 @@ import { ALAIN_I18N_TOKEN } from '@delon/theme';
 import { registerLocaleData } from '@angular/common';
 import localeZhHans from '@angular/common/locales/zh-Hans';
 import {StartupService} from "@core/services/startup.service";
+import { DelonModule } from 'app/delon.module';
 registerLocaleData(localeZhHans);
 
 // AoT requires an exported function for factories
@@ -48,6 +49,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        DelonModule.forRoot(),
         SharedModule.forRoot(),
         CoreModule,
         LayoutModule,

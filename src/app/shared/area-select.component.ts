@@ -14,9 +14,11 @@ import {Address} from '../domain/address';
                 <nz-select
                     style="width: 200px;"
                     nzAllowClear
+                    [nzFilter]="true"
                     [nzPlaceHolder]="'请选择省份'"
                     [(ngModel)]="_address.province"
-                    (nzOpenChange)="onProvinceChange()">
+                    (nzOpenChange)="onProvinceChange()"
+                    nzShowSearch>
                     <nz-option
                         *ngFor="let p of provinces"
                         [nzLabel]="p"
@@ -31,6 +33,7 @@ import {Address} from '../domain/address';
                     nzAllowClear
                     [nzPlaceHolder]="'请选择城市'"
                     [(ngModel)]="_address.city"
+                    [nzFilter]="true"
                     (nzOpenChange)="onCityChange()">
                     <nz-option
                         *ngFor="let c of cities$ | async"
@@ -44,6 +47,7 @@ import {Address} from '../domain/address';
                 <nz-select
                     style="width: 200px;"
                     nzAllowClear
+                    [nzFilter]="true"
                     [nzPlaceHolder]="'请选择区县'"
                     [(ngModel)]="_address.district"
                     (nzOpenChange)="onDistrictChange()">
@@ -187,6 +191,7 @@ export class AreaSelectComponent implements ControlValueAccessor, OnInit, OnDest
 
     onProvinceChange() {
         this._province.next(this._address.province);
+        this._address.city = '';
     }
 
     onCityChange() {

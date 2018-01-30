@@ -1,1 +1,21 @@
-<div></div>
+<div nz-form-item nz-row>
+    <ng-container *ngFor='let item of data.rules'>
+        <div nz-form-item nz-col [nzSpan]='8' [ngStyle]="{'margin-bottom ':'5px','height':'42px'}">
+            <div nz-form-label nz-col [nzSm]='6'>
+                <label [title]='item.field'> {{item.field | translate}}</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]='6'>
+                <nz-select [ngStyle]="{'width':'100%'}" [(ngModel)]='item.operator'>
+                    <nz-option *ngFor='let operator of getOperators(item.field)' nzLabel='{{operator |translate}}' [nzValue]='operator'>
+                    </nz-option>
+                </nz-select>
+            </div>
+            <div nz-form-control nz-col [nzSm]='12'>
+                <ng-container [ngSwitch]='getInputType(item.field, item.operator)'>
+                    <nz-input [(ngModel)]='item.value' *ngSwitchCase='text'> </nz-input>
+                    <nz-input-number [ngStyle]="{'width':'100%'}" [(ngModel)]='item.value' *ngSwitchCase='number'> </nz-input-number>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</div>

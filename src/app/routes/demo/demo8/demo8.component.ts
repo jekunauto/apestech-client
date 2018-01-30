@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormArray, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 import {Observable} from 'rxjs/Rx';
+import {QueryBuilderConfig} from '@shared/querybuilder';
 
 @Component({
     selector: 'app-demo8',
@@ -11,6 +12,7 @@ import {Observable} from 'rxjs/Rx';
 export class Demo8Component {
 
     form = new FormArray([0, 1].map(() => new FormGroup({}) ));
+
     model: any = {};
     options: FormlyFormOptions = {};
     feild1: FormlyFieldConfig[] = [{
@@ -193,10 +195,44 @@ export class Demo8Component {
             inputCol: 22,
         }
     }];
-
-    // ngOnInit(): void {
-    //
-    // }
+    public query = {
+        condition: 'and',
+        rules: [
+            {field: 'age', operator: 'LTE'},
+            {field: 'name', operator: 'EQ'},
+            {field: 'educated', operator: 'EQ'},
+            {field: 'school', operator: 'EQ'},
+            {field: 'gender', operator: 'EQ'},
+            {field: 'occupation', operator: 'in'}
+        ]
+    };
+    public config: QueryBuilderConfig = {
+        fields: {
+            'age': {name: 'Age', type: 'number'},
+            'gender': {
+                name: 'Gender',
+                type: 'category',
+                options: [
+                    {name: 'Male', value: 'm'},
+                    {name: 'Female', value: 'f'}
+                ]
+            },
+            'name': {name: 'Name', type: 'string'},
+            'educated': {name: 'College Degree?', type: 'boolean'},
+            'birthday': {name: 'Birthday', type: 'date'},
+            'school': {name: 'School', type: 'string', nullable: true},
+            'occupation': {
+                name: 'Occupation',
+                type: 'string',
+                options: [
+                    {name: 'Student', value: 'student'},
+                    {name: 'Teacher', value: 'teacher'},
+                    {name: 'Unemployed', value: 'unemployed'},
+                    {name: 'Scientist', value: 'scientist'}
+                ]
+            }
+        }
+    }
 
     submit() {
         alert(JSON.stringify(this.model));

@@ -99,83 +99,9 @@ import {HeaderGroupComponent} from '../routes/demo/gridComponent/header-group-co
 import {DateComponent} from '../routes/demo/gridComponent/date-component/date.component';
 import {AgGridModule} from 'ag-grid-angular';
 import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component/header.component';
+import {QueryBuilderModule} from '@shared/querybuilder';
+import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
-
-const ZORROMODULES = [
-    // LoggerModule,
-    // NzLocaleModule,
-    NzButtonModule,
-    NzAlertModule,
-    NzBadgeModule,
-    // NzCalendarModule,
-    NzCascaderModule,
-    NzCheckboxModule,
-    NzDatePickerModule,
-    NzFormModule,
-    NzInputModule,
-    NzInputNumberModule,
-    NzGridModule,
-    NzMessageModule,
-    NzModalModule,
-    NzNotificationModule,
-    NzPaginationModule,
-    NzPopconfirmModule,
-    NzPopoverModule,
-    NzRadioModule,
-    NzRateModule,
-    NzSelectModule,
-    NzSpinModule,
-    NzSliderModule,
-    NzSwitchModule,
-    NzProgressModule,
-    NzTableModule,
-    NzTabsModule,
-    NzTagModule,
-    NzTimePickerModule,
-    NzUtilModule,
-    NzStepsModule,
-    NzDropDownModule,
-    NzMenuModule,
-    NzBreadCrumbModule,
-    NzLayoutModule,
-    NzRootModule,
-    NzCarouselModule,
-    // NzCardModule,
-    NzCollapseModule,
-    NzTimelineModule,
-    NzToolTipModule,
-    // NzBackTopModule,
-    // NzAffixModule,
-    // NzAnchorModule,
-    NzAvatarModule
-];
-const ABCMODULES = [
-    AdSimpleTableModule,
-    AdReuseTabModule,
-    AdAvatarListModule,
-    AdChartsModule,
-    AdCountDownModule,
-    AdDescListModule,
-    AdEllipsisModule,
-    AdErrorCollectModule,
-    AdExceptionModule,
-    AdFooterToolbarModule,
-    AdGlobalFooterModule,
-    AdNoticeIconModule,
-    AdNumberInfoModule,
-    AdProHeaderModule,
-    AdResultModule,
-    AdSidebarNavModule,
-    AdStandardFormRowModule,
-    AdTagSelectModule,
-    AdTrendModule,
-    AdDownFileModule,
-    AdImageModule,
-    AdUtilsModule,
-    AdFullContentModule,
-    AdXlsxModule,
-    AdZipModule
-];
 // endregion
 export function minlengthValidationMessage(err, field) {
     return `至少${field.templateOptions.minLength}个字符`;
@@ -223,6 +149,7 @@ export function maxValidationMessage(err, field) {
             ],
         }),
         FormlyZorroModule,
+        QueryBuilderModule,
 
         AgGridModule.withComponents([
             DateComponent,
@@ -248,6 +175,7 @@ export function maxValidationMessage(err, field) {
         // dynamicform
         FormlyModule,
         FormlyZorroModule,
+        QueryBuilderModule,
         AgGridModule
     ]
 })

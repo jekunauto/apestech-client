@@ -103,5 +103,20 @@
     "FI": "财务系统",
     "defineCompany": "定义公司",
     "defineAddress": "定义地点",
-    "defineDepartment": "定义部门"
+    "defineDepartment": "定义部门",
+    "Age": "年龄",
+    "age": "年龄",
+    "EQ": "等于",
+    "NE": "不等于",
+    "GT": "大于",
+    "LT": "小于",
+    "GTE": "大于等于",
+    "LTE": "小于等于",
+    "AND": "并且",
+    "OR": "或者",
+    "LIKE": "模糊匹配",
+    "IS_MEMBER": "",
+    "IS_NOT_MEMBER": "",
+    "IS_NULL": "为空",
+    "IS_NOT_NULL": "不为空"
 }

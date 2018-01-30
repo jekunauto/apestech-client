@@ -13,11 +13,7 @@ export class Demo5Component implements OnInit {
 
     formGroupModel: FormGroup;
 
-    data = {
-        advancedOperation1: [],
-        advancedOperation2: [],
-        advancedOperation3: []
-    };
+    data: { };
 
     constructor(public msg: NzMessageService, private http: _HttpClient,
                 private modal: NzModalService, private fb: FormBuilder) {
@@ -101,7 +97,7 @@ export class Demo5Component implements OnInit {
         this.http.get('/profile/advanced').subscribe(res => this.data = res);
     }
 
-    onClickSelect(){
+    onClickSelect() {
         let options = {
            wrapClassName: 'modal-lg',
            content: ModelCustomComponent,
@@ -114,7 +110,7 @@ export class Demo5Component implements OnInit {
        this.modal.open( options ).subscribe(result => {
             debugger;
            //由于传递过来的值，存在多个事件，只选择传递数组的值
-           if( Array.isArray(result)){
+           if ( Array.isArray(result) ) {
                this.formGroupModel.setValue({
                    selectFeild: JSON.stringify(result)
                });

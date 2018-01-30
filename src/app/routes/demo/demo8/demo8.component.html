@@ -1,5 +1,4 @@
 <pro-header></pro-header>
-
 <form [formGroup]="form" (ngSubmit)="submit()">
 
     <div nz-row [nzGutter]="16">
@@ -17,6 +16,20 @@
                     <div nz-form-item nz-row [nzGutter]="8">
                         <formly-form [model]="model" [fields]="feild2" [options]="options" [form]="form.at(1)">
                         </formly-form>
+                    </div>
+                </nz-card-tab>
+
+                <!-- <nz-card-tab nzTabHeading="查询条件">
+                    <query-builder class='margin30' [data]='query' [config]='config'></query-builder>
+                    <div class='margin30'>
+                        <textarea>{{query | json}}</textarea>
+                    </div>
+                </nz-card-tab> -->
+
+                <nz-card-tab nzTabHeading="查询条件">
+                    <query-builder-zorro class='margin30' [data]='query' [config]='config'></query-builder-zorro>
+                    <div class='margin30'>
+                        <textarea>{{query | json}}</textarea>
                     </div>
                 </nz-card-tab>
 

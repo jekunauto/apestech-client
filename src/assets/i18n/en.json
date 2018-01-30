@@ -95,5 +95,19 @@
     "pro-user": "Account",
     "pro-login": "Login",
     "pro-register": "Register",
-    "pro-register-result": "Register Result"
+    "pro-register-result": "Register Result",
+    "say-hi works!": "jfksjfk",
+    "EQ": "EQ",
+    "NE": "NE",
+    "GT": "GT",
+    "LT": "LT",
+    "GTE": "GTE",
+    "LTE": "LTE",
+    "AND": "AND",
+    "OR": "OR",
+    "LIKE": "LIKE",
+    "IS_MEMBER": "",
+    "IS_NOT_MEMBER": "",
+    "IS_NULL": "为空",
+    "IS_NOT_NULL": "不为空"
 }

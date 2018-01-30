@@ -6,44 +6,9 @@ import {RouteReuseStrategy, RouterModule} from '@angular/router';
 
 import {NgZorroAntdExtraModule} from 'ng-zorro-antd-extra';
 import {AlainThemeModule} from '@delon/theme';
-// endregion
+
 // region: @delon/abc modules
-import {
-    AdAvatarListModule,
-    AdChartsModule,
-    AdCountDownModule,
-    AdDescListModule,
-    AdDownFileModule,
-    AdEllipsisModule,
-    AdErrorCollectModule,
-    AdExceptionModule,
-    AdFooterToolbarModule,
-    AdFullContentModule,
-    AdGlobalFooterModule,
-    AdImageModule,
-    AdNoticeIconModule,
-    AdNumberInfoModule,
-    AdProHeaderModule,
-    AdResultModule,
-    AdReuseTabModule,
-    AdSidebarNavModule,
-    AdSimpleTableModule,
-    AdStandardFormRowModule,
-    AdTagSelectModule,
-    AdTrendModule,
-    AdUtilsModule,
-    AdXlsxModule,
-    AdZipModule,
-    DA_XLSX_CONFIG,
-    DA_ZIP_CONFIG,
-    FullContentService,
-    LazyService,
-    ReuseTabService,
-    ReuseTabStrategy,
-    SimpleTableConfig,
-    XlsxService,
-    ZipService
-} from '@delon/abc';
+import {DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService} from '@delon/abc';
 import {AlainACLModule} from '@delon/acl';
 // third libs
 import {CountdownModule} from 'ngx-countdown';
@@ -52,49 +17,7 @@ import {FormlyZorroModule} from './ui-zorro';
 // i18n
 import {TranslateModule} from '@ngx-translate/core';
 // region: zorro modules
-import {
-    NzAlertModule,
-    NzAvatarModule,
-    NzBadgeModule,
-    NzBreadCrumbModule,
-    NzButtonModule,
-    NzCarouselModule,
-    NzCascaderModule,
-    NzCheckboxModule,
-    NzCollapseModule,
-    NzDatePickerModule,
-    NzDropDownModule,
-    NzFormModule,
-    NzGridModule,
-    NzInputModule,
-    NzInputNumberModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzMessageModule,
-    NzMessageService,
-    NzModalModule,
-    NzNotificationModule,
-    NzNotificationService,
-    NzPaginationModule,
-    NzPopconfirmModule,
-    NzPopoverModule,
-    NzProgressModule,
-    NzRadioModule,
-    NzRateModule,
-    NzRootModule,
-    NzSelectModule,
-    NzSliderModule,
-    NzSpinModule,
-    NzStepsModule,
-    NzSwitchModule,
-    NzTableModule,
-    NzTabsModule,
-    NzTagModule,
-    NzTimelineModule,
-    NzTimePickerModule,
-    NzToolTipModule,
-    NzUtilModule
-} from 'ng-zorro-antd';
+import { NzMessageService, NzNotificationService} from 'ng-zorro-antd';
 import {HeaderGroupComponent} from '../routes/demo/gridComponent/header-group-component/header-group.component';
 import {DateComponent} from '../routes/demo/gridComponent/date-component/date.component';
 import {AgGridModule} from 'ag-grid-angular';

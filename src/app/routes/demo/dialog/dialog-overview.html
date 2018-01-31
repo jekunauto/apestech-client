@@ -67,10 +67,21 @@
                     </div>
 
                 </div>
+
+                <div class="mb-md" nz-row>
+                    <div nz-col [nzSpan]="24" class="text-left">
+                        <button nz-button [nzType]="'primary'" (click)="_search()" [nzSize]="'large'">查询</button>
+                        <button nz-button (click)="resetForm()" class="mx-sm" [nzSize]="'large'">重置</button>
+                    </div>
+                </div>
+
+                <div>
+                    <dialog-grid></dialog-grid>
+                </div>
+
             </div>
         </div>
     </div>
-
 </div>
 
 <div class="modal-footer">

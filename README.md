@@ -17,6 +17,9 @@
 #配置开发服务器使用的默认HTTP主机和端口
 ng serve --host 0.0.0.0 --port 4201
 
+##使用aot编译打包
+ng build --prod --aot
+
 #打包
 npm run build /ng build --prod --build-optimizer --aot
 

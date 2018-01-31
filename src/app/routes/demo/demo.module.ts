@@ -19,7 +19,6 @@ import { Demo8Component} from './demo8/demo8.component';
 import { SharedModule} from '@shared/shared.module';
 import { Demo9Component } from './demo9/demo9.component';
 import { DialogOverview} from "./dialog/dialog-overview";
-import { DialogGrid} from "./dialog/dialog-grid-component";
 
 @NgModule({
     imports: [ SharedModule, DemoRoutingModule ],
@@ -40,7 +39,6 @@ import { DialogGrid} from "./dialog/dialog-grid-component";
         //dialog
         ModelCustomComponent,
         DialogOverview,
-        DialogGrid,
     ],
     entryComponents: [
         ModelCustomComponent,

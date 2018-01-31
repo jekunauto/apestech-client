@@ -12,9 +12,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class Demo5Component implements OnInit {
 
     formGroupModel: FormGroup;
-
-    data: { };
-
+    data = {
+        advancedOperation1: [],
+        advancedOperation2: [],
+        advancedOperation3: []
+    };
+   // data={advancedOperation1,advancedOperation2,advancedOperation3};
     constructor(public msg: NzMessageService, private http: _HttpClient,
                 private modal: NzModalService, private fb: FormBuilder) {
         this.formGroupModel = this.fb.group({
@@ -94,11 +97,11 @@ export class Demo5Component implements OnInit {
 
 
     ngOnInit() {
-        this.http.get('/profile/advanced').subscribe(res => this.data = res);
+        this.http.get('/profile/advanced').subscribe((res: any) => this.data = res);
     }
 
     onClickSelect() {
-        let options = {
+        const options = {
            wrapClassName: 'modal-lg',
            content: ModelCustomComponent,
            footer: false,
@@ -109,7 +112,7 @@ export class Demo5Component implements OnInit {
        };
        this.modal.open( options ).subscribe(result => {
             debugger;
-           //由于传递过来的值，存在多个事件，只选择传递数组的值
+           // 由于传递过来的值，存在多个事件，只选择传递数组的值
            if ( Array.isArray(result) ) {
                this.formGroupModel.setValue({
                    selectFeild: JSON.stringify(result)

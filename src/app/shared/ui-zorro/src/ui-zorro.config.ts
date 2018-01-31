@@ -14,7 +14,7 @@ import {
     FormlyFieldTextArea,
 } from './types/types';
 
-import {FormlyWrapperDescription, FormlyWrapperFieldset, FormlyWrapperLabel,} from './wrappers/wrappers';
+import {FormlyWrapperDescription, FormlyWrapperFieldset, FormlyWrapperLabel} from './wrappers/wrappers';
 
 export const FIELD_TYPE_COMPONENTS = [
   // types

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DialogOverviewDialog} from "../dialog/dialog-overview-dialog";
 import {MatDialog} from "@angular/material";
+import {DialogOverview} from "../dialog/dialog-overview";
 
 @Component({
   selector: 'app-demo9',
@@ -40,8 +40,8 @@ export class Demo9Component implements OnInit {
     }
 
     onSearchAddress(){
-        let dialogRef = this.dialog.open(DialogOverviewDialog, {
-            width: '800px',
+        let dialogRef = this.dialog.open(DialogOverview, {
+            width: '900px',
             data: {
                 title: "查询地点",
                 name: this.form.value["addressId"],

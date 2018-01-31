@@ -14,11 +14,12 @@ import {ModelCustomComponent} from './demo5/custom.component';
 import {Demo6Component} from './demo6/demo6.component';
 import {Demo7Component} from './demo7/demo7.component';
 
-import {RichGridComponent} from './gridComponent/rich-grid-example/rich-grid.component';
-import {Demo8Component} from './demo8/demo8.component';
-import {SharedModule} from '@shared/shared.module';
+import { RichGridComponent} from './gridComponent/rich-grid-example/rich-grid.component';
+import { Demo8Component} from './demo8/demo8.component';
+import { SharedModule} from '@shared/shared.module';
 import { Demo9Component } from './demo9/demo9.component';
-import {DialogOverviewDialog} from "./dialog/dialog-overview-dialog";
+import { DialogOverview} from "./dialog/dialog-overview";
+import { DialogGrid} from "./dialog/dialog-grid-component";
 
 @NgModule({
     imports: [ SharedModule, DemoRoutingModule ],
@@ -38,11 +39,12 @@ import {DialogOverviewDialog} from "./dialog/dialog-overview-dialog";
 
         //dialog
         ModelCustomComponent,
-        DialogOverviewDialog
+        DialogOverview,
+        DialogGrid,
     ],
     entryComponents: [
         ModelCustomComponent,
-        DialogOverviewDialog
+        DialogOverview
     ]
 
 })

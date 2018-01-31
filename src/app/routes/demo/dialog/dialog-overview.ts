@@ -12,9 +12,11 @@ import RefData from "../gridComponent/data/refData";
 })
 export class DialogOverview {
 
-    owSelection: string = "multiple";
+    // 搜索按钮的动画
+    searchLoading: boolean = false;
 
-    @ViewChild('grid', {read: ElementRef}) public grid;
+    // grid的选择模式
+    rowSelection: string = "single";  //  multiple
 
     private gridOptions:GridOptions;
     public rowData: any[];
@@ -26,8 +28,6 @@ export class DialogOverview {
 
         this.gridOptions = <GridOptions>{};
         this.createRowData();
-        this.createColumnDefs();
-
         this.gridOptions.dateComponentFramework = DateComponent;
 
         this.gridOptions.localeText =  {
@@ -113,19 +113,25 @@ export class DialogOverview {
     }
 
     _search(): void{
+        this.searchLoading = true;
 
+        setTimeout(()=>{
+            this.createColumnDefs();
+            this.searchLoading = false;
+        }, 2000);
     }
-    private createColumnDefs() {
-        //列的 pinned 属性：表示是否冻结该列
 
+    private createColumnDefs() {
+
+        //列的 pinned 属性：表示是否冻结该列
         this.columnDefs = [
-            { headerName: '#', width: 30, checkboxSelection: true, suppressSorting: true, suppressMenu: true, pinned: true },
+            { headerName: '', width: 30, checkboxSelection: true, suppressSorting: true, suppressMenu: true, pinned: true },
             { headerName: "名称", field: "name", width: 150, pinned: true },
             { headerName: "城市", field: "country", width: 150 },
-            { headerName: "Proficiency", field: "proficiency", width: 120, filter: ProficiencyFilter },
-            {headerName: "Mobile", field: "mobile", width: 150, filter: 'text'},
-            {headerName: "Land-line", field: "landline", width: 150, filter: 'text'},
-            {headerName: "Address", field: "address", width: 500, filter: 'text'}
+            { headerName: "能力", field: "proficiency", width: 120, filter: ProficiencyFilter },
+            { headerName: "电话", field: "mobile", width: 150, filter: 'text'},
+            { headerName: "座机", field: "landline", width: 150, filter: 'text'},
+            { headerName: "地址", field: "address", width: 500, filter: 'text'}
         ];
     }
 
@@ -165,7 +171,7 @@ export class DialogOverview {
         console.log(event);
     }
 
-    createRandomPhoneNumber() {
+    private createRandomPhoneNumber() {
         let result = '+';
         for (let i = 0; i < 12; i++) {
             result += Math.round(Math.random() * 10);
@@ -174,6 +180,10 @@ export class DialogOverview {
             }
         }
         return result;
+    }
+
+    private onGridReady(event: Event){
+        console.log(event);
     }
 
 }

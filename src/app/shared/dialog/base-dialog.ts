@@ -35,7 +35,7 @@ export class BaseDialog {
             page: '页',
             more: '更多',
             to: '到',
-            of: 'daOf',
+            of: 'Of',
             next: '下一页',
             last: '最后一页',
             first: '第一页',

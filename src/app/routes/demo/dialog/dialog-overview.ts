@@ -36,7 +36,7 @@ export class DialogOverview {
             page: '页',
             more: '更多',
             to: '到',
-            of: 'daOf',
+            of: 'Of',
             next: '下一页',
             last: '最后一页',
             first: '第一页',
@@ -128,7 +128,7 @@ export class DialogOverview {
     private createRowData() {
         let rowData:any[] = [];
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 10; i++) {
             let countryData = RefData.countries[i % RefData.countries.length];
             rowData.push({
                 name: RefData.firstNames[i % RefData.firstNames.length] + ' ' + RefData.lastNames[i % RefData.lastNames.length],

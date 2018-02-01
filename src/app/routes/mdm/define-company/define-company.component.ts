@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {MatDialog} from "@angular/material";
+import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
 
 @Component({
   selector: 'app-define-company',
@@ -8,10 +10,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class DefineCompanyComponent implements OnInit {
 
-    form: FormGroup;
+  form: FormGroup;
 
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
 
   ngOnInit() {
       this.form  = this.fb.group({
@@ -58,6 +59,26 @@ export class DefineCompanyComponent implements OnInit {
             this.form.controls[i].markAsDirty();
         }
         if (this.form.invalid) return ;
+    }
+
+    // 弹出查询公司
+    onSearchCompany(){
+
+        let dialogRef = this.dialog.open(CompanyDialog, {
+            width: "900px",
+            data: {
+                rowSelection: "single",
+                result: []
+            }
+        });
+
+        dialogRef.afterOpen().subscribe( () => {
+            console.log("afterOPen")
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            this.form.patchValue({addressName: JSON.stringify(result)})
+        });
     }
 
 }

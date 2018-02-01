@@ -9,7 +9,9 @@ import {FormGroup} from "@angular/forms";
 })
 export class CompanyDialog {
 
-    searchLoading: boolean = false; // 搜索按钮的动画
+    title: string = "查询公司";
+
+    searchLoading: boolean = false;
     rowSelection: string;  // grid的选择模式 multiple  or single
 
     conditionField: any[];  // 查询条件

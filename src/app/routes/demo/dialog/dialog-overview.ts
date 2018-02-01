@@ -1,10 +1,8 @@
-import {Component, ElementRef, Inject, ViewChild} from "@angular/core";
-
+import {Component, Inject} from "@angular/core";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {GridOptions} from "ag-grid";
-import {DateComponent} from "../gridComponent/date-component/date.component";
-import ProficiencyFilter from "../gridComponent/filters/proficiencyFilter";
 import RefData from "../gridComponent/data/refData";
+import {FormGroup} from "@angular/forms";
 
 @Component({
     selector: 'dialog-overview',
@@ -12,23 +10,27 @@ import RefData from "../gridComponent/data/refData";
 })
 export class DialogOverview {
 
-    // 搜索按钮的动画
-    searchLoading: boolean = false;
+    searchLoading: boolean = false; // 搜索按钮的动画
+    rowSelection: string;  // grid的选择模式 multiple  or single
 
-    // grid的选择模式
-    rowSelection: string = "single";  //  multiple
+    conditionField: any[];  // 查询条件
+    model: any = {};
+    options: any;
+    form = new FormGroup({});
 
     private gridOptions:GridOptions;
     public rowData: any[];
     private columnDefs: any[];
 
-
     constructor(public dialogRef: MatDialogRef<DialogOverview>,
                 @Inject(MAT_DIALOG_DATA) public data: any) {
 
         this.gridOptions = <GridOptions>{};
-        this.createRowData();
-        this.gridOptions.dateComponentFramework = DateComponent;
+        this.columnDefs = data.columnDefs;
+        this.conditionField = data.conditionField;
+
+        // 选择模式默认为 single
+        this.rowSelection = data.rowSelection? data.rowSelection :"single" ;
 
         this.gridOptions.localeText =  {
             page: '页',
@@ -115,24 +117,12 @@ export class DialogOverview {
     _search(): void{
         this.searchLoading = true;
 
+        console.log(this.model);
+
         setTimeout(()=>{
-            this.createColumnDefs();
+            this.createRowData();
             this.searchLoading = false;
         }, 2000);
-    }
-
-    private createColumnDefs() {
-
-        //列的 pinned 属性：表示是否冻结该列
-        this.columnDefs = [
-            { headerName: '', width: 30, checkboxSelection: true, suppressSorting: true, suppressMenu: true, pinned: true },
-            { headerName: "名称", field: "name", width: 150, pinned: true },
-            { headerName: "城市", field: "country", width: 150 },
-            { headerName: "能力", field: "proficiency", width: 120, filter: ProficiencyFilter },
-            { headerName: "电话", field: "mobile", width: 150, filter: 'text'},
-            { headerName: "座机", field: "landline", width: 150, filter: 'text'},
-            { headerName: "地址", field: "address", width: 500, filter: 'text'}
-        ];
     }
 
     private createRowData() {
@@ -149,7 +139,6 @@ export class DialogOverview {
                     windows: Math.random() < 0.4,
                     css: Math.random() < 0.4
                 },
-                dob: RefData.DOBs[i % RefData.DOBs.length],
                 address: RefData.addresses[i % RefData.addresses.length],
                 years: Math.round(Math.random() * 100),
                 proficiency: Math.round(Math.random() * 100),
@@ -163,14 +152,6 @@ export class DialogOverview {
         this.rowData = rowData;
     }
 
-    private onColumnEvent(event: Event){
-        console.log(event);
-    }
-
-    private onRowSelected(event: Event){
-        console.log(event);
-    }
-
     private createRandomPhoneNumber() {
         let result = '+';
         for (let i = 0; i < 12; i++) {
@@ -182,8 +163,10 @@ export class DialogOverview {
         return result;
     }
 
-    private onGridReady(event: Event){
-        console.log(event);
+    onSelectionChanged(event: Event){
+        let selectedRow = this.gridOptions.api.getSelectedRows();
+        console.log(selectedRow);
+        this.data.result = selectedRow;
     }
 
 }

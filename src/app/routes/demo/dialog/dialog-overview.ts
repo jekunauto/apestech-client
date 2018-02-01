@@ -18,9 +18,9 @@ export class DialogOverview {
     options: any;
     form = new FormGroup({});
 
-    private gridOptions:GridOptions;
+    gridOptions: GridOptions;
     public rowData: any[];
-    private columnDefs: any[];
+    columnDefs: any[];
 
     constructor(public dialogRef: MatDialogRef<DialogOverview>,
                 @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -163,10 +163,13 @@ export class DialogOverview {
         return result;
     }
 
-    onSelectionChanged(event: Event){
+    onSelectionChanged(){
         let selectedRow = this.gridOptions.api.getSelectedRows();
         console.log(selectedRow);
         this.data.result = selectedRow;
+    }
+    resetForm() {
+
     }
 
 }

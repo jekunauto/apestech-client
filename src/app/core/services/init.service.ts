@@ -31,7 +31,7 @@ export class InitService {
 
     }
 
-    loadAppData(){
+    loadAppData() {
         this.httpClient.get('assets/app-data.json').subscribe(appData =>{
             this.appData = appData;
 

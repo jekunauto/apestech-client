@@ -17,7 +17,7 @@ export class UserLoginComponent implements OnDestroy {
     error = '';
     type = 0;
     loading = false;
-
+    smsg: string;
     constructor(
         fb: FormBuilder,
         private router: Router,
@@ -103,8 +103,22 @@ export class UserLoginComponent implements OnDestroy {
             this.router.navigate(['']);
         }, 1000);
     }
-
+    check() {
+        let result = true;
+        if (!this.userName.value) {
+          this.smsg = '用户名不能为空';
+          result = false;
+          return result;
+        }
+        if (!this.password.value) {
+          this.smsg = '密码不能为空';
+          result = false;
+          return result;
+        }
+        return result;
+      }
     login(): void {
+        if (!this.check())return;
         const userModel = {
             userid: this.userName.value,
             password: this.password.value

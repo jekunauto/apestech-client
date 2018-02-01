@@ -17,9 +17,9 @@ export class CompanyDialog {
     options: any;
     form = new FormGroup({});
 
-    private gridOptions:GridOptions;
+    gridOptions: GridOptions;
     public rowData: any[];
-    private columnDefs: any[];
+    columnDefs: any[];
 
     constructor(public dialogRef: MatDialogRef<CompanyDialog>,
                 @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -152,10 +152,12 @@ export class CompanyDialog {
     }
 
     // 选中行的时候就获取到选中的行数据
-    onSelectionChanged(event: Event){
+    onSelectionChanged(){
         let selectedRow = this.gridOptions.api.getSelectedRows();
         console.log(selectedRow);
         this.data.result = selectedRow;
     }
-
+    resetForm() {
+        console.log('aa');
+     }
 }

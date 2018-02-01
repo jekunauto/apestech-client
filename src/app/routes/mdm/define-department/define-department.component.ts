@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup} from "@angular/forms";
 import { FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
-import {NzCardComponent} from "ng-zorro-antd-extra";
 
 @Component({
   selector: 'app-define-department',
@@ -36,9 +35,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '部门编码',
                 placeholder: '请输入部门编码',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'deptName',
@@ -47,9 +43,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '部门名称',
                 placeholder: '请输入部门名称',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'companyId',
@@ -58,9 +51,7 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司编码',
                 placeholder: '请输入公司编码',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
+
             }
         }, {
             key: 'companyName',
@@ -69,9 +60,7 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司名称',
                 placeholder: '请输入公司名称',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
+
             }
         }, {
             key: 'isValid',
@@ -79,9 +68,6 @@ export class DefineDepartmentComponent implements OnInit {
             defaultValue: true,
             templateOptions: {
                 label: '有效标记',
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }
     ];
@@ -95,9 +81,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '部门编码',
                 placeholder: '请输入部门编码',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'deptName',
@@ -106,9 +89,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '部门名称',
                 placeholder: '请输入部门名称',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'companyId',
@@ -117,9 +97,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司编码',
                 placeholder: '请输入公司编码',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'companyName',
@@ -128,19 +105,13 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司名称',
                 placeholder: '请输入公司名称',
                 required: true,
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
             }
         }, {
             key: 'isValid',
             type: 'checkbox',
             defaultValue: true,
             templateOptions: {
-                label: '有效标记',
-                divCol: 8,
-                lblCol: 6,
-                inputCol: 18
+                label: '有效标记'
             }
         }
     ];

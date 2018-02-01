@@ -16,7 +16,11 @@
                                 <label nz-form-item-required>公司编码</label>
                             </div>
                             <div nz-form-control nz-col nzHasFeedback [nzSm]="18" [nzValidateStatus]="companyId">
-                                <nz-input formControlName="companyId" [nzPlaceHolder]="'请输入公司编码'" ></nz-input>
+                                <nz-input formControlName="companyId" [nzPlaceHolder]="'请输入公司编码'" >
+                                    <ng-template #suffix>
+                                        <i class="anticon anticon-search" (click)="onSearchCompany()"></i>
+                                    </ng-template>
+                                </nz-input>
                                 <div nz-form-explain *ngIf="(companyId.dirty || companyId.touched) && companyId.errors?.required">
                                     请输公司编码
                                 </div>

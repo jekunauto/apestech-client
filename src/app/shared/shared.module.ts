@@ -27,6 +27,9 @@ import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
 //Material UI
 import {MatDialogModule} from "@angular/material";
+import {BaseDialog} from "@shared/dialog/base-dialog";
+import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
+
 
 // endregion
 export function minlengthValidationMessage(err, field) {
@@ -49,7 +52,9 @@ export function maxValidationMessage(err, field) {
     declarations: [
         DateComponent,
         GridHeaderComponent,
-        HeaderGroupComponent
+        HeaderGroupComponent,
+        BaseDialog,
+        CompanyDialog,
     ],
     imports: [
         CommonModule,
@@ -103,14 +108,18 @@ export function maxValidationMessage(err, field) {
         // third libs
         CountdownModule,
 
-        //Material UI
+        // Material UI
         MatDialogModule,
 
         // dynamicform
         FormlyModule,
         FormlyZorroModule,
         QueryBuilderModule,
-        AgGridModule
+        AgGridModule,
+    ],
+    entryComponents: [
+        BaseDialog,
+        CompanyDialog,
     ]
 })
 export class SharedModule {

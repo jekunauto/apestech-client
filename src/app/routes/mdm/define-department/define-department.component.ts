@@ -9,28 +9,26 @@ import { FormlyFieldConfig, FormlyFormOptions} from "@ngx-formly/core";
 })
 export class DefineDepartmentComponent implements OnInit {
 
-    loading: boolean = false;
-
-    form = new FormGroup({});
-
-    queryForm = new FormGroup({});
-    editForm = new FormGroup({});
-
-    queryModel: any = {};
-    editModel: any = {};
-
-    advancedOperation3 = [];
-
     selectIndex = 0;
 
+    searchLoading: boolean = false;
+
+    form = new FormGroup({});
+    queryForm = new FormGroup({});
+    queryModel: any = {};
     queryOptions: FormlyFormOptions = {};
+
+    editForm = new FormGroup({});
+    editModel: any = {};
     editOptions: FormlyFormOptions = {};
+
+    departmentData = [];
 
     queryArray = [
         {
             key: 'deptId',
             type: 'input',
-            defaultValue: "111",
+            // defaultValue: "111",
             templateOptions: {
                 label: '部门编码',
                 placeholder: '请输入部门编码',
@@ -51,7 +49,6 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司编码',
                 placeholder: '请输入公司编码',
                 required: true,
-
             }
         }, {
             key: 'companyName',
@@ -60,12 +57,11 @@ export class DefineDepartmentComponent implements OnInit {
                 label: '公司名称',
                 placeholder: '请输入公司名称',
                 required: true,
-
             }
         }, {
             key: 'isValid',
             type: 'checkbox',
-            defaultValue: true,
+            // defaultValue: true,
             templateOptions: {
                 label: '有效标记',
             }
@@ -76,7 +72,6 @@ export class DefineDepartmentComponent implements OnInit {
         {
             key: 'deptId',
             type: 'input',
-            defaultValue: "111",
             templateOptions: {
                 label: '部门编码',
                 placeholder: '请输入部门编码',
@@ -109,73 +104,59 @@ export class DefineDepartmentComponent implements OnInit {
         }, {
             key: 'isValid',
             type: 'checkbox',
-            defaultValue: true,
             templateOptions: {
                 label: '有效标记'
             }
         }
     ];
 
-    formFeild0: FormlyFieldConfig[] = this.queryArray;
-    formFeild1: FormlyFieldConfig[] = this.editArray;
+    tableColumn = [
+        {"label":"编号"},
+        {"label":"部门编码"},
+        {"label":"部门名称"},
+        {"label":"公司编码"},
+        {"label":"公司名称"},
+        {"label":"是否有效"},
+        {"label":"录入人"},
+        {"label":"录入时间"},
+        {"label":"操作"},
+    ];
 
-  constructor() { }
+    queryField: FormlyFieldConfig[] = this.queryArray;
+    editField: FormlyFieldConfig[] = this.editArray;
 
-  ngOnInit() {
-      this.getData();
-  }
+    constructor() { }
 
-    resetForm(){
+    ngOnInit() {
+    }
+
+    resetForm() {
         this.queryForm.reset();
     }
 
-    _search(){
+    _search() {
       console.log( "_search" );
       console.log(this.queryForm.value);
+
+        this.searchLoading = true;
+        setTimeout( () => {
+            this.searchLoading = false;
+            this.getData();
+        }, 2000);
     }
 
-    getData(){
-      let data = [{
-          index: 1,
-          deptId: "0001",
-          deptName: "IT部门",
-          companyId: "0001",
-          companyName: "集群车宝",
-          isValid: true,
-          inputPerson: "admin",
-          inputDate: "2018-1-1"
-      },{
-          index: 2,
-          deptId: "0001",
-          deptName: "ERP部门",
-          companyId: "0001",
-          companyName: "集群车宝",
-          isValid: false,
-          inputPerson: "admin",
-          inputDate: "2018-1-1"
-      },{
-          index: 3,
-          deptId: "0001",
-          deptName: "HR部门",
-          companyId: "0001",
-          companyName: "集群车宝",
-          isValid: true,
-          inputPerson: "admin",
-          inputDate: "2018-1-1"
-      },{
-          index: 4,
-          deptId: "0001",
-          deptName: "法务部门",
-          companyId: "0001",
-          companyName: "集群车宝",
-          isValid: true,
-          inputPerson: "admin",
-          inputDate: "2018-1-1"
-      }];
-      this.advancedOperation3 = data;
+    // 模拟数据展示
+    getData() {
+      let data = [
+          {index: 1, deptId: "0001", deptName: "IT部门", companyId: "0001", companyName: "集群车宝", isValid: true, inputPerson: "admin", inputDate: "2018-1-1"},
+          {index: 2, deptId: "0001", deptName: "ERP部门", companyId: "0001", companyName: "集群车宝", isValid: false, inputPerson: "admin", inputDate: "2018-1-1"},
+          {index: 3, deptId: "0001", deptName: "HR部门", companyId: "0001", companyName: "集群车宝", isValid: true, inputPerson: "admin", inputDate: "2018-1-1"},
+          {index: 4, deptId: "0001", deptName: "法务部门", companyId: "0001", companyName: "集群车宝", isValid: true, inputPerson: "admin", inputDate: "2018-1-1"}
+      ];
+      this.departmentData = data;
     }
 
-    _editRowData(rowData: any){
+    _editRowData(rowData: any) {
       console.log(rowData);
       console.log(this);
 
@@ -184,15 +165,15 @@ export class DefineDepartmentComponent implements OnInit {
       this.selectIndex = 1;
     }
 
-    _onQueryTabClick(){
+    _onQueryTabClick() {
       this.selectIndex = 0;
     }
 
-    _onEditTabClick(){
+    _onEditTabClick() {
       this.selectIndex = 1;
     }
 
-    _submit(){
+    _submit() {
       console.log("_submit");
       console.log(this.queryModel.value);
       console.log(this.editModel.value);

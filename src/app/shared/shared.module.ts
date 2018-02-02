@@ -25,8 +25,12 @@ import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component
 import {QueryBuilderModule} from '@shared/querybuilder';
 import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
-//Material UI
+// Material UI
 import {MatDialogModule} from "@angular/material";
+
+// dialog
+import {BaseDialog} from "@shared/dialog/base-dialog";
+import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
 
 // endregion
 export function minlengthValidationMessage(err, field) {
@@ -49,7 +53,9 @@ export function maxValidationMessage(err, field) {
     declarations: [
         DateComponent,
         GridHeaderComponent,
-        HeaderGroupComponent
+        HeaderGroupComponent,
+        BaseDialog,
+        CompanyDialog
     ],
     imports: [
         CommonModule,
@@ -111,6 +117,10 @@ export function maxValidationMessage(err, field) {
         FormlyZorroModule,
         QueryBuilderModule,
         AgGridModule
+    ],
+    entryComponents: [
+        BaseDialog,
+        CompanyDialog
     ]
 })
 export class SharedModule {

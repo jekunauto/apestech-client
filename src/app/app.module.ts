@@ -16,7 +16,7 @@ import { LayoutModule } from './layout/layout.module';
 import {InitService} from "@core/services/init.service";
 import {UserAuthService} from "@core/services/user-auth.service";
 import { DefaultInterceptor } from '@core/net/default.interceptor';
- 
+
 import { DelonMockModule } from '@delon/mock';
 import * as MOCKDATA from '../../_mock';
 import { environment } from '../environments/environment';
@@ -26,12 +26,14 @@ const MOCKMODULE = !environment.production || environment.chore === true ?
 // i18n
 import { I18NService } from './core/i18n/i18n.service';
 import { ALAIN_I18N_TOKEN } from '@delon/theme';
-
 import { registerLocaleData } from '@angular/common';
 import localeZhHans from '@angular/common/locales/zh-Hans';
-import {StartupService} from "@core/services/startup.service";
 import { DelonModule } from 'app/delon.module';
 registerLocaleData(localeZhHans);
+
+// 系统附加的Service
+import {GridConfigService} from "@core/config/grid-config-service.service";
+import {StartupService} from "@core/services/startup.service";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -77,6 +79,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         InitService,
         UserAuthService,
         StartupService,
+        GridConfigService,
         {
             provide: APP_INITIALIZER,
             useFactory: StartupServiceFactory,

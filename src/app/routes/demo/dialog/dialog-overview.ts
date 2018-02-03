@@ -55,7 +55,7 @@ export class DialogOverview {
     private createRowData() {
         let rowData:any[] = [];
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 240; i++) {
             let countryData = RefData.countries[i % RefData.countries.length];
             rowData.push({
                 name: RefData.firstNames[i % RefData.firstNames.length] + ' ' + RefData.lastNames[i % RefData.lastNames.length],
@@ -76,7 +76,8 @@ export class DialogOverview {
                 landline: this.createRandomPhoneNumber()
             });
         }
-        this.rowData = rowData;
+        // this.rowData = rowData;
+        this.gridOptions.api.setRowData(rowData);
     }
 
     private createRandomPhoneNumber() {

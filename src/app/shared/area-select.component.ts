@@ -12,7 +12,7 @@ import {Address} from '../domain/address';
         <div class="address-group">
             <div>
                 <nz-select
-                    style="width: 200px;"
+                    style="width: 100px;"
                     nzAllowClear
                     [nzFilter]="true"
                     [nzPlaceHolder]="'请选择省份'"
@@ -29,7 +29,7 @@ import {Address} from '../domain/address';
             </div>
             <div>
                 <nz-select
-                    style="width: 200px;"
+                    style="width: 100px;"
                     nzAllowClear
                     [nzPlaceHolder]="'请选择城市'"
                     [(ngModel)]="_address.city"
@@ -45,7 +45,7 @@ import {Address} from '../domain/address';
             </div>
             <div>
                 <nz-select
-                    style="width: 200px;"
+                    style="width: 100px;"
                     nzAllowClear
                     [nzFilter]="true"
                     [nzPlaceHolder]="'请选择区县'"
@@ -73,8 +73,7 @@ import {Address} from '../domain/address';
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: row; 
         }
     `],
     providers: [
@@ -191,16 +190,18 @@ export class AreaSelectComponent implements ControlValueAccessor, OnInit, OnDest
 
     onProvinceChange() {
         this._province.next(this._address.province);
-        this._address.city = '';
+        this.cities$.take(1).subscribe(v => {this._address.city = v[0]; });
+        this.districts$.take(1).subscribe(v => {this._address.district = v[0]; });
     }
 
     onCityChange() {
         this._city.next(this._address.city);
+        this.districts$.take(1).subscribe(v => {this._address.district = v[0]; });
     }
 
     onDistrictChange() {
         this._district.next(this._address.district);
-    }
+   }
 
     onStreetChange() {
         this._street.next(this._address.street);

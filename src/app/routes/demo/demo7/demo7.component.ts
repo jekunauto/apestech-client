@@ -120,8 +120,10 @@ export class Demo7Component implements OnInit {
     ngOnInit() {
     }
 
-    _submitForm(){
+    _submitForm() {
+        this.selectValue = '';
         console.log(this.form.value);
+
     }
 
 }

@@ -106,12 +106,12 @@ export class UserLoginComponent implements OnDestroy {
     check() {
         let result = true;
         if (!this.userName.value) {
-          this.smsg = '用户名不能为空';
+          this.error = '用户名不能为空';
           result = false;
           return result;
         }
         if (!this.password.value) {
-          this.smsg = '密码不能为空';
+          this.error = '密码不能为空';
           result = false;
           return result;
         }
@@ -128,8 +128,14 @@ export class UserLoginComponent implements OnDestroy {
                 const userInfo = {'token': res.body.sessionId, 'userAccount': res.body.user};
                 const storageInfo = JSON.stringify(userInfo);
                 this.userAuthService.storeUserInfo(storageInfo);
-                this.router.navigate(['home']);
+                //this.router.navigate(['home']);
+
+                //加载菜单..setUserInfo(JSON.stringify(userInfo));
+                this.initService.loadAppData();
+
+                this.router.navigate(['']);
             } else {
+                debugger;
                 console.log(res.message);
             }
         });

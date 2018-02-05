@@ -1,12 +1,14 @@
 import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {ConfigService} from './config.service';
 import * as CryptoJS from 'crypto-js';
 import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
 import {serialize} from '../../utils/serialize';
 
-const ERP_BASE_URL: string = 'http://127.0.0.1:4200/router';
+//const ERP_BASE_URL: string = 'http://10.2.5.37:8060/router';
+const ERP_BASE_URL: string = '/router';
 
 export enum RequestMethod {
     Get = 'GET',
@@ -26,7 +28,7 @@ export class ApiService {
         'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private config: ConfigService) {
     }
 
     get(path: string, args?: any): Observable<any> {
@@ -50,7 +52,7 @@ export class ApiService {
         const secret = 'abcdeabcdeabcdeabcdeabcde';
         data.version = '1.0';
         data.sign = this.sign(data, secret);
-        return this.request(ERP_BASE_URL, serialize(data), RequestMethod.Post, customHeaders);
+        return this.request(this.config.apiURL, serialize(data), RequestMethod.Post, customHeaders);
     }
 
     put(path: string, body: any): Observable<any> {

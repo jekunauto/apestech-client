@@ -3,7 +3,9 @@ import {throwIfAlreadyLoaded} from './module-import-guard';
 import {AlainThemeModule} from '@delon/theme';
 
 import {I18NService} from './i18n/i18n.service';
-import {ApiService} from "@core/services/api.service";
+import {ApiService} from '@core/services/api.service';
+import {ConfigService} from '@core/services/config.service';
+import {GridConfigService} from '@core/config/grid-config.service';
 
 @NgModule({
     imports: [
@@ -11,6 +13,8 @@ import {ApiService} from "@core/services/api.service";
     ],
     providers: [
         I18NService,
+        ConfigService,
+        GridConfigService,
         {provide: ApiService, useClass: ApiService},
     ]
 })

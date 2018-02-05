@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {GridOptions} from "ag-grid";
 import RefData from "../gridComponent/data/refData";
 import {FormGroup} from "@angular/forms";
-import {GridConfigService} from "@core/config/grid-config-service.service";
+import {GridConfigService} from "@core/config/grid-config.service";
 
 @Component({
     selector: 'dialog-overview',
@@ -19,9 +19,9 @@ export class DialogOverview {
     options: any;
     form = new FormGroup({});
 
-    private gridOptions:GridOptions;
+    gridOptions: GridOptions;
     public rowData: any[];
-    private columnDefs: any[];
+    columnDefs: any[];
 
     constructor(public dialogRef: MatDialogRef<DialogOverview>,
                 @Inject(MAT_DIALOG_DATA) public data: any,
@@ -91,10 +91,13 @@ export class DialogOverview {
         return result;
     }
 
-    onSelectionChanged(event: Event){
+    onSelectionChanged() {
         let selectedRow = this.gridOptions.api.getSelectedRows();
         console.log(selectedRow);
         this.data.result = selectedRow;
+    }
+    resetForm() {
+
     }
 
 }

@@ -32,7 +32,6 @@ import { DelonModule } from 'app/delon.module';
 registerLocaleData(localeZhHans);
 
 // 系统附加的Service
-import {GridConfigService} from "@core/config/grid-config-service.service";
 import {StartupService} from "@core/services/startup.service";
 
 // AoT requires an exported function for factories
@@ -79,7 +78,6 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         InitService,
         UserAuthService,
         StartupService,
-        GridConfigService,
         {
             provide: APP_INITIALIZER,
             useFactory: StartupServiceFactory,

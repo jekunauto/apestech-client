@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {ConfigService} from './config.service';
+import {ConfigService} from '../config/config.service';
 import * as CryptoJS from 'crypto-js';
 import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';

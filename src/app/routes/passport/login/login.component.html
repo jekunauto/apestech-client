@@ -1,4 +1,4 @@
-<form nz-form [formGroup]="form" (ngSubmit)="submit()" role="form">
+<form nz-form [formGroup]="form" (ngSubmit)="login()" role="form">
     <nz-tabset [nzAnimated]="false" class="tabs" (nzSelectChange)="switch($event)">
         <nz-tab>
             <ng-template #nzTabHeading>账户密码登录</ng-template>
@@ -31,7 +31,7 @@
             <ng-template #nzTabHeading>手机号登录</ng-template>
             <div nz-form-item>
                 <div nz-form-control [nzValidateStatus]="mobile">
-                    <nz-input formControlName="mobile" [nzPlaceHolder]="'手机号'" [nzSize]="'large'" >
+                    <nz-input formControlName="mobile" [nzPlaceHolder]="'手机号'" [nzSize]="'large'">
                         <ng-template #prefix>
                             <i class="anticon anticon-user"></i>
                         </ng-template>

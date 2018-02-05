@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ActivatedRoute, CanActivate, Router} from '@angular/router';
+import { Router, CanActivate,   ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import {UserAuthService} from "@core/services/user-auth.service";
@@ -10,27 +10,20 @@ import {InitService} from "@core/services/init.service";
 export class CanAuthProvide implements CanActivate {
 
     constructor( private userAuthService: UserAuthService, private router: Router,
-                 private msg: NzMessageService, private activeRouter: ActivatedRoute, private initService: InitService) {}
+                 private msg: NzMessageService, private initService: InitService) {}
 
-    canActivate(): boolean | Observable<boolean> | Promise<boolean> {
+        canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-        return new Observable((observer) => {
+        this.initService.loadAppData();
 
-            //界面刷新之后，重新加载菜单
-            console.log(this.activeRouter.snapshot);
-            this.initService.loadAppData();
-
-            if (this.userAuthService.isLogined()) {
-                observer.next(true);
-                observer.complete();
-                return;
-            }
-
+        if (this.userAuthService.isLogined) {
+            return true;
+          } else {
             this.msg.error('请先登录');
             this.router.navigateByUrl("/passport");
+            return false;
+          }
+        }
 
-            observer.next(false);
-            observer.complete();
-        });
-    }
 }
+ 

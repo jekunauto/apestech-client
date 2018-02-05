@@ -2,7 +2,7 @@ import {Component, Inject} from "@angular/core";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {GridOptions} from "ag-grid";
 import {FormGroup} from "@angular/forms";
-import {GridConfigService} from "@core/config/grid-config-service.service";
+import {GridConfigService} from "@core/config/grid-config.service";
 
 @Component({
     selector: 'base-dialog',

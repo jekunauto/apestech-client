@@ -10,7 +10,6 @@ import { ALAIN_I18N_TOKEN, ColorsService, SettingsService, MenuService, ScrollSe
 import { I18NService } from '@core/i18n/i18n.service';
 import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
-import { AlainAuthModule } from '@delon/auth';
 import { HttpLoaderFactory } from '../app/app.module';
 
 const resetTestingModule = TestBed.resetTestingModule,
@@ -32,9 +31,6 @@ export const setUpTestBed = (moduleDef: TestModuleMetadata) => {
         moduleDef.imports.push(RouterTestingModule);
         moduleDef.imports.push(SharedModule.forRoot());
         // auth
-        moduleDef.imports.push(AlainAuthModule.forRoot({
-            login_url: `/passport/login`
-        }));
         moduleDef.imports.push(TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

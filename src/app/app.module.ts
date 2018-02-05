@@ -4,9 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { AlainAuthModule, SimpleInterceptor } from '@delon/auth';
-
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -56,10 +53,6 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         LayoutModule,
         RoutesModule,
         ...MOCKMODULE,
-        // 登录
-        AlainAuthModule.forRoot({
-            login_url: `/passport/login`
-        }),
         // i18n
         TranslateModule.forRoot({
             loader: {
@@ -72,7 +65,6 @@ export function StartupServiceFactory(startupService: StartupService): Function 
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'zh-Hans' },
-        { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true},
         { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true},
         { provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false },
         InitService,

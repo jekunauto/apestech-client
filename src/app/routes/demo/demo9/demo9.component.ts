@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material";
-import {DialogOverview} from "../dialog/dialog-overview";
 import ProficiencyFilter from "../gridComponent/filters/proficiencyFilter";
+import {DialogOverview} from "../dialog/dialog-overview";
 
 @Component({
   selector: 'app-demo9',
@@ -73,7 +73,7 @@ export class Demo9Component implements OnInit {
             data: {
                 title: "查询地点",
                 conditionField: conditionField,
-                rowSelection: "multiple", // 定义选择模式，单选或者多选
+                rowSelection: "multiple", // 定义选择模式，单选或者多选  multiple or single
                 columnDefs: columnDefs,
                 url: "queryAddress.action",
                 result: []

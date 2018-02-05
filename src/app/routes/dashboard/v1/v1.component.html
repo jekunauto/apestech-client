@@ -114,7 +114,7 @@
             <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'" class="py-sm bg-grey-lighter-h point"
                 *ngFor="let item of todoData">
                 <div nz-col [nzSpan]="4" class="text-center">
-                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'" [nzSize]="'large'"></nz-avatar>
+                    <nz-avatar [nzSrc]="item.avatar" [nzSize]="'large'"></nz-avatar>
                 </div>
                 <div nz-col [nzSpan]="20">
                     <strong>{{item.name}}</strong>
@@ -128,7 +128,7 @@
             <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'" class="py-sm bg-grey-lighter-h point"
                 *ngFor="let item of todoData">
                 <div nz-col [nzSpan]="4" class="text-center">
-                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'" [nzSize]="'large'"></nz-avatar>
+                    <nz-avatar [nzSrc]="item.avatar" [nzSize]="'large'"></nz-avatar>
                 </div>
                 <div nz-col [nzSpan]="18">
                     <strong>{{item.name}}</strong>

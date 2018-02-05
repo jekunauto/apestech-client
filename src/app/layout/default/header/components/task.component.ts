@@ -42,23 +42,23 @@ export class HeaderTaskComponent {
     loading = true;
 
     taskList = [{
-        imgUrl: './assets/img/1.png',
+        imgUrl: 'http://temp.im/81x81',
         name: 'cipchk',
         content:'Please tell me what happened in a few words, don\'t go into details.'
     },{
-        imgUrl: './assets/img/2.png',
+        imgUrl: 'http://temp.im/81x81',
         name: 'はなさき',
         content:'ハルカソラトキヘダツヒカリ.'
     },{
-        imgUrl: './assets/img/3.png',
+        imgUrl: 'http://temp.im/81x81',
         name: '马爸爸',
         content:'最牛逼的事情莫过于你说，你没有碰过钱。说不应该创建阿里。'
     },{
-        imgUrl: './assets/img/3.png',
+        imgUrl: 'http://temp.im/81x81',
         name: '苏先生',
         content:'请告诉我，我应该说点什么好？'
     },{
-        imgUrl: './assets/img/5.png',
+        imgUrl: 'http://temp.im/81x81',
         name: 'Jefferson',
         content:'Please tell me what happened in a few words, don\'t go into details.'
     }];

@@ -15,7 +15,7 @@ import 'ag-grid-enterprise/main';
 import {HeaderGroupComponent} from '../header-group-component/header-group.component';
 import {DateComponent} from '../date-component/date.component';
 import {GridHeaderComponent} from '../header-component/header.component';
-import {GridConfigService} from "@core/config/grid-config-service.service";
+import {GridConfigService} from "@core/config/grid-config.service";
 
 @Component({
     selector: 'rich-grid',

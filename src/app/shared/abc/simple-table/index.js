@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var simple_table_component_1 = require("./simple-table.component");
+exports.SimpleTableComponent = simple_table_component_1.SimpleTableComponent;
+var simple_table_row_directive_1 = require("./simple-table-row.directive");
+exports.SimpleTableRowDirective = simple_table_row_directive_1.SimpleTableRowDirective;
+var simple_table_config_1 = require("./simple-table.config");
+exports.SimpleTableConfig = simple_table_config_1.SimpleTableConfig;
+var simple_table_module_1 = require("./simple-table.module");
+exports.AdSimpleTableModule = simple_table_module_1.AdSimpleTableModule;

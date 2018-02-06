@@ -8,8 +8,5 @@ export class ConfigService {
   get apiURL(): string{
       return this._api_url;
   }
-
-
-
-
+  
 }

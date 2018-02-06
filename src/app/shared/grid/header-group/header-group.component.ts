@@ -1,9 +1,10 @@
-import {Component} from "@angular/core";
-import {IHeaderGroupParams} from "ag-grid/main";
-import {IHeaderGroupAngularComp} from "ag-grid-angular/main";
+import { Component } from '@angular/core';
+import {IHeaderGroupParams} from "ag-grid";
+import {IHeaderGroupAngularComp} from "ag-grid-angular";
 
 @Component({
-    templateUrl: 'header-group.component.html',
+  selector: 'app-header-group',
+  templateUrl: './header-group.component.html',
     styleUrls: ['header-group.component.scss']
 })
 export class HeaderGroupComponent implements IHeaderGroupAngularComp {
@@ -28,3 +29,4 @@ export class HeaderGroupComponent implements IHeaderGroupAngularComp {
         this.expanded = this.params.columnGroup.getOriginalColumnGroup().isExpanded()
     }
 }
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import { getTimeDistance, yuan } from '@delon/abc';
-import { _HttpClient } from '@delon/theme';
+import { getTimeDistance, yuan } from '@shared/abc';
+import { _HttpClient } from '@core';
 
 @Component({
     selector: 'app-dashboard-analysis',

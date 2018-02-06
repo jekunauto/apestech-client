@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { zip } from 'rxjs/observable/zip';
-import { getTimeDistance, yuan, fixedZero } from '@delon/abc';
-import { _HttpClient } from '@delon/theme';
+import { getTimeDistance, yuan, fixedZero } from '@shared/abc';
+import { _HttpClient } from '@core';
 
 @Component({
     selector: 'app-dashboard-monitor',

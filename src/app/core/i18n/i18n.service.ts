@@ -2,8 +2,9 @@ import { Injectable, Inject, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { zhCN, enUS, NzLocaleService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { SettingsService, AlainI18NService } from '@delon/theme';
 import { Observable } from 'rxjs/Observable';
+import {AlainI18NService} from '@core/services/i18n';
+import {SettingsService} from '@core/services/settings/settings.service';
 
 @Injectable()
 export class I18NService implements AlainI18NService {
@@ -52,4 +53,7 @@ export class I18NService implements AlainI18NService {
     get currentLang() {
         return this.translate.currentLang || this.translate.getDefaultLang() || this._default;
     }
+
+
+
 }

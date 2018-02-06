@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SettingsService, MenuService } from '@delon/theme';
+import { SettingsService, MenuService } from '@core';
 import { I18NService } from '@core/i18n/i18n.service';
 
 @Component({

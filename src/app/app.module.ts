@@ -22,7 +22,7 @@ const MOCKMODULE = !environment.production || environment.chore === true ?
 
 // i18n
 import { I18NService } from './core/i18n/i18n.service';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
+import { ALAIN_I18N_TOKEN } from  '@core';
 import { registerLocaleData } from '@angular/common';
 import localeZhHans from '@angular/common/locales/zh-Hans';
 import { DelonModule } from 'app/delon.module';

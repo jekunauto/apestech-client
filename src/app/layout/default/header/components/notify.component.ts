@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
 import { map, groupBy, concatMap, mergeMap, flatMap, delay, tap, toArray } from 'rxjs/operators';
 import * as moment from 'moment';
-import { NoticeItem } from '@delon/abc';
-import { SettingsService } from '@delon/theme';
+import { SettingsService } from '@core';
+import {NoticeItem} from '@shared/abc';
 
 /**
  * 菜单通知

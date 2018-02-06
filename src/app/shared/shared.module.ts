@@ -1,36 +1,63 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {RouteReuseStrategy, RouterModule} from '@angular/router';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
-import {NgZorroAntdExtraModule} from 'ng-zorro-antd-extra';
-import {AlainThemeModule} from '@delon/theme';
+import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
+import { AlainThemeModule } from '@core';
 
 // region: @delon/abc modules
-import {DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService} from '@delon/abc';
-import {AlainACLModule} from '@delon/acl';
+import { DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService } from '@shared/abc';
 // third libs
-import {CountdownModule} from 'ngx-countdown';
-import {FormlyModule} from '@ngx-formly/core';
-import {FormlyZorroModule} from './ui-zorro';
+import { CountdownModule } from 'ngx-countdown';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyZorroModule } from './ui-zorro';
 // i18n
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 // region: zorro modules
-import { NzMessageService, NzNotificationService} from 'ng-zorro-antd';
-import {HeaderGroupComponent} from '../routes/demo/gridComponent/header-group-component/header-group.component';
-import {DateComponent} from '../routes/demo/gridComponent/date-component/date.component';
-import {AgGridModule} from 'ag-grid-angular';
-import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component/header.component';
-import {QueryBuilderModule} from '@shared/querybuilder';
-import { ZORROMODULES, ABCMODULES } from '../delon.module';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { HeaderGroupComponent } from '../routes/demo/gridComponent/header-group-component/header-group.component';
+import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { GridHeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
+import { QueryBuilderModule } from '@shared/querybuilder';
+import { ZORROMODULES} from '../delon.module';
+import {
+    AdSimpleTableModule,
+    AdReuseTabModule,
+    AdAvatarListModule,
+    AdChartsModule,
+    AdCountDownModule,
+    AdDescListModule,
+    AdEllipsisModule,
+    AdErrorCollectModule,
+    AdExceptionModule,
+    AdFooterToolbarModule,
+    AdGlobalFooterModule,
+    AdNoticeIconModule,
+    AdNumberInfoModule,
+    AdProHeaderModule,
+    AdResultModule,
+    AdSidebarNavModule,
+    AdStandardFormRowModule,
+    AdTagSelectModule,
+    AdTrendModule,
+    AdDownFileModule,
+    AdImageModule,
+    AdUtilsModule,
+    AdFullContentModule,
+    AdXlsxModule,
+    AdZipModule
+} from './abc';
 
 // Material UI
-import {MatDialogModule, MatIconModule, MatButtonModule} from "@angular/material";
+import {MatDialogModule, MatCard, MatCardModule, MatIconModule} from "@angular/material";
+
 
 // dialog
-import {BaseDialog} from "@shared/dialog/base-dialog";
-import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
+import { BaseDialog } from "@shared/dialog/base-dialog";
+import { CompanyDialog } from "@shared/dialog/featuresDailog/company-dialog";
 
 //check
 import {
@@ -55,15 +82,38 @@ import {
         ...ZORROMODULES,
         NgZorroAntdExtraModule.forRoot(),
         AlainThemeModule.forChild(),
-        ...ABCMODULES,
-        AlainACLModule.forRoot(),
         // third libs
         CountdownModule,
-
         //Material UI
         MatDialogModule,
         MatIconModule,
-        MatButtonModule,
+
+        // abc
+        AdErrorCollectModule.forRoot(),
+        AdFooterToolbarModule.forRoot(),
+        AdSidebarNavModule.forRoot(),
+        AdDownFileModule.forRoot(),
+        AdImageModule.forRoot(),
+        AdAvatarListModule.forRoot(),
+        AdDescListModule.forRoot(),
+        AdEllipsisModule.forRoot(),
+        AdExceptionModule.forRoot(),
+        AdExceptionModule.forRoot(),
+        AdNoticeIconModule.forRoot(),
+        AdNumberInfoModule.forRoot(),
+        AdProHeaderModule.forRoot(),
+        AdResultModule.forRoot(),
+        AdStandardFormRowModule.forRoot(),
+        AdTagSelectModule.forRoot(),
+        AdTrendModule.forRoot(),
+        AdUtilsModule.forRoot(),
+        AdChartsModule.forRoot(),
+        AdCountDownModule.forRoot(),
+        AdSimpleTableModule.forRoot(),
+        AdReuseTabModule.forRoot(),
+        AdFullContentModule.forRoot(),
+        AdXlsxModule.forRoot(),
+        AdZipModule.forRoot(),
 
         // dynamicForm
         FormlyModule.forRoot({
@@ -93,8 +143,6 @@ import {
         ...ZORROMODULES,
         NgZorroAntdExtraModule,
         AlainThemeModule,
-        ...ABCMODULES,
-        AlainACLModule,
         // i18n
         TranslateModule,
         // third libs
@@ -102,9 +150,32 @@ import {
 
         //Material UI
         MatDialogModule,
+        AdSimpleTableModule,
+        AdReuseTabModule,
+        AdAvatarListModule,
+        AdChartsModule,
+        AdCountDownModule,
+        AdDescListModule,
+        AdEllipsisModule,
+        AdErrorCollectModule,
+        AdExceptionModule,
+        AdFooterToolbarModule,
+        AdGlobalFooterModule,
+        AdNoticeIconModule,
+        AdNumberInfoModule,
+        AdProHeaderModule,
+        AdResultModule,
+        AdSidebarNavModule,
+        AdStandardFormRowModule,
+        AdTagSelectModule,
+        AdTrendModule,
+        AdDownFileModule,
+        AdImageModule,
+        AdUtilsModule,
+        AdFullContentModule,
+        AdXlsxModule,
+        AdZipModule,
         MatIconModule,
-        MatButtonModule,
-
         // dynamicform
         FormlyModule,
         FormlyZorroModule,
@@ -129,7 +200,7 @@ export class SharedModule {
                 FullContentService,
                 // reuse-tab
                 ReuseTabService,
-                { provide: RouteReuseStrategy, useClass: ReuseTabStrategy, deps: [ ReuseTabService ] },
+                { provide: RouteReuseStrategy, useClass: ReuseTabStrategy, deps: [ReuseTabService] },
                 // xlsx
                 XlsxService,
                 { provide: DA_XLSX_CONFIG, useValue: {} },

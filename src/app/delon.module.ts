@@ -102,76 +102,13 @@ export const ZORROMODULES = [
     NzCollapseModule,
     NzTimelineModule,
     NzToolTipModule,
-    // NzBackTopModule,
-    // NzAffixModule,
-    // NzAnchorModule,
     NzAvatarModule,
     NzUploadModule
 ];
 // endregion
-
-// region: @delon/abc modules
-import {
-    AdSimpleTableModule,
-    AdReuseTabModule,
-    AdAvatarListModule,
-    AdChartsModule,
-    AdCountDownModule,
-    AdDescListModule,
-    AdEllipsisModule,
-    AdErrorCollectModule,
-    AdExceptionModule,
-    AdFooterToolbarModule,
-    AdGlobalFooterModule,
-    AdNoticeIconModule,
-    AdNumberInfoModule,
-    AdProHeaderModule,
-    AdResultModule,
-    AdSidebarNavModule,
-    AdStandardFormRowModule,
-    AdTagSelectModule,
-    AdTrendModule,
-    AdDownFileModule,
-    AdImageModule,
-    AdUtilsModule,
-    AdFullContentModule,
-    AdXlsxModule,
-    AdZipModule
-} from '@delon/abc';
-export const ABCMODULES = [
-    AdSimpleTableModule,
-    AdReuseTabModule,
-    AdAvatarListModule,
-    AdChartsModule,
-    AdCountDownModule,
-    AdDescListModule,
-    AdEllipsisModule,
-    AdErrorCollectModule,
-    AdExceptionModule,
-    AdFooterToolbarModule,
-    AdGlobalFooterModule,
-    AdNoticeIconModule,
-    AdNumberInfoModule,
-    AdProHeaderModule,
-    AdResultModule,
-    AdSidebarNavModule,
-    AdStandardFormRowModule,
-    AdTagSelectModule,
-    AdTrendModule,
-    AdDownFileModule,
-    AdImageModule,
-    AdUtilsModule,
-    AdFullContentModule,
-    AdXlsxModule,
-    AdZipModule
-];
 // endregion
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
-import { AlainThemeModule } from '@delon/theme';
-import { AlainABCModule } from '@delon/abc'; 
-import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
 // mock
 import { DelonMockModule } from '@delon/mock';
@@ -182,7 +119,7 @@ const MOCKMODULE = !environment.production || environment.chore === true ?
 
 // region: global config functions
 
-// import { SimpleTableConfig } from '@delon/abc';
+// import { SimpleTableConfig } from '@shared/abc';
 // export function simpleTableConfig(): SimpleTableConfig {
 //     return { ps: 20 };
 // }
@@ -192,20 +129,8 @@ const MOCKMODULE = !environment.production || environment.chore === true ?
 @NgModule({
     imports: [
         NgZorroAntdModule.forRoot(),
-        NgZorroAntdExtraModule.forRoot(),
         // theme
-        AlainThemeModule.forRoot(),
-        // abc
-        AdErrorCollectModule.forRoot(), AdFooterToolbarModule.forRoot(), AdSidebarNavModule.forRoot(), AdDownFileModule.forRoot(), AdImageModule.forRoot(),
-        AdAvatarListModule.forRoot(), AdDescListModule.forRoot(), AdEllipsisModule.forRoot(), AdExceptionModule.forRoot(), AdExceptionModule.forRoot(),
-        AdNoticeIconModule.forRoot(), AdNumberInfoModule.forRoot(), AdProHeaderModule.forRoot(), AdResultModule.forRoot(), AdStandardFormRowModule.forRoot(),
-        AdTagSelectModule.forRoot(), AdTrendModule.forRoot(), AdUtilsModule.forRoot(), AdChartsModule.forRoot(), AdCountDownModule.forRoot(), AdSimpleTableModule.forRoot(),
-        AdReuseTabModule.forRoot(), AdFullContentModule.forRoot(), AdXlsxModule.forRoot(), AdZipModule.forRoot(),
-        // auth
-       
-        // acl
-        AlainACLModule.forRoot(),
-        // cache
+         // cache
         DelonCacheModule.forRoot(),
         // mock
         ...MOCKMODULE

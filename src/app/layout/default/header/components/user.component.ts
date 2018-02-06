@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { SettingsService } from '@delon/theme'; 
+import { SettingsService } from '@core';
 import {UserAuthService} from "@core/services/user-auth.service";
 
 @Component({
@@ -30,7 +30,7 @@ export class HeaderUserComponent implements OnInit {
         private userAuthService: UserAuthService ) {}
 
     ngOnInit(): void {
-             
+
     }
     logout() {
         this.userAuthService.removeUserInfo();

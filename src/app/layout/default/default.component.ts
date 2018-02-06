@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd, RouteConfigLoadStart, NavigationError } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
-import { ScrollService, MenuService, SettingsService } from '@delon/theme';
+import { ScrollService, MenuService, SettingsService } from  '@core';
 
 @Component({
     selector: 'layout-default',

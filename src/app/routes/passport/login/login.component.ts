@@ -135,7 +135,7 @@ export class UserLoginComponent implements OnDestroy {
 
                 this.router.navigate(['']);
             } else {
-                debugger;
+                console.log('------------------');
                 console.log(res.message);
             }
         });

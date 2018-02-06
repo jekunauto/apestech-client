@@ -3,7 +3,7 @@ import { setUpTestBed } from '@testing/common.spec';
 
 import { AppComponent } from './app.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { ThemesService, TitleService } from '@delon/theme';
+import { ThemesService, TitleService } from '@core';
 
 describe('Component: App', () => {
     setUpTestBed(<TestModuleMetadata>{

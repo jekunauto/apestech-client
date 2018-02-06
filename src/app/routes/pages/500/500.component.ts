@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SettingsService } from '@delon/theme';
+import { SettingsService } from '@core';
 
 @Component({
   selector: 'app-pages-500',

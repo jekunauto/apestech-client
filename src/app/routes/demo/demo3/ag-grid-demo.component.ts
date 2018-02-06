@@ -34,68 +34,32 @@ export class AgGridDemoComponent {
   private gridApi;
   private gridColumnApi;
 
+    // 列头的定义
     columnDefs;
+    // 行数据
     rowData;
+
     rowSelection;
     pinnedBottomRowData;
     navigateToNextCell;
+
   constructor() {
+
+      // 列头的定义
     this.columnDefs = [
-      {
-        headerName: '商品名称',
-        field: "make",
-        editable: true
-      },
-      {
-        headerName: "数量",
-        field: "sl",
-        editable: true
-      },
-      {
-        headerName: "单价",
-        field: "price",
-        editable: true
-      },
-      {
-        headerName: "金额",
-        field: "je",
-        aggFunc: "sum",
-        valueGetter: "data.sl * data.price",
-      },
-      {
-        headerName: "Style",
-        field: "style"
-      },
-      {
-        headerName: "Clothes",
-        field: "clothes"
-      }
+      {headerName: '商品名称', field: "make", editable: true},
+      {headerName: "数量", field: "sl", editable: true},
+      {headerName: "单价", field: "price", editable: true},
+      {headerName: "金额", field: "je", aggFunc: "sum", valueGetter: "data.sl * data.price",},
+      {headerName: "Style", field: "style"},
+      {headerName: "Clothes", field: "clothes"}
     ];
+
+    // 行数据
     this.rowData = [
-      {
-        make: "Toyota",
-        sl: 1,
-        price: 35000,
-        je: 35000,
-        style: "Smooth",
-        clothes: "Jeans"
-      },
-      {
-        make: "Ford",
-        sl: 1,
-        price: 35000,
-        je: 35000,
-        style: "Filthy",
-        clothes: "Shorts"
-      },
-      {
-        make: "Porsche",
-        sl: 1,
-        price: 35000,
-        je: 35000,
-        style: "Dirty",
-        clothes: "Padded"
-      }
+      { make: "Toyota", sl: 1, price: 35000, je: 35000, style: "Smooth", clothes: "Jeans"},
+      { make: "Ford", sl: 1, price: 35000, je: 35000, style: "Filthy", clothes: "Shorts"},
+      { make: "Porsche", sl: 1, price: 35000, je: 35000, style: "Dirty", clothes: "Padded"}
     ];
     this.rowSelection = 'multiple';
 

@@ -11,7 +11,7 @@ import {serialize} from '../../utils/serialize';
 const ERP_BASE_URL: string = '/router';
 
 export enum RequestMethod {
-    Get = 'GET',
+    Get = "GET",
     Head = 'HEAD',
     Post = 'POST',
     Put = 'PUT',

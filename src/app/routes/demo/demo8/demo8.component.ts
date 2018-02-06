@@ -66,9 +66,7 @@ export class Demo8Component {
             label: '开始时间',
             placeholder: '结束时间',
             required: true,
-            divCol: 8,
-            lblCol: 6,
-            inputCol: 18
+
         }
     }];
 

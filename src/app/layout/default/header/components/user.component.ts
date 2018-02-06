@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { SettingsService } from '@delon/theme';
-import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
+import { SettingsService } from '@delon/theme'; 
 import {UserAuthService} from "@core/services/user-auth.service";
 
 @Component({
@@ -28,26 +27,13 @@ export class HeaderUserComponent implements OnInit {
     constructor(
         public settings: SettingsService,
         private router: Router,
-        private userAuthService: UserAuthService,
-        @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService) {}
+        private userAuthService: UserAuthService ) {}
 
     ngOnInit(): void {
-        this.tokenService.change().subscribe((res: any) => {
-            this.settings.setUser(res);
-        });
-        // mock
-        const token = this.tokenService.get() || {
-            token: 'nothing',
-            name: 'Admin',
-            avatar: './assets/img/zorro.svg',
-            email: 'admin@apestek.com'
-        };
-        this.tokenService.set(token);
+             
     }
-
     logout() {
         this.userAuthService.removeUserInfo();
-        this.tokenService.clear();
-        this.router.navigateByUrl(this.tokenService.login_url);
+        this.router.navigateByUrl('/passport');
     }
 }

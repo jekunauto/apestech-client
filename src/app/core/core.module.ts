@@ -4,7 +4,7 @@ import {AlainThemeModule} from '@delon/theme';
 
 import {I18NService} from './i18n/i18n.service';
 import {ApiService} from '@core/services/api.service';
-import {ConfigService} from '@core/services/config.service';
+import {ConfigService} from '@core/config/config.service';
 import {GridConfigService} from '@core/config/grid-config.service';
 
 @NgModule({

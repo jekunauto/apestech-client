@@ -170,8 +170,7 @@ export const ABCMODULES = [
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
 import { AlainThemeModule } from '@delon/theme';
-import { AlainABCModule } from '@delon/abc';
-import { AlainAuthModule } from '@delon/auth';
+import { AlainABCModule } from '@delon/abc'; 
 import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
 // mock
@@ -203,10 +202,7 @@ const MOCKMODULE = !environment.production || environment.chore === true ?
         AdTagSelectModule.forRoot(), AdTrendModule.forRoot(), AdUtilsModule.forRoot(), AdChartsModule.forRoot(), AdCountDownModule.forRoot(), AdSimpleTableModule.forRoot(),
         AdReuseTabModule.forRoot(), AdFullContentModule.forRoot(), AdXlsxModule.forRoot(), AdZipModule.forRoot(),
         // auth
-        AlainAuthModule.forRoot({
-            // ignores: [ `\\/login`, `assets\\/` ],
-            login_url: `/passport/login`
-        }),
+       
         // acl
         AlainACLModule.forRoot(),
         // cache

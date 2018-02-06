@@ -26,7 +26,7 @@ import {QueryBuilderModule} from '@shared/querybuilder';
 import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
 // Material UI
-import {MatDialogModule, MatIconModule} from "@angular/material";
+import {MatDialogModule, MatIconModule, MatButtonModule} from "@angular/material";
 
 // dialog
 import {BaseDialog} from "@shared/dialog/base-dialog";
@@ -63,6 +63,7 @@ import {
         //Material UI
         MatDialogModule,
         MatIconModule,
+        MatButtonModule,
 
         // dynamicForm
         FormlyModule.forRoot({
@@ -102,6 +103,7 @@ import {
         //Material UI
         MatDialogModule,
         MatIconModule,
+        MatButtonModule,
 
         // dynamicform
         FormlyModule,

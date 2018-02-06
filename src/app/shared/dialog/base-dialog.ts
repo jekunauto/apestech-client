@@ -19,7 +19,7 @@ export class BaseDialog {
     form = new FormGroup({});
 
     gridOptions: GridOptions;
-    public rowData: any[];
+    rowData: any[];
     columnDefs: any[];
 
     constructor(public dialogRef: MatDialogRef<BaseDialog>,
@@ -57,9 +57,7 @@ export class BaseDialog {
         for (let i = 0; i < 20; i++) {
 
             rowData.push({
-
                 name: "Jim"+i,
-
                 skills: {
                     android: Math.random() < 0.4,
                     html5: Math.random() < 0.4,
@@ -83,6 +81,7 @@ export class BaseDialog {
         console.log(selectedRow);
         this.data.result = selectedRow;
     }
+
     resetForm() {
        console.log('aa');
     }

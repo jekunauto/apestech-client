@@ -17,10 +17,6 @@ import { FormlyZorroModule } from './ui-zorro';
 import { TranslateModule } from '@ngx-translate/core';
 // region: zorro modules
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
-import { HeaderGroupComponent } from '../routes/demo/gridComponent/header-group-component/header-group.component';
-import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
-import { AgGridModule } from 'ag-grid-angular';
-import { GridHeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
 import { QueryBuilderModule } from '@shared/querybuilder';
 import { ZORROMODULES} from '../delon.module';
 import {
@@ -65,13 +61,21 @@ import {
     minValidationMessage
 } from "@core/config/message-config.serivce";
 
+//grid
+import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
+import { GridHeardComponent } from "../routes/demo/demo2/grid-heard/grid-heard.component";
+import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.component";
+
 @NgModule({
     declarations: [
         DateComponent,
-        GridHeaderComponent,
-        HeaderGroupComponent,
         BaseDialog,
-        CompanyDialog
+        CompanyDialog,
+        HeaderComponent,
+        GridHeardComponent,
+        HeaderGroupComponent
     ],
     imports: [
         CommonModule,
@@ -130,7 +134,8 @@ import {
 
         AgGridModule.withComponents([
             DateComponent,
-            GridHeaderComponent,
+            HeaderComponent,
+            GridHeardComponent,
             HeaderGroupComponent
         ]),
 

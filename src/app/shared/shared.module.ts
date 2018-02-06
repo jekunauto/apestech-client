@@ -52,41 +52,19 @@ import {
 } from './abc';
 
 // Material UI
-<<<<<<< HEAD
-import { MatDialogModule, MatCard, MatCardModule } from "@angular/material";
-=======
-import {MatDialogModule, MatIconModule} from "@angular/material";
->>>>>>> origin/master
+import {MatDialogModule, MatCard, MatCardModule, MatIconModule} from "@angular/material";
+
 
 // dialog
 import { BaseDialog } from "@shared/dialog/base-dialog";
 import { CompanyDialog } from "@shared/dialog/featuresDailog/company-dialog";
 
-<<<<<<< HEAD
-// endregion
-export function minlengthValidationMessage(err, field) {
-    return `至少${field.templateOptions.minLength}个字符`;
-}
-
-export function maxlengthValidationMessage(err, field) {
-    return `不能超过${field.templateOptions.maxLength}个字符`;
-}
-
-export function minValidationMessage(err, field) {
-    return `应小于${field.templateOptions.min}`;
-}
-
-export function maxValidationMessage(err, field) {
-    return `不能大于${field.templateOptions.max}`;
-}
-=======
 //check
 import {
     maxlengthValidationMessage, maxValidationMessage, minlengthValidationMessage,
     minValidationMessage
 } from "@core/config/message-config.serivce";
 
->>>>>>> origin/master
 @NgModule({
     declarations: [
         DateComponent,
@@ -172,7 +150,6 @@ import {
 
         //Material UI
         MatDialogModule,
-<<<<<<< HEAD
         AdSimpleTableModule,
         AdReuseTabModule,
         AdAvatarListModule,
@@ -198,10 +175,7 @@ import {
         AdFullContentModule,
         AdXlsxModule,
         AdZipModule,
-=======
         MatIconModule,
-
->>>>>>> origin/master
         // dynamicform
         FormlyModule,
         FormlyZorroModule,

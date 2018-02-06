@@ -1,7 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { MenuService, SettingsService, TitleService } from '@delon/theme';
-import { ACLService } from '@delon/acl';
+import { MenuService, SettingsService, TitleService } from  '@core';
 import { zip } from 'rxjs/observable/zip';
 import { I18NService } from '../i18n/i18n.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,7 +16,6 @@ export class StartupService {
         private translate: TranslateService,
         private i18n: I18NService,
         private settingService: SettingsService,
-        private aclService: ACLService,
         private titleService: TitleService,
         private httpClient: HttpClient,
         private injector: Injector) { }
@@ -40,7 +38,7 @@ export class StartupService {
                 // 用户信息：包括姓名、头像、邮箱地址
                 this.settingService.setUser(res.user);
                 // ACL：设置权限为全量
-                this.aclService.setFull(true);
+                //this.aclService.setFull(true);
                 // 初始化菜单
                 this.menuService.clear();
                 this.menuService.add(res.menu);

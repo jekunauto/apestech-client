@@ -5,7 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { I18NService } from './i18n.service';
 import { HttpLoaderFactory } from '../../app.module';
-import { SettingsService } from '@delon/theme';
+import { SettingsService } from '@core';
 
 describe('Service: I18n', () => {
     beforeEach(() => {

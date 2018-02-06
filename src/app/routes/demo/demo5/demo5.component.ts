@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {_HttpClient} from "@delon/theme";
+import {_HttpClient} from '@core';
 import {NzMessageService, NzModalService} from "ng-zorro-antd";
 import {ModelCustomComponent} from "./custom.component";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -111,7 +111,6 @@ export class Demo5Component implements OnInit {
            }
        };
        this.modal.open( options ).subscribe(result => {
-            debugger;
            // 由于传递过来的值，存在多个事件，只选择传递数组的值
            if ( Array.isArray(result) ) {
                this.formGroupModel.setValue({

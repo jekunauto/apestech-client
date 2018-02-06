@@ -22,4 +22,7 @@ ng build --prod --aot
 
 #打包
 npm run build /ng build --prod --build-optimizer --aot
+#发布到tomcat
+1、ng build --base-href /angular/ --prod 
+2、将dist目录下所有文件拷贝到 tomcat /webapps/angular 下
 

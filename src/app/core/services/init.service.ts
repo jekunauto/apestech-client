@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {MenuService, SettingsService, TitleService} from "@delon/theme";
-import {I18NService} from "@core/i18n/i18n.service";
-import {HttpClient} from "@angular/common/http";
-import {TranslateService} from "@ngx-translate/core";
+import {MenuService, SettingsService, TitleService} from  '@core';
+import {I18NService} from '@core/i18n/i18n.service';
+import {HttpClient} from '@angular/common/http';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable()
 export class InitService {

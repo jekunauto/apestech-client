@@ -1,5 +1,5 @@
 import { Component, OnDestroy, ViewEncapsulation, OnInit } from '@angular/core';
-import { _HttpClient } from '@delon/theme';
+import { _HttpClient } from '@core';
 
 @Component({
     selector: 'app-data-v-relation',

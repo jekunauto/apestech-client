@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { ThemesService, SettingsService, TitleService } from '@delon/theme';
+import { ThemesService, SettingsService, TitleService } from  '@core';
 import { filter, map } from 'rxjs/operators';
 
 @Component({

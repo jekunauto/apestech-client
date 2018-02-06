@@ -1,20 +1,20 @@
 import {Component, ViewEncapsulation, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 
-import {ColDef, ColumnApi, GridApi} from 'ag-grid';
+import {ColumnApi, GridApi} from 'ag-grid';
 import {GridOptions} from 'ag-grid/main';
 
 import ProficiencyFilter from '../filters/proficiencyFilter';
 import SkillFilter from '../filters/skillFilter';
 import RefData from '../data/refData';
 
+import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.component";
+
 // only import this if you are using the ag-Grid-Enterprise
 import 'ag-grid-enterprise/main';
 
-import {HeaderGroupComponent} from '../header-group-component/header-group.component';
 import {DateComponent} from '../date-component/date.component';
-import {GridHeaderComponent} from '../header-component/header.component';
+import {HeaderComponent} from '../header-component/header.component';
 import {GridConfigService} from "@core/config/grid-config.service";
 
 @Component({
@@ -39,7 +39,7 @@ export class RichGridComponent {
     private columnDefs:any[];
     public rowCount:string;
     public dateComponentFramework:DateComponent;
-    public HeaderGroupComponent = HeaderGroupComponent;
+    public HeaderGroupComponent = this.HeaderGroupComponent;
 
 
     constructor(gridConfigService: GridConfigService) {
@@ -50,7 +50,7 @@ export class RichGridComponent {
         this.showGrid = true;
         this.gridOptions.dateComponentFramework = DateComponent;
         this.gridOptions.defaultColDef = {
-            headerComponentFramework : <{new():GridHeaderComponent}>GridHeaderComponent,
+            headerComponentFramework : <{new():HeaderComponent}>HeaderComponent,
             headerComponentParams : {
                 menuIcon: 'fa-bars'
             }

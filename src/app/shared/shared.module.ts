@@ -1,37 +1,68 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {RouteReuseStrategy, RouterModule} from '@angular/router';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
-import {NgZorroAntdExtraModule} from 'ng-zorro-antd-extra';
-import {AlainThemeModule} from '@delon/theme';
+import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
+import { AlainThemeModule } from '@core';
 
 // region: @delon/abc modules
-import {DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService} from '@delon/abc';
-import {AlainACLModule} from '@delon/acl';
+import { DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService } from '@shared/abc';
 // third libs
-import {CountdownModule} from 'ngx-countdown';
-import {FormlyModule} from '@ngx-formly/core';
-import {FormlyZorroModule} from './ui-zorro';
+import { CountdownModule } from 'ngx-countdown';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyZorroModule } from './ui-zorro';
 // i18n
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 // region: zorro modules
-import { NzMessageService, NzNotificationService} from 'ng-zorro-antd';
-import {HeaderGroupComponent} from '../routes/demo/gridComponent/header-group-component/header-group.component';
-import {DateComponent} from '../routes/demo/gridComponent/date-component/date.component';
-import {AgGridModule} from 'ag-grid-angular';
-import {GridHeaderComponent} from '../routes/demo/gridComponent/header-component/header.component';
-import {QueryBuilderModule} from '@shared/querybuilder';
-import { ZORROMODULES, ABCMODULES } from '../delon.module';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { HeaderGroupComponent } from '../routes/demo/gridComponent/header-group-component/header-group.component';
+import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { GridHeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
+import { QueryBuilderModule } from '@shared/querybuilder';
+import { ZORROMODULES} from '../delon.module';
+import {
+    AdSimpleTableModule,
+    AdReuseTabModule,
+    AdAvatarListModule,
+    AdChartsModule,
+    AdCountDownModule,
+    AdDescListModule,
+    AdEllipsisModule,
+    AdErrorCollectModule,
+    AdExceptionModule,
+    AdFooterToolbarModule,
+    AdGlobalFooterModule,
+    AdNoticeIconModule,
+    AdNumberInfoModule,
+    AdProHeaderModule,
+    AdResultModule,
+    AdSidebarNavModule,
+    AdStandardFormRowModule,
+    AdTagSelectModule,
+    AdTrendModule,
+    AdDownFileModule,
+    AdImageModule,
+    AdUtilsModule,
+    AdFullContentModule,
+    AdXlsxModule,
+    AdZipModule
+} from './abc';
 
 // Material UI
-import {MatDialogModule} from "@angular/material";
+<<<<<<< HEAD
+import { MatDialogModule, MatCard, MatCardModule } from "@angular/material";
+=======
+import {MatDialogModule, MatIconModule} from "@angular/material";
+>>>>>>> origin/master
 
 // dialog
-import {BaseDialog} from "@shared/dialog/base-dialog";
-import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
+import { BaseDialog } from "@shared/dialog/base-dialog";
+import { CompanyDialog } from "@shared/dialog/featuresDailog/company-dialog";
 
+<<<<<<< HEAD
 // endregion
 export function minlengthValidationMessage(err, field) {
     return `至少${field.templateOptions.minLength}个字符`;
@@ -48,7 +79,14 @@ export function minValidationMessage(err, field) {
 export function maxValidationMessage(err, field) {
     return `不能大于${field.templateOptions.max}`;
 }
+=======
+//check
+import {
+    maxlengthValidationMessage, maxValidationMessage, minlengthValidationMessage,
+    minValidationMessage
+} from "@core/config/message-config.serivce";
 
+>>>>>>> origin/master
 @NgModule({
     declarations: [
         DateComponent,
@@ -66,13 +104,38 @@ export function maxValidationMessage(err, field) {
         ...ZORROMODULES,
         NgZorroAntdExtraModule.forRoot(),
         AlainThemeModule.forChild(),
-        ...ABCMODULES,
-        AlainACLModule.forRoot(),
         // third libs
         CountdownModule,
-
         //Material UI
         MatDialogModule,
+        MatIconModule,
+
+        // abc
+        AdErrorCollectModule.forRoot(),
+        AdFooterToolbarModule.forRoot(),
+        AdSidebarNavModule.forRoot(),
+        AdDownFileModule.forRoot(),
+        AdImageModule.forRoot(),
+        AdAvatarListModule.forRoot(),
+        AdDescListModule.forRoot(),
+        AdEllipsisModule.forRoot(),
+        AdExceptionModule.forRoot(),
+        AdExceptionModule.forRoot(),
+        AdNoticeIconModule.forRoot(),
+        AdNumberInfoModule.forRoot(),
+        AdProHeaderModule.forRoot(),
+        AdResultModule.forRoot(),
+        AdStandardFormRowModule.forRoot(),
+        AdTagSelectModule.forRoot(),
+        AdTrendModule.forRoot(),
+        AdUtilsModule.forRoot(),
+        AdChartsModule.forRoot(),
+        AdCountDownModule.forRoot(),
+        AdSimpleTableModule.forRoot(),
+        AdReuseTabModule.forRoot(),
+        AdFullContentModule.forRoot(),
+        AdXlsxModule.forRoot(),
+        AdZipModule.forRoot(),
 
         // dynamicForm
         FormlyModule.forRoot({
@@ -102,8 +165,6 @@ export function maxValidationMessage(err, field) {
         ...ZORROMODULES,
         NgZorroAntdExtraModule,
         AlainThemeModule,
-        ...ABCMODULES,
-        AlainACLModule,
         // i18n
         TranslateModule,
         // third libs
@@ -111,7 +172,36 @@ export function maxValidationMessage(err, field) {
 
         //Material UI
         MatDialogModule,
+<<<<<<< HEAD
+        AdSimpleTableModule,
+        AdReuseTabModule,
+        AdAvatarListModule,
+        AdChartsModule,
+        AdCountDownModule,
+        AdDescListModule,
+        AdEllipsisModule,
+        AdErrorCollectModule,
+        AdExceptionModule,
+        AdFooterToolbarModule,
+        AdGlobalFooterModule,
+        AdNoticeIconModule,
+        AdNumberInfoModule,
+        AdProHeaderModule,
+        AdResultModule,
+        AdSidebarNavModule,
+        AdStandardFormRowModule,
+        AdTagSelectModule,
+        AdTrendModule,
+        AdDownFileModule,
+        AdImageModule,
+        AdUtilsModule,
+        AdFullContentModule,
+        AdXlsxModule,
+        AdZipModule,
+=======
+        MatIconModule,
 
+>>>>>>> origin/master
         // dynamicform
         FormlyModule,
         FormlyZorroModule,
@@ -136,7 +226,7 @@ export class SharedModule {
                 FullContentService,
                 // reuse-tab
                 ReuseTabService,
-                { provide: RouteReuseStrategy, useClass: ReuseTabStrategy, deps: [ ReuseTabService ] },
+                { provide: RouteReuseStrategy, useClass: ReuseTabStrategy, deps: [ReuseTabService] },
                 // xlsx
                 XlsxService,
                 { provide: DA_XLSX_CONFIG, useValue: {} },

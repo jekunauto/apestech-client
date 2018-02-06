@@ -26,28 +26,17 @@ import {QueryBuilderModule} from '@shared/querybuilder';
 import { ZORROMODULES, ABCMODULES } from '../delon.module';
 
 // Material UI
-import {MatDialogModule} from "@angular/material";
+import {MatDialogModule, MatIconModule} from "@angular/material";
 
 // dialog
 import {BaseDialog} from "@shared/dialog/base-dialog";
 import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
 
-// endregion
-export function minlengthValidationMessage(err, field) {
-    return `至少${field.templateOptions.minLength}个字符`;
-}
-
-export function maxlengthValidationMessage(err, field) {
-    return `不能超过${field.templateOptions.maxLength}个字符`;
-}
-
-export function minValidationMessage(err, field) {
-    return `应小于${field.templateOptions.min}`;
-}
-
-export function maxValidationMessage(err, field) {
-    return `不能大于${field.templateOptions.max}`;
-}
+//check
+import {
+    maxlengthValidationMessage, maxValidationMessage, minlengthValidationMessage,
+    minValidationMessage
+} from "@core/config/message-config.serivce";
 
 @NgModule({
     declarations: [
@@ -73,6 +62,7 @@ export function maxValidationMessage(err, field) {
 
         //Material UI
         MatDialogModule,
+        MatIconModule,
 
         // dynamicForm
         FormlyModule.forRoot({
@@ -111,6 +101,7 @@ export function maxValidationMessage(err, field) {
 
         //Material UI
         MatDialogModule,
+        MatIconModule,
 
         // dynamicform
         FormlyModule,

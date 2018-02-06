@@ -21,7 +21,7 @@ export class CompanyDialog {
     form = new FormGroup({});
 
     gridOptions: GridOptions;
-    public rowData: any[];
+    rowData: any[];
     columnDefs: any[];
 
     constructor(public dialogRef: MatDialogRef<CompanyDialog>,

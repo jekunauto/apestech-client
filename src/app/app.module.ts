@@ -10,26 +10,19 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
 
-import {InitService} from "@core/services/init.service";
-import {UserAuthService} from "@core/services/user-auth.service";
+import {InitService} from '@core/services/init.service';
+import {UserAuthService} from '@core/services/user-auth.service';
 import { DefaultInterceptor } from '@core/net/default.interceptor';
-
-import { DelonMockModule } from '@delon/mock';
-import * as MOCKDATA from '../../_mock';
-import { environment } from '../environments/environment';
-const MOCKMODULE = !environment.production || environment.chore === true ?
-    [ DelonMockModule.forRoot({ data: MOCKDATA }) ] : [];
 
 // i18n
 import { I18NService } from './core/i18n/i18n.service';
-import { ALAIN_I18N_TOKEN } from  '@core';
+import { ALAIN_I18N_TOKEN } from '@core';
 import { registerLocaleData } from '@angular/common';
-import localeZhHans from '@angular/common/locales/zh-Hans';
-import { DelonModule } from 'app/delon.module';
+import localeZhHans from '@angular/common/locales/zh-Hans'; 
 registerLocaleData(localeZhHans);
 
 // 系统附加的Service
-import {StartupService} from "@core/services/startup.service";
+import {StartupService} from '@core/services/startup.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,12 +40,10 @@ export function StartupServiceFactory(startupService: StartupService): Function 
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        DelonModule.forRoot(),
         SharedModule.forRoot(),
         CoreModule,
         LayoutModule,
         RoutesModule,
-        ...MOCKMODULE,
         // i18n
         TranslateModule.forRoot({
             loader: {

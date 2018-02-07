@@ -120,7 +120,7 @@ export class UserLoginComponent implements OnDestroy {
     login(): void {
         if (!this.check())return;
         const userModel = {
-            userid: this.userName.value,
+            userId: this.userName.value,
             password: this.password.value
         };
         this.apiService.post('aut.user.login', {'body': JSON.stringify(userModel)}).subscribe((res) => {

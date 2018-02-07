@@ -39,7 +39,7 @@ export class Demo2Component implements OnInit {
     get companyName() { return this.form.controls.companyName };
 
 
-    initColumnDefs(){
+    initColumnDefs() {
         this.columnDefs = [
             { headerName: '', width: 30, checkboxSelection: true, suppressMenu: true, pinned: true },
             { headerName: "地点编码", field:"addressId", width: 150, },
@@ -47,5 +47,8 @@ export class Demo2Component implements OnInit {
             { headerName: "公司编码", field: "companyId", width: 150 },
             { headerName: "公司名称", field: "companyName", width: 150 },
         ];
+    }
+    onSelectionChanged() {
+        console.log('abc');
     }
 }

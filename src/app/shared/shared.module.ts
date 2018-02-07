@@ -18,7 +18,7 @@ import { TranslateModule } from '@ngx-translate/core';
 // region: zorro modules
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { QueryBuilderModule } from '@shared/querybuilder';
-import { ZORROMODULES} from '../delon.module';
+import { ZORROMODULES} from '../zorro.module';
 import {
     AdSimpleTableModule,
     AdReuseTabModule,
@@ -48,23 +48,23 @@ import {
 } from './abc';
 
 // Material UI
-import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from "@angular/material";
+import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 // dialog
-import { BaseDialog } from "@shared/dialog/base-dialog";
-import { CompanyDialog } from "@shared/dialog/featuresDailog/company-dialog";
+import { BaseDialog } from '@shared/dialog/base-dialog';
+import { CompanyDialog } from '@shared/dialog/featuresDailog/company-dialog';
 
 //check
 import {
     maxlengthValidationMessage, maxValidationMessage, minlengthValidationMessage,
     minValidationMessage
-} from "@core/config/message-config.serivce";
+} from '@core/config/message-config.serivce';
 
 //grid
 import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
-import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.component";
+import {HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
 import { HeaderButtonComponent } from './grid/header-button/header-button.component';
 
 @NgModule({

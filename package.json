@@ -42,8 +42,6 @@
     "@antv/data-set": "^0.8.3",
     "@antv/g2": "^3.0.1",
     "@antv/g2-plugin-slider": "^2.0.0",
-    "@delon/cache": "^0.6.5",
-    "@delon/mock": "^0.6.5",
     "@ngx-formly/core": "^2.0.0-rc.13",
     "@ngx-translate/core": "^9.0.0",
     "@ngx-translate/http-loader": "^2.0.0",

@@ -48,7 +48,7 @@ export class Demo2Component implements OnInit {
     get companyName() { return this.form.controls.companyName };
 
 
-    initColumnDefs(){
+    initColumnDefs() {
         this.columnDefs = [
             { headerName: '', width: 30, checkboxSelection: true, suppressMenu: true, pinned: true },
 
@@ -65,5 +65,8 @@ export class Demo2Component implements OnInit {
                 ]
             }
         ];
+    }
+    onSelectionChanged() {
+        console.log('abc');
     }
 }

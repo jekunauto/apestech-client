@@ -48,8 +48,7 @@ import {
 } from './abc';
 
 // Material UI
-import {MatDialogModule, MatCard, MatCardModule, MatIconModule} from "@angular/material";
-
+import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from "@angular/material";
 
 // dialog
 import { BaseDialog } from "@shared/dialog/base-dialog";
@@ -65,8 +64,8 @@ import {
 import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
-import { GridHeardComponent } from "../routes/demo/demo2/grid-heard/grid-heard.component";
 import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.component";
+import { HeaderButtonComponent } from './grid/header-button/header-button.component';
 
 @NgModule({
     declarations: [
@@ -74,8 +73,8 @@ import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.compo
         BaseDialog,
         CompanyDialog,
         HeaderComponent,
-        GridHeardComponent,
-        HeaderGroupComponent
+        HeaderGroupComponent,
+        HeaderButtonComponent
     ],
     imports: [
         CommonModule,
@@ -91,6 +90,7 @@ import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.compo
         //Material UI
         MatDialogModule,
         MatIconModule,
+        MatButtonModule,
 
         // abc
         AdErrorCollectModule.forRoot(),
@@ -135,8 +135,8 @@ import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.compo
         AgGridModule.withComponents([
             DateComponent,
             HeaderComponent,
-            GridHeardComponent,
-            HeaderGroupComponent
+            HeaderGroupComponent,
+            HeaderButtonComponent,
         ]),
 
     ],
@@ -155,6 +155,8 @@ import {HeaderGroupComponent} from "@shared/grid/header-group/header-group.compo
 
         //Material UI
         MatDialogModule,
+        MatButtonModule,
+
         AdSimpleTableModule,
         AdReuseTabModule,
         AdAvatarListModule,

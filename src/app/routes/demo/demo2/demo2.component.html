@@ -5,7 +5,7 @@
     </h1>
 </div>
 
-<form nz-form>
+<form nz-form [formGroup]="form">
     <nz-card>
         <div nz-row [nzGutter]="8">
             <div nz-col [nzMd]="24">
@@ -64,7 +64,7 @@
         </div>
     </nz-card>
 
-    <nz-card>
+    <nz-card nzType="inner">
         <ag-grid-angular
             #grid
             style="width: 100%; height: 300px;" class="ag-fresh"
@@ -73,6 +73,9 @@
             enableFilter="true"
             pagination="true"
             paginationAutoPageSize="true"
+            suppressLoadingOverlay="true"
+
+            [groupHeaderHeight]="groupHeaderHeight"
 
             [gridOptions]="gridOptions"
             [columnDefs]="columnDefs"
@@ -81,4 +84,9 @@
             (selectionChanged)="onSelectionChanged()">
         </ag-grid-angular>
     </nz-card>
+
+
+    <footer-toolbar errorCollect style="z-index: 0">
+        <button nz-button [nzType]="'primary'" nzSize="large">提交</button>
+    </footer-toolbar>
 </form>

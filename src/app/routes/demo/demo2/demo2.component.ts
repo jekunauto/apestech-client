@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {GridOptions} from "ag-grid";
+import {GridConfigService} from "@core/config/grid-config.service";
+import {HeaderButtonComponent} from "@shared/grid/header-button/header-button.component";
 
 @Component({
   selector: 'app-demo2',
@@ -11,12 +13,19 @@ export class Demo2Component implements OnInit {
 
     form: FormGroup;
 
+    // grid
     gridOptions: GridOptions;
     columnDefs: any[];
     rowSelection: string;
 
-    constructor(private fb: FormBuilder) {
+    // 按钮操作区域的高度
+    groupHeaderHeight: number = 28;
+
+
+    constructor(private fb: FormBuilder, private gridConfigService: GridConfigService) {
+        this.gridOptions = <GridOptions>{};
         this.initColumnDefs();
+        this.gridOptions.localeText = gridConfigService.getLocaleText();
     }
 
     ngOnInit() {
@@ -42,10 +51,19 @@ export class Demo2Component implements OnInit {
     initColumnDefs(){
         this.columnDefs = [
             { headerName: '', width: 30, checkboxSelection: true, suppressMenu: true, pinned: true },
-            { headerName: "地点编码", field:"addressId", width: 150, },
-            { headerName: "地点名称", field: "addressNames", width: 150, },
-            { headerName: "公司编码", field: "companyId", width: 150 },
-            { headerName: "公司名称", field: "companyName", width: 150 },
+
+            { headerName: '',
+                headerGroupComponentFramework: HeaderButtonComponent,
+                children: [
+                    { headerName: "地点编码", field:"addressId", width: 150, },
+                    { headerName: "地点名称", field: "addressNames", width: 170, },
+                    { headerName: "公司编码", field: "companyId", width: 150 },
+                    { headerName: "公司名称", field: "companyName", width: 170 },
+                    { headerName: "是否有效", field: "isValid", width: 170 },
+                    { headerName: "操作人", field: "inputPerson", width: 170 },
+                    { headerName: "操作时间", field: "inputDate", width: 150 },
+                ]
+            }
         ];
     }
 }

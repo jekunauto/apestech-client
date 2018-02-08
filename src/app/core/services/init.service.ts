@@ -32,7 +32,7 @@ export class InitService {
     }
 
     loadAppData() {
-        this.httpClient.get('assets/app-data.json').subscribe(appData =>{
+        this.httpClient.get('assets/app-data.json').subscribe(appData => {
             this.appData = appData;
 
             // application data

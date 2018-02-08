@@ -7,17 +7,10 @@ import { XlsxConfig, DA_XLSX_CONFIG } from './interface';
 
 const COMPONENTS = [ XlsxDirective ];
 
-// region: zorro modules
-
-// import { NzBreadCrumbModule } from 'ng-zorro-antd';
-// import { NzIconModule } from 'ng-zorro-antd-extra';
-
-const ZORROMODULES = [ ];
-
 // endregion
 
 @NgModule({
-    imports:        [CommonModule, ...ZORROMODULES, AdUtilsModule],
+    imports:        [CommonModule, AdUtilsModule],
     declarations:   [...COMPONENTS],
     exports:        [...COMPONENTS]
 })

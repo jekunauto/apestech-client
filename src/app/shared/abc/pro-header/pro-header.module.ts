@@ -10,7 +10,6 @@ const COMPONENTS = [ProHeaderComponent];
 // region: zorro modules
 
 import { NzBreadCrumbModule } from 'ng-zorro-antd';
-// import { NzIconModule } from 'ng-zorro-antd-extra';
 
 const ZORROMODULES = [ NzBreadCrumbModule ];
 

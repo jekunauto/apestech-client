@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IHeaderGroupParams} from "ag-grid";
-import {IHeaderGroupAngularComp} from "ag-grid-angular";
+import { IHeaderGroupParams} from 'ag-grid';
+import {IHeaderGroupAngularComp} from 'ag-grid-angular';
 
 @Component({
   selector: 'app-header-button',
@@ -16,7 +16,6 @@ export class HeaderButtonComponent implements IHeaderGroupAngularComp {
 
     agInit(params: IHeaderGroupParams): void {
         this.params = params;
-        this.params.columnGroup.getOriginalColumnGroup().addEventListener('expandedChanged', this.click.bind(this));
     }
 
     ngOnDestroy() {
@@ -24,8 +23,33 @@ export class HeaderButtonComponent implements IHeaderGroupAngularComp {
     }
 
     click(){
-        console.log("qqqq");
+
     }
 
+    _onQueryClick() {
+        console.log("onGridQueryClick");
+    }
 
+    _onAddClick() {
+        let data = {
+            addressId:"",
+            addressNames:"",
+            companyId:"",
+            companyName:"",
+            isValid:"",
+            inputPerson:"",
+            inputDate:""
+        };
+
+        this.params.api.updateRowData({add: [data]});
+    }
+
+    _onEditClick() {
+        console.log("onEditClick");
+    }
+
+    _onDeleteClick() {
+        let selectedData = this.params.api.getSelectedRows();
+        this.params.api.updateRowData({ remove: selectedData });
+    }
 }

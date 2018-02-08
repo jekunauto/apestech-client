@@ -5,8 +5,7 @@ export class ConfigService {
 
   private _api_url = 'router';
 
-  get apiURL(): string{
+  get apiURL(): string {
       return this._api_url;
   }
-  
 }

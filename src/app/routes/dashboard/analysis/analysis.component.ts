@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import { getTimeDistance, yuan } from '@shared/abc';
-import { _HttpClient } from '@core';
+import { getTimeDistance, yuan } from '../../../shared/abc';
+import { ApiService } from '../../../core/services/api.service';
 
 @Component({
     selector: 'app-dashboard-analysis',
@@ -24,11 +24,14 @@ export class DashboardAnalysisComponent implements OnInit {
             total: 323234
         };
     });
-
-    constructor(private http: _HttpClient, public msg: NzMessageService) {}
+    salesType = 'all';
+    salesPieData: any;
+    salesTotal = 0;
+    _activeTab = 0;
+    constructor(private apiService: ApiService, public msg: NzMessageService) {}
 
     ngOnInit() {
-        this.http.get('/chart').subscribe((res: any) => {
+        this.apiService.get('/chart').subscribe((res: any) => {
             res.offlineData.forEach((item: any) => {
                 item.chart = Object.assign([], res.offlineChartData);
             });
@@ -57,10 +60,6 @@ export class DashboardAnalysisComponent implements OnInit {
             })
         ];
     }
-
-    salesType = 'all';
-    salesPieData: any;
-    salesTotal = 0;
     changeSaleType() {
         this.salesPieData = this.salesType === 'all' ? this.data.salesTypeData : (
             this.salesType === 'online' ? this.data.salesTypeDataOnline : this.data.salesTypeDataOffline
@@ -71,8 +70,6 @@ export class DashboardAnalysisComponent implements OnInit {
     handlePieValueFormat(value: any) {
         return yuan(value);
     }
-
-    _activeTab = 0;
     _tabChange(value: any) {
         console.log('tab', this._activeTab, value);
     }

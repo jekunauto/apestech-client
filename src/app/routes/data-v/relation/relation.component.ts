@@ -1,6 +1,4 @@
 import { Component, OnDestroy, ViewEncapsulation, OnInit } from '@angular/core';
-import { _HttpClient } from '@core';
-
 @Component({
     selector: 'app-data-v-relation',
     templateUrl: './relation.component.html',
@@ -124,7 +122,7 @@ export class RelationComponent implements OnInit, OnDestroy {
         }]
     };
 
-    constructor(private http: _HttpClient) { }
+    constructor() { }
 
     chartInit(ec) {
         this.ecIntance = ec;

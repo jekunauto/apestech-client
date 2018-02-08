@@ -23,7 +23,7 @@ const COMPONENTS = [
 // region: zorro modules
 
 import { NzSpinModule, NzToolTipModule, NzGridModule } from 'ng-zorro-antd';
-import { NzCardModule, NzDividerModule } from 'ng-zorro-antd-extra';
+import { NzCardModule, NzDividerModule } from '../../extra';
 
 const ZORROMODULES = [
     NzSpinModule, NzToolTipModule, NzGridModule,

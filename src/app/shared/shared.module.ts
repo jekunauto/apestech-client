@@ -4,13 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
-import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
-import { AlainThemeModule } from '@core';
+import { NgZorroAntdExtraModule } from './extra';
+import { AlainThemeModule } from '../core';
 
 // region: @delon/abc modules
-import { DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService, ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService } from '@shared/abc';
+import { DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService,
+    ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService } from '../shared/abc';
 // third libs
-import { CountdownModule } from 'ngx-countdown';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyZorroModule } from './ui-zorro';
 // i18n
@@ -24,7 +24,6 @@ import {
     AdReuseTabModule,
     AdAvatarListModule,
     AdChartsModule,
-    AdCountDownModule,
     AdDescListModule,
     AdEllipsisModule,
     AdErrorCollectModule,
@@ -51,16 +50,16 @@ import {
 import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 // dialog
-import { BaseDialog } from '@shared/dialog/base-dialog';
-import { CompanyDialog } from '@shared/dialog/featuresDailog/company-dialog';
+import { BaseDialog } from '../shared/dialog/base-dialog';
+import { CompanyDialog } from '../shared/dialog/featuresDailog/company-dialog';
 
-//check
+// check
 import {
     maxlengthValidationMessage, maxValidationMessage, minlengthValidationMessage,
     minValidationMessage
-} from '@core/config/message-config.serivce';
+} from '../core/config/message-config.serivce';
 
-//grid
+// grid
 import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
@@ -85,9 +84,7 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         ...ZORROMODULES,
         NgZorroAntdExtraModule.forRoot(),
         AlainThemeModule.forChild(),
-        // third libs
-        CountdownModule,
-        //Material UI
+        // Material UI
         MatDialogModule,
         MatIconModule,
         MatButtonModule,
@@ -112,7 +109,6 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         AdTrendModule.forRoot(),
         AdUtilsModule.forRoot(),
         AdChartsModule.forRoot(),
-        AdCountDownModule.forRoot(),
         AdSimpleTableModule.forRoot(),
         AdReuseTabModule.forRoot(),
         AdFullContentModule.forRoot(),
@@ -150,10 +146,7 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         AlainThemeModule,
         // i18n
         TranslateModule,
-        // third libs
-        CountdownModule,
-
-        //Material UI
+        // Material UI
         MatDialogModule,
         MatButtonModule,
 
@@ -161,7 +154,6 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         AdReuseTabModule,
         AdAvatarListModule,
         AdChartsModule,
-        AdCountDownModule,
         AdDescListModule,
         AdEllipsisModule,
         AdErrorCollectModule,

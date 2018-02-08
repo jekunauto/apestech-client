@@ -6,11 +6,6 @@ import { ZipConfig, DA_ZIP_CONFIG } from './interface';
 
 const COMPONENTS = [  ];
 
-// region: zorro modules
-
-// import { NzBreadCrumbModule } from 'ng-zorro-antd';
-// import { NzIconModule } from 'ng-zorro-antd-extra';
-
 const ZORROMODULES = [ ];
 
 // endregion

@@ -11,7 +11,7 @@ import { AdDescListModule } from '../desc-list/desc-list.module';
 // region: zorro modules
 
 import { NzPopoverModule, NzBadgeModule, NzSpinModule, NzTabsModule, NzTagModule } from 'ng-zorro-antd';
-import { NzListModule, NzIconModule } from 'ng-zorro-antd-extra';
+import { NzListModule, NzIconModule } from '../../extra';
 
 const ZORROMODULES = [
     NzPopoverModule, NzBadgeModule, NzSpinModule, NzTabsModule, NzTagModule,

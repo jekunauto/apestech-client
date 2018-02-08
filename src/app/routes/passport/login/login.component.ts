@@ -128,9 +128,9 @@ export class UserLoginComponent implements OnDestroy {
                 const userInfo = {'token': res.body.sessionId, 'userAccount': res.body.user};
                 const storageInfo = JSON.stringify(userInfo);
                 this.userAuthService.storeUserInfo(storageInfo);
-                //this.router.navigate(['home']);
+                // this.router.navigate(['home']);
 
-                //加载菜单..setUserInfo(JSON.stringify(userInfo));
+                // 加载菜单..setUserInfo(JSON.stringify(userInfo));
                 this.initService.loadAppData();
 
                 this.router.navigate(['']);

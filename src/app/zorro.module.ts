@@ -5,7 +5,7 @@ import {
     NzAlertModule,
     NzBadgeModule,
     // NzCalendarModule,
-    NzCascaderModule,
+    // NzCascaderModule,
     NzCheckboxModule,
     NzDatePickerModule,
     NzFormModule,
@@ -51,13 +51,9 @@ import {
     NzMessageService
 } from 'ng-zorro-antd';
 export const ZORROMODULES = [
-    // LoggerModule,
-    // NzLocaleModule,
     NzButtonModule,
     NzAlertModule,
     NzBadgeModule,
-    // NzCalendarModule,
-    NzCascaderModule,
     NzCheckboxModule,
     NzDatePickerModule,
     NzFormModule,
@@ -89,11 +85,9 @@ export const ZORROMODULES = [
     NzLayoutModule,
     NzRootModule,
     NzCarouselModule,
-    // NzCardModule,
     NzCollapseModule,
     NzTimelineModule,
     NzToolTipModule,
     NzAvatarModule,
     NzUploadModule
-]; 
- 
+];

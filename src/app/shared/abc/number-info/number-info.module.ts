@@ -8,7 +8,7 @@ const COMPONENTS = [NumberInfoComponent];
 // region: zorro modules
 
 // import { NzButtonModule } from 'ng-zorro-antd';
-import { NzIconModule } from 'ng-zorro-antd-extra';
+import { NzIconModule } from '../../extra';
 
 const ZORROMODULES = [ NzIconModule ];
 

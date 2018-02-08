@@ -10,19 +10,19 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
 
-import {InitService} from '@core/services/init.service';
-import {UserAuthService} from '@core/services/user-auth.service';
-import { DefaultInterceptor } from '@core/net/default.interceptor';
+import {InitService} from './core/services/init.service';
+import {UserAuthService} from './core/services/user-auth.service';
+import { DefaultInterceptor } from './core/net/default.interceptor';
 
 // i18n
 import { I18NService } from './core/i18n/i18n.service';
-import { ALAIN_I18N_TOKEN } from '@core';
+import { ALAIN_I18N_TOKEN } from './core';
 import { registerLocaleData } from '@angular/common';
-import localeZhHans from '@angular/common/locales/zh-Hans'; 
+import localeZhHans from '@angular/common/locales/zh-Hans';
 registerLocaleData(localeZhHans);
 
 // 系统附加的Service
-import {StartupService} from '@core/services/startup.service';
+import {StartupService} from './core/services/startup.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

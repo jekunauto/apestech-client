@@ -65,6 +65,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
 import {HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
 import { HeaderButtonComponent } from './grid/header-button/header-button.component';
+import { RowButtonComponent } from './grid/row-button/row-button.component';
 
 @NgModule({
     declarations: [
@@ -73,7 +74,8 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         CompanyDialog,
         HeaderComponent,
         HeaderGroupComponent,
-        HeaderButtonComponent
+        HeaderButtonComponent,
+        RowButtonComponent
     ],
     imports: [
         CommonModule,
@@ -133,6 +135,7 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
             HeaderComponent,
             HeaderGroupComponent,
             HeaderButtonComponent,
+            RowButtonComponent,
         ]),
 
     ],

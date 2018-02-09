@@ -9,7 +9,7 @@ import { AlainThemeModule } from '../core';
 
 // region: @delon/abc modules
 import { DA_XLSX_CONFIG, DA_ZIP_CONFIG, FullContentService, LazyService, ReuseTabService,
-    ReuseTabStrategy, SimpleTableConfig, XlsxService, ZipService } from '../shared/abc';
+    ReuseTabStrategy, XlsxService, ZipService } from '../shared/abc';
 // third libs
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyZorroModule } from './ui-zorro';
@@ -20,7 +20,6 @@ import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { QueryBuilderModule } from '@shared/querybuilder';
 import { ZORROMODULES} from '../zorro.module';
 import {
-    AdSimpleTableModule,
     AdReuseTabModule,
     AdAvatarListModule,
     AdChartsModule,
@@ -109,7 +108,6 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         AdTrendModule.forRoot(),
         AdUtilsModule.forRoot(),
         AdChartsModule.forRoot(),
-        AdSimpleTableModule.forRoot(),
         AdReuseTabModule.forRoot(),
         AdFullContentModule.forRoot(),
         AdXlsxModule.forRoot(),
@@ -149,8 +147,6 @@ import { HeaderButtonComponent } from './grid/header-button/header-button.compon
         // Material UI
         MatDialogModule,
         MatButtonModule,
-
-        AdSimpleTableModule,
         AdReuseTabModule,
         AdAvatarListModule,
         AdChartsModule,
@@ -194,8 +190,6 @@ export class SharedModule {
                 // ng-zorro-antd Services
                 NzNotificationService,
                 NzMessageService,
-                // @delon/abc
-                SimpleTableConfig,
                 FullContentService,
                 // reuse-tab
                 ReuseTabService,

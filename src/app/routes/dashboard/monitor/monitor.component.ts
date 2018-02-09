@@ -1,8 +1,8 @@
+import { ApiService } from './../../../core/services/api.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { zip } from 'rxjs/observable/zip';
 import { getTimeDistance, yuan, fixedZero } from '@shared/abc';
-import { _HttpClient } from '@core';
 
 @Component({
     selector: 'app-dashboard-monitor',
@@ -36,7 +36,7 @@ export class DashboardMonitorComponent implements OnInit, OnDestroy {
         t1: '',
         t2: ''
     };
-    constructor(private http: _HttpClient, public msg: NzMessageService) {}
+    constructor(private http: ApiService, public msg: NzMessageService) {}
 
     ngOnInit() {
         zip(

@@ -1,14 +1,13 @@
+import { ApiService } from '@core/services/api.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Component, OnInit } from '@angular/core';
-import { _HttpClient } from '@core';
-
 @Component({
     selector: 'app-dashboard-v1',
     templateUrl: './v1.component.html'
 })
 export class DashboardV1Component implements OnInit {
 
-    constructor(private http: _HttpClient, public msg: NzMessageService) { }
+    constructor(private http: ApiService, public msg: NzMessageService) { }
 
     todoData: any[] = [
         { completed: true, avatar: 'http://temp.im/81x81', name: '苏先生', content: `请告诉我，我应该说点什么好？` },

@@ -1,6 +1,6 @@
+import { ApiService } from './../../../core/services/api.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Component } from '@angular/core';
-import { _HttpClient } from '@core';
 
 @Component({
     selector: 'app-widgets',
@@ -25,7 +25,7 @@ export class WidgetsComponent {
 
     dislike = false;
 
-    constructor(public msg: NzMessageService, private http: _HttpClient) {
+    constructor(public msg: NzMessageService, private http: ApiService) {
         this.http.get('/chart/visit').subscribe((res: any[]) => {
             this.data = res;
             this.smallData = res.slice(0, 6);

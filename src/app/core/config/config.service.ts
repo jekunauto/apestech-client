@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
   private _api_url = 'router';
-
   get apiURL(): string {
       return this._api_url;
   }

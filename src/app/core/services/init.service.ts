@@ -7,8 +7,8 @@ import {TranslateService} from '@ngx-translate/core';
 @Injectable()
 export class InitService {
 
-    langData: {};    //语言包
-    appData : {};    //用户数据以及菜单
+    langData: {};    // 语言包
+    appData: {};    // 用户数据以及菜单
 
     constructor(
         private menuService: MenuService,
@@ -19,7 +19,7 @@ export class InitService {
         private httpClient: HttpClient) {
     }
 
-    loadI18n(){
+    loadI18n() {
 
         this.httpClient.get(`assets/i18n/${this.i18n.defaultLang}.json`).subscribe( langData =>{
             this.langData = this.langData;
@@ -50,7 +50,7 @@ export class InitService {
         });
     }
 
-    load(){
+    load() {
         this.loadI18n();
         this.loadAppData();
     }

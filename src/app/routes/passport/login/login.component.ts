@@ -65,6 +65,7 @@ export class UserLoginComponent implements OnDestroy {
     // endregion
 
     submit() {
+        debugger;
         this.error = '';
         if (this.type === 0) {
             this.userName.markAsDirty();
@@ -104,6 +105,8 @@ export class UserLoginComponent implements OnDestroy {
         }, 1000);
     }
     check() {
+        this.userName.markAsDirty();
+        this.password.markAsDirty();
         let result = true;
         if (!this.userName.value) {
           this.error = '用户名不能为空';
@@ -118,13 +121,13 @@ export class UserLoginComponent implements OnDestroy {
         return result;
       }
     login(): void {
-        if (!this.check())return;
+        if (!this.check()) { return; }
         const userModel = {
             userId: this.userName.value,
             password: this.password.value
         };
         this.apiService.post('aut.user.login', {'body': JSON.stringify(userModel)}).subscribe((res) => {
-            if (res.header.code) {
+            if (res.header.code !== 'isp.xxx-service-unavailable') {
                 const userInfo = {'token': res.body.sessionId, 'userAccount': res.body.user};
                 const storageInfo = JSON.stringify(userInfo);
                 this.userAuthService.storeUserInfo(storageInfo);
@@ -135,13 +138,13 @@ export class UserLoginComponent implements OnDestroy {
 
                 this.router.navigate(['']);
             } else {
-                console.log('------------------');
-                console.log(res.message);
+                this.error = res.headermessage;
+                console.log(res.header.message);
             }
         });
     }
     // endregion
     ngOnDestroy(): void {
-        if (this.interval$) clearInterval(this.interval$);
+        if (this.interval$) { clearInterval(this.interval$); }
     }
 }

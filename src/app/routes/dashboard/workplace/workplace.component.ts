@@ -1,8 +1,7 @@
+import { ApiService } from './../../../core/services/api.service';
 import { zip } from 'rxjs/observable/zip';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import { _HttpClient } from '@core';
-
 @Component({
     selector: 'app-dashboard-workplace',
     templateUrl: './workplace.component.html',
@@ -75,7 +74,7 @@ export class DashboardWorkplaceComponent implements OnInit, OnDestroy {
       ];
     // endregion
 
-    constructor(private http: _HttpClient, public msg: NzMessageService) {}
+    constructor(private http: ApiService, public msg: NzMessageService) {}
 
     ngOnInit() {
         zip(

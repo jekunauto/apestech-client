@@ -1,6 +1,6 @@
+import { ApiService } from '@core/services/api.service';
 import { Component, OnInit } from '@angular/core';
-import {_HttpClient} from '@core';
-import {NzMessageService, NzModalService} from "ng-zorro-antd";
+import {NzMessageService, NzModalService} from 'ng-zorro-antd';
 import {ModelCustomComponent} from "./custom.component";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -18,7 +18,7 @@ export class Demo5Component implements OnInit {
         advancedOperation3: []
     };
    // data={advancedOperation1,advancedOperation2,advancedOperation3};
-    constructor(public msg: NzMessageService, private http: _HttpClient,
+    constructor(public msg: NzMessageService, private http: ApiService,
                 private modal: NzModalService, private fb: FormBuilder) {
         this.formGroupModel = this.fb.group({
             selectFeild : [''],

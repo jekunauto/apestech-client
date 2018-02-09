@@ -7,11 +7,8 @@ import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
 import {serialize} from '../../utils/serialize';
 
-//const ERP_BASE_URL: string = 'http://10.2.5.37:8060/router';
-const ERP_BASE_URL: string = '/router';
-
 export enum RequestMethod {
-    Get = "GET",
+    Get = 'GET',
     Head = 'HEAD',
     Post = 'POST',
     Put = 'PUT',
@@ -107,6 +104,7 @@ export class ApiService {
         const sign = CryptoJS.SHA1(shaSource).toString(CryptoJS.enc.Hex).toUpperCase();
         return sign;
     }
+
 
 // tslint:disable-next-line:eofline
 }

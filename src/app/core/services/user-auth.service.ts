@@ -40,6 +40,8 @@ export class UserAuthService {
    * 判断是否处于登录状态
    */
   public isLogined() {
+      debugger;
+      console.log(this.storage.getItem(this.userKey));
       return !!this.storage.getItem(this.userKey);
   }
 

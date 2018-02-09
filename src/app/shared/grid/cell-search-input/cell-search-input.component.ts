@@ -5,36 +5,28 @@ import {ICellEditorParams} from 'ag-grid';
 @Component({
   selector: 'app-cell-search-input',
   template: `
-      <nz-input [nzSize]="'default'" [(ngModel)]="inputValue">
-          <ng-template #suffix>
-              <i class="anticon anticon-search" (click)="_onSearch()"></i>
-          </ng-template>
-      </nz-input>
+  <nz-input [nzType]="'search'" [nzPlaceHolder]="url"
+     [(ngModel)]="inputValue"  (nzOnSearch)="onSearch($event)"></nz-input>
   `,
   styles: []
 })
 export class CellSearchInputComponent implements ICellEditorAngularComp  {
-    inputValue;
+    inputValue: any;
+    url: any;
     private  params: ICellEditorParams;
 
     constructor() { }
-
-    refresh(params: any): boolean {
-        return undefined;
-    }
-
     agInit(params: ICellEditorParams): void {
         this.params = params;
-        console.log(this.params.value);
-        console.log(this.inputValue);
+        this.inputValue = params.value.inputValue;
+        this.url = params.value.url;
     }
 
     getValue() {
+        this.params.value.inputValue = this.inputValue;
         return  this.inputValue;
     }
-    _onSearch() {
-        console.log("cell-searche");
-
+    onSearch() {
         console.log(this.inputValue);
 
         // 获取传入的值

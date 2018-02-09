@@ -74,9 +74,9 @@ export class Demo2Component implements OnInit {
                 children: [
                     { headerName: "地点编码", field:"addressId", width: 150, editable: true, cellEditor: "cellSearchInput",
                         cellEditorParams: {
-                            url: "queryAddress.action",
+                            value: {url: "queryAddress.action",
                             condition: ["addressId", "addressName"],
-                            inputValue: 'fuck you'
+                            inputValue: 'fuck you'}
                         },
 
                     },

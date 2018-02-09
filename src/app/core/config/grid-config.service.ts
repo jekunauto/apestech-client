@@ -102,5 +102,17 @@ export class GridConfigService {
             ctrlV: 'ctrl + V'
         }
     }
-
 }
+
+// grid 处理单元格的值
+export function numberValueParser(params) {
+    let value = 0;
+    let regPos = /^\d+(\.\d+)?$/;
+
+    if( regPos.test( params.newValue ) ){
+        value = params.newValue;
+    }
+
+    return value;
+}
+

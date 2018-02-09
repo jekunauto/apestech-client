@@ -39,6 +39,5 @@ export class CellSearchInputComponent implements ICellEditorAngularComp  {
 
         // 获取传入的值
         console.log( this.params);
-
     }
 }

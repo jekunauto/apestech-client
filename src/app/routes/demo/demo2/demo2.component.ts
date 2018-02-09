@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GridOptions} from 'ag-grid';
-import {GridConfigService} from '@core/config/grid-config.service';
-import {HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
-import {RowButtonComponent} from '@shared/grid/row-button/row-button.component';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { GridOptions} from 'ag-grid';
+import { GridConfigService, numberValueParser} from '@core/config/grid-config.service';
+import { HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
+import { CellButtonComponent} from '@shared/grid/cell-button/cell-button.component';
+import {CellSearchInputComponent} from "@shared/grid/cell-search-input/cell-search-input.component";
 
 @Component({
   selector: 'app-demo2',
@@ -34,7 +35,9 @@ export class Demo2Component implements OnInit {
 
             groupHeaderHeight: 28,  // 按钮操作区域的高度
             rowHeight: 29,
-            buttonList: ['add', 'delete']
+            frameworkComponents: {      // 自定义的 Grid cell 渲染器
+                cellSearchInput: CellSearchInputComponent
+            }
 
         };
 
@@ -69,10 +72,16 @@ export class Demo2Component implements OnInit {
             { headerName: '',
                 headerGroupComponentFramework: HeaderButtonComponent,
                 children: [
-                    { headerName: "地点编码", field:"addressId", width: 150, editable: true },
-                    { headerName: "地点名称", field: "addressNames", width: 170, editable: true},
-                    { headerName: "公司编码", field: "companyId", width: 150, editable: true},
-                    { headerName: "公司名称", field: "companyName", width: 170, editable: true},
+                    { headerName: "地点编码", field:"addressId", width: 150, editable: true, cellEditor: "cellSearchInput",
+                        cellEditorParams: {
+                            url: "queryAddress.action",
+                            condition: ["addressId", "addressName"]
+                        },
+
+                    },
+                    { headerName: "地点名称", field: "addressNames", width: 170, editable: true, },
+                    { headerName: "公司编码", field: "companyId", width: 150, editable: true, valueParser: numberValueParser},
+                    { headerName: "公司名称", field: "companyName", width: 170, editable: true,  },
                     { headerName: "是否有效", field: "isValid", width: 170, editable: true},
                     { headerName: "操作人", field: "inputPerson", width: 170, editable: true},
                     { headerName: "操作时间", field: "inputDate", width: 150, editable: true},
@@ -82,7 +91,7 @@ export class Demo2Component implements OnInit {
                             values: ["AAA", "BBB", "CCC"]
                         }
                     },
-                    { headerName: "操作", field:"", editable: false, cellRendererFramework: RowButtonComponent}
+                    { headerName: "操作", field:"", editable: false, cellRendererFramework: CellButtonComponent}
                 ]
             }
         ];
@@ -110,4 +119,5 @@ export class Demo2Component implements OnInit {
 
         return rowData;
     }
+
 }

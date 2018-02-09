@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AgRendererComponent} from 'ag-grid-angular';
-import {ICellRendererParams} from 'ag-grid';
+import { Component, OnInit, Input } from '@angular/core';
+import {ICellEditorAngularComp} from 'ag-grid-angular';
+import {ICellEditorParams} from 'ag-grid';
 
 @Component({
   selector: 'app-cell-search-input',
@@ -13,10 +13,9 @@ import {ICellRendererParams} from 'ag-grid';
   `,
   styles: []
 })
-export class CellSearchInputComponent implements AgRendererComponent{
-
-    inputValue: any;
-    params: ICellRendererParams;
+export class CellSearchInputComponent implements ICellEditorAngularComp  {
+    inputValue;
+    private  params: ICellEditorParams;
 
     constructor() { }
 
@@ -24,19 +23,22 @@ export class CellSearchInputComponent implements AgRendererComponent{
         return undefined;
     }
 
-    agInit(params: ICellRendererParams): void {
+    agInit(params: ICellEditorParams): void {
         this.params = params;
+        console.log(this.params.value);
+        console.log(this.inputValue);
     }
 
-
-    _onSearch(){
-        debugger;
+    getValue() {
+        return  this.inputValue;
+    }
+    _onSearch() {
         console.log("cell-searche");
 
         console.log(this.inputValue);
 
         // 获取传入的值
-        console.log( this.params );
+        console.log( this.params);
 
     }
 }

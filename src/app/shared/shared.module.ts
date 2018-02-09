@@ -63,9 +63,11 @@ import {
 import { DateComponent } from '../routes/demo/gridComponent/date-component/date.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from '../routes/demo/gridComponent/header-component/header.component';
-import {HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
+import { HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
 import { HeaderButtonComponent } from './grid/header-button/header-button.component';
-import { RowButtonComponent } from './grid/row-button/row-button.component';
+
+import { CellSearchInputComponent } from './grid/cell-search-input/cell-search-input.component';
+import { CellButtonComponent} from '@shared/grid/cell-button/cell-button.component';
 
 @NgModule({
     declarations: [
@@ -75,7 +77,9 @@ import { RowButtonComponent } from './grid/row-button/row-button.component';
         HeaderComponent,
         HeaderGroupComponent,
         HeaderButtonComponent,
-        RowButtonComponent
+
+        CellButtonComponent,
+        CellSearchInputComponent
     ],
     imports: [
         CommonModule,
@@ -135,7 +139,8 @@ import { RowButtonComponent } from './grid/row-button/row-button.component';
             HeaderComponent,
             HeaderGroupComponent,
             HeaderButtonComponent,
-            RowButtonComponent,
+            CellButtonComponent,
+            CellSearchInputComponent,
         ]),
 
     ],

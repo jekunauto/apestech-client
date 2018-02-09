@@ -4,10 +4,10 @@ import {ICellRendererParams} from 'ag-grid';
 
 @Component({
   selector: 'app-row-button',
-  templateUrl: './row-button.component.html',
+  templateUrl: './cell-button.component.html',
   styles: []
 })
-export class RowButtonComponent implements AgRendererComponent {
+export class CellButtonComponent implements AgRendererComponent {
 
     params: ICellRendererParams;
 

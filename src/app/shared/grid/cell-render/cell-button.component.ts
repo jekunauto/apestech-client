@@ -4,7 +4,13 @@ import {ICellRendererParams} from 'ag-grid';
 
 @Component({
   selector: 'app-row-button',
-  templateUrl: './cell-button.component.html',
+  template: `
+      <div>
+          <button nz-button [nzSize]="small" style="height: 24px;" ><span>编辑</span></button>
+          <button nz-button [nzSize]="small" style="height: 24px;" ><span>新增</span></button>
+          <button nz-button [nzSize]="small" style="height: 24px;" (click)="_onDelete()"><span>删除</span></button>
+      </div>
+  `,
   styles: []
 })
 export class CellButtonComponent implements AgRendererComponent {

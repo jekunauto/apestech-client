@@ -65,8 +65,9 @@ import { HeaderComponent } from '../routes/demo/gridComponent/header-component/h
 import { HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
 import { HeaderButtonComponent } from './grid/header-button/header-button.component';
 
-import { CellSearchInputComponent } from './grid/cell-search-input/cell-search-input.component';
-import { CellButtonComponent} from '@shared/grid/cell-button/cell-button.component';
+import { CellSearchInputComponent } from './grid/cell-render/cell-search-input.component';
+import { CellButtonComponent} from '@shared/grid/cell-render/cell-button.component';
+import { CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.component';
 
 @NgModule({
     declarations: [
@@ -78,7 +79,8 @@ import { CellButtonComponent} from '@shared/grid/cell-button/cell-button.compone
         HeaderButtonComponent,
 
         CellButtonComponent,
-        CellSearchInputComponent
+        CellSearchInputComponent,
+        CellDateInputComponent
     ],
     imports: [
         CommonModule,
@@ -139,6 +141,7 @@ import { CellButtonComponent} from '@shared/grid/cell-button/cell-button.compone
             HeaderButtonComponent,
             CellButtonComponent,
             CellSearchInputComponent,
+            CellDateInputComponent,
         ]),
 
     ],

@@ -4,8 +4,8 @@ import { GridOptions} from 'ag-grid';
 import {dateValueParser, GridConfigService, numberValueParser} from '@core/config/grid-config.service';
 import { HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
 import { CellButtonComponent} from '@shared/grid/cell-render/cell-button.component';
-import {CellSearchInputComponent} from "@shared/grid/cell-render/cell-search-input.component";
-import {CellDateInputComponent} from "@shared/grid/cell-render/cell-date-input.component";
+import {CellSearchInputComponent} from '@shared/grid/cell-render/cell-search-input.component';
+import {CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.component';
 
 @Component({
   selector: 'app-demo2',

@@ -41,6 +41,7 @@ export class UserAuthService {
    */
   public isLogined() {
       debugger;
+      console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaa');
       console.log(this.storage.getItem(this.userKey));
       return !!this.storage.getItem(this.userKey);
   }

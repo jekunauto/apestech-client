@@ -14,14 +14,13 @@ export class CanAuthProvide implements CanActivate {
 
         canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
             this.initService.loadAppData();
-            if (this.userAuthService.isLogined) {
+            if (this.userAuthService.isLogined()) {
                 return true;
-              } else {
+             } else {
                 this.msg.error('请先登录');
                 this.router.navigateByUrl('/passport');
                 return false;
-              }
+            }
         }
 
 }
- 

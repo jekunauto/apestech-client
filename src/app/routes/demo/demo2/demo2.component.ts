@@ -129,5 +129,4 @@ export class Demo2Component implements OnInit {
 
         return rowData;
     }
-
 }

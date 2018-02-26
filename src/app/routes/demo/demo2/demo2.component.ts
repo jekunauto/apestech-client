@@ -6,6 +6,8 @@ import { HeaderButtonComponent} from '@shared/grid/header-button/header-button.c
 import { CellButtonComponent} from '@shared/grid/cell-render/cell-button.component';
 import {CellSearchInputComponent} from '@shared/grid/cell-render/cell-search-input.component';
 import {CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.component';
+import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
+import {BaseDialog} from "@shared/dialog/base-dialog";
 
 @Component({
   selector: 'app-demo2',
@@ -20,6 +22,7 @@ export class Demo2Component implements OnInit {
     gridOptions: GridOptions;
     columnDefs: any[];
     rowSelection: string;
+    frameworkComponents: any;    // 自定义的 Grid cell 渲染器
 
     constructor(private fb: FormBuilder, private gridConfigService: GridConfigService) {
 
@@ -36,11 +39,11 @@ export class Demo2Component implements OnInit {
 
             groupHeaderHeight: 28,  // 按钮操作区域的高度
             rowHeight: 29,
-            frameworkComponents: {      // 自定义的 Grid cell 渲染器
-                cellSearchInput: CellSearchInputComponent,
-                dateInput: CellDateInputComponent,
-            }
+        };
 
+        this.frameworkComponents = {
+            cellSearchInput: CellSearchInputComponent,
+            dateInput: CellDateInputComponent
         };
 
         this.initColumnDefs();
@@ -78,14 +81,33 @@ export class Demo2Component implements OnInit {
                         cellEditor: "cellSearchInput",
                         cellEditorParams: {
                             value: {
+                                dialog: BaseDialog,
                                 url: "queryAddress.action",
                                 condition: ["addressId", "addressName"],
+                                dialogGridConfig:{
+                                    rowSelection: "single",
+                                    result: []
+                                },
                                 value: ''
                             }
                         },
                     },
                     { headerName: "地点名称", field: "addressNames", width: 170, editable: true, },
-                    { headerName: "公司编码", field: "companyId", width: 150, editable: true, valueParser: numberValueParser },
+                    { headerName: "公司编码", field: "companyId", width: 150, editable: true, valueParser: numberValueParser,
+                        cellEditor: "cellSearchInput",
+                        cellEditorParams: {
+                            value: {
+                                dialog: CompanyDialog,
+                                url: "queryCompany.action",
+                                condition: ["companyId", "companyName"],
+                                dialogGridConfig:{
+                                    rowSelection: "multiple",
+                                    result: []
+                                },
+                                value: ''
+                            }
+                        },
+                    },
                     { headerName: "公司名称", field: "companyName", width: 170, editable: true,  },
                     { headerName: "是否有效", field: "isValid", width: 170, editable: true},
                     { headerName: "操作人", field: "inputPerson", width: 170, editable: true},

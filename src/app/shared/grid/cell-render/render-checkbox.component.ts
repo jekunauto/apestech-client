@@ -7,7 +7,7 @@ import {ICellRendererAngularComp} from "ag-grid-angular";
 })
 export class RenderCheckboxComponent implements ICellRendererAngularComp {
 
-    private value: boolean = false;
+    private value: any;
     private params: any;
 
     agInit(params: any): void {
@@ -15,7 +15,8 @@ export class RenderCheckboxComponent implements ICellRendererAngularComp {
         this.value = params.value.value;
     }
 
-    refresh(): boolean {
-        return false;
+    refresh(params: any): boolean {
+        this.value = params.value.value;
+        return true;
     }
 }

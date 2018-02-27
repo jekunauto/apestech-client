@@ -10,7 +10,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular";
 })
 export class CellCheckboxComponent implements ICellEditorAngularComp {
 
-    private value: boolean = false;
+    private value: any;
     private params: any;
 
     constructor() { }

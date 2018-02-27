@@ -69,6 +69,7 @@ import { CellSearchInputComponent } from './grid/cell-editor-render/cell-search-
 import { CellButtonComponent} from '@shared/grid/cell-editor-render/cell-button.component';
 import { CellDateInputComponent} from '@shared/grid/cell-editor-render/cell-date-input.component';
 import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkbox.component";
+import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.component";
 
 @NgModule({
     declarations: [
@@ -83,6 +84,7 @@ import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkb
         CellSearchInputComponent,
         CellDateInputComponent,
         CellCheckboxComponent,
+        RenderCheckboxComponent,
     ],
     imports: [
         CommonModule,
@@ -145,6 +147,7 @@ import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkb
             CellSearchInputComponent,
             CellDateInputComponent,
             CellCheckboxComponent,
+            RenderCheckboxComponent,
         ]),
 
     ],

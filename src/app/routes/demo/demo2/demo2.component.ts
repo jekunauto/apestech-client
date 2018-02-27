@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { GridOptions} from 'ag-grid';
 import {dateValueParser, GridConfigService, numberValueParser} from '@core/config/grid-config.service';
 import { HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
-import { CellButtonComponent} from '@shared/grid/cell-render/cell-button.component';
-import {CellSearchInputComponent} from '@shared/grid/cell-render/cell-search-input.component';
-import {CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.component';
+import { CellButtonComponent} from '@shared/grid/cell-editor-render/cell-button.component';
+import {CellSearchInputComponent} from '@shared/grid/cell-editor-render/cell-search-input.component';
+import {CellDateInputComponent} from '@shared/grid/cell-editor-render/cell-date-input.component';
 import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
 import {BaseDialog} from "@shared/dialog/base-dialog";
+import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkbox.component";
 
 @Component({
   selector: 'app-demo2',
@@ -39,11 +40,13 @@ export class Demo2Component implements OnInit {
 
             groupHeaderHeight: 28,  // 按钮操作区域的高度
             rowHeight: 29,
+
         };
 
         this.frameworkComponents = {
             cellSearchInput: CellSearchInputComponent,
-            dateInput: CellDateInputComponent
+            dateInput: CellDateInputComponent,
+            checkboxInput: CellCheckboxComponent,
         };
 
         this.initColumnDefs();
@@ -90,7 +93,7 @@ export class Demo2Component implements OnInit {
                                 },
                                 value: ''
                             }
-                        },
+                        }
                     },
                     { headerName: "地点名称", field: "addressNames", width: 170, editable: true, },
                     { headerName: "公司编码", field: "companyId", width: 150, editable: true, valueParser: numberValueParser,
@@ -109,7 +112,13 @@ export class Demo2Component implements OnInit {
                         },
                     },
                     { headerName: "公司名称", field: "companyName", width: 170, editable: true,  },
-                    { headerName: "是否有效", field: "isValid", width: 170, editable: true},
+                    { headerName: "是否有效", field: "isValid", width: 170, editable: true,
+                        // cellRendererFramework: CellCheckboxComponent,
+                        cellEditor: "checkboxInput",
+                        cellEditorParams: {
+                            value: { value: '' }
+                        }
+                    },
                     { headerName: "操作人", field: "inputPerson", width: 170, editable: true},
                     { headerName: "操作时间", field: "inputDate", width: 150, editable: true, cellRenderer: dateValueParser,
                         cellEditor: "dateInput",
@@ -151,4 +160,7 @@ export class Demo2Component implements OnInit {
 
         return rowData;
     }
+
+
+
 }

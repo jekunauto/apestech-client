@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ICellEditorAngularComp} from "ag-grid-angular";
+import {ICellEditorAngularComp} from 'ag-grid-angular';
 
 @Component({
     selector: 'app-cell-search-input',
@@ -10,7 +10,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular";
 })
 export class CellCheckboxComponent implements ICellEditorAngularComp {
 
-    private value: any;
+    private value: boolean;
     private params: any;
 
     constructor() { }

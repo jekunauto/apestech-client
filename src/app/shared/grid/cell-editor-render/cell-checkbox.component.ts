@@ -4,7 +4,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular";
 @Component({
     selector: 'app-cell-search-input',
     template: `
-        <label nz-checkbox [(ngModel)]="value" (ngModelChange)="_console($event)"></label>
+        <label nz-checkbox [(ngModel)]="value"></label>
     `,
     styles: []
 })
@@ -15,17 +15,14 @@ export class CellCheckboxComponent implements ICellEditorAngularComp {
 
     constructor() { }
 
-    _console(value) {
-        console.log(value);
-    }
-
-    getValue(): any {
-        this.params.value.value = this.value;
-        return this.value;
-    }
-
     agInit(params: any): void {
         this.params = params;
+        this.value = params.value.value;
+    }
+
+    getValue(): boolean {
+        this.params.value.value = this.value;
+        return this.value;
     }
 
     refresh(params: any): boolean {

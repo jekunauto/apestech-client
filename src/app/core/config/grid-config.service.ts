@@ -121,10 +121,14 @@ export function numberValueParser(params) {
  * @param number
  * @returns {string}
  */
-export function formatNumber(number) {
-    return Math.floor(number)
-        .toString()
-        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+export function formatNumber(params) {
+    let number = params.value;
+    let result = Math.floor(number).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    // 判断需要测试不同的场景
+    if( result == "NaN" ){
+        result = "0";
+    }
+    return result;
 }
 
 export function dateValueParser(params){

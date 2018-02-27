@@ -43,10 +43,12 @@ export class Demo2Component implements OnInit {
             rowHeight: 29,
         };
 
+        // 渲染的组件需要在这里定义，不然不会生效
         this.frameworkComponents = {
             cellSearchInput: CellSearchInputComponent,
             dateInput: CellDateInputComponent,
             checkboxInput: CellCheckboxComponent,
+            renderCheckBox: RenderCheckboxComponent,
         };
 
         this.initColumnDefs();
@@ -111,7 +113,7 @@ export class Demo2Component implements OnInit {
                     },
                     { headerName: "公司名称", field: "companyName", width: 170, editable: true,  },
                     { headerName: "是否有效", field: "isValid", width: 170, editable: true,
-                        cellRenderer: RenderCheckboxComponent,
+                        cellRenderer: "renderCheckBox",
                         cellEditor: "checkboxInput",
                         cellEditorParams: {
                             value: { value: '' }

@@ -104,7 +104,7 @@ export class GridConfigService {
     }
 }
 
-// grid 处理单元格的值
+/***** grid 处理单元格的值 *****/
 export function numberValueParser(params) {
     let value = 0;
     let regPos = /^\d+(\.\d+)?$/;
@@ -116,6 +116,21 @@ export function numberValueParser(params) {
     return value;
 }
 
+/**
+ * 将 1111 格式化为  1,111
+ * @param number
+ * @returns {string}
+ */
+export function formatNumber(params) {
+    let number = params.value;
+    let result = Math.floor(number).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    // 判断需要测试不同的场景
+    if( result == "NaN" ){
+        result = "0";
+    }
+    return result;
+}
+
 export function dateValueParser(params){
     let value: any;
     if( params.value ){
@@ -124,9 +139,14 @@ export function dateValueParser(params){
     return value;
 }
 
-
-//(new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
-//(new Date()).Format("yyyy-M-d h:m:s.S")	  ==> 2006-7-2 8:9:4.18
+/**
+ * 格式化日期
+ * (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+ * (new Date()).Format("yyyy-M-d h:m:s.S")	  ==> 2006-7-2 8:9:4.18
+ * @param date
+ * @param fmt
+ * @returns {any}
+ */
 function dateFormat(date, fmt) {
     var o = {
         "M+": date.getMonth() + 1, //月份

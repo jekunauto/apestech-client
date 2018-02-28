@@ -57,6 +57,7 @@ export class CompanyDialog {
     }
 
     _search(): void{
+        this.gridOptions.api.setRowData([]);
         this.searchLoading = true;
 
         console.log(this.model);
@@ -67,12 +68,12 @@ export class CompanyDialog {
         }, 2000);
     }
 
+    // 查询数据需要调用后端接口
     private queryData() {
         let rowData:any[] = [];
 
-        //查询数据
+        // 查询数据
         for (let i = 0; i < 20; i++) {
-
             rowData.push({
                 companyId: "0000"+i,
                 companyName: "New York"+i,
@@ -84,10 +85,10 @@ export class CompanyDialog {
     // 选中行的时候就获取到选中的行数据
     onSelectionChanged(){
         let selectedRow = this.gridOptions.api.getSelectedRows();
-        console.log(selectedRow);
         this.data.result = selectedRow;
     }
+
     resetForm() {
-        console.log('aa');
+        this.form.reset();
      }
 }

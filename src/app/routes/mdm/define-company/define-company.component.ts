@@ -77,7 +77,7 @@ export class DefineCompanyComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            this.form.patchValue({addressName: JSON.stringify(result)})
+            this.form.patchValue({companyName: JSON.stringify(result)})
         });
     }
 

@@ -46,7 +46,7 @@ import {
 } from './abc';
 
 // Material UI
-import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
+import {MatDialogModule, MatToolbarModule,MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 // dialog
 import { BaseDialog } from '../shared/dialog/base-dialog';
@@ -95,7 +95,7 @@ import { CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.
         MatDialogModule,
         MatIconModule,
         MatButtonModule,
-
+        MatToolbarModule,
         // abc
         AdErrorCollectModule.forRoot(),
         AdFooterToolbarModule.forRoot(),
@@ -157,6 +157,7 @@ import { CellDateInputComponent} from '@shared/grid/cell-render/cell-date-input.
         TranslateModule,
         // Material UI
         MatDialogModule,
+        MatToolbarModule,
         MatButtonModule,
         AdReuseTabModule,
         AdAvatarListModule,

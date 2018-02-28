@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { GridOptions} from 'ag-grid';
 import {dateValueParser, formatNumber, GridConfigService, numberValueParser} from '@core/config/grid-config.service';
-import { HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
-import { CellButtonComponent} from '@shared/grid/cell-editor-render/cell-button.component';
-import {CellSearchInputComponent} from '@shared/grid/cell-editor-render/cell-search-input.component';
-import {CellDateInputComponent} from '@shared/grid/cell-editor-render/cell-date-input.component';
-import {CompanyDialog} from "@shared/dialog/featuresDailog/company-dialog";
-import {BaseDialog} from "@shared/dialog/base-dialog";
-import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkbox.component";
-import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.component";
+import {HeaderButtonComponent} from '@shared/grid/header-button/header-button.component';
+import {RenderButtonComponent} from '@shared/grid/cell-render/render-button.component';
+import {EditorSearchInputComponent} from '@shared/grid/editor-render/editor-search-input.component';
+import {EditorDateInputComponent} from '@shared/grid/editor-render/editor-date-input.component';
+import {CompanyDialog} from '@shared/dialog/featuresDailog/company-dialog';
+import {BaseDialog} from '@shared/dialog/base-dialog';
+import {EditorCheckboxComponent} from '@shared/grid/editor-render/editor-checkbox.component';
+import {RenderCheckboxComponent} from '@shared/grid/cell-render/render-checkbox.component';
+import {EditorSelectComponent} from "@shared/grid/editor-render/editor-select.component";
 
 @Component({
   selector: 'app-demo2',
@@ -45,9 +46,11 @@ export class Demo2Component implements OnInit {
 
         // 渲染的组件需要在这里定义，不然不会生效
         this.frameworkComponents = {
-            cellSearchInput: CellSearchInputComponent,
-            dateInput: CellDateInputComponent,
-            checkboxInput: CellCheckboxComponent,
+            editorSearchInput: EditorSearchInputComponent,
+            dateInput: EditorDateInputComponent,
+            checkboxInput: EditorCheckboxComponent,
+            editorSelect: EditorSelectComponent,
+
             renderCheckBox: RenderCheckboxComponent,
         };
 
@@ -81,7 +84,7 @@ export class Demo2Component implements OnInit {
                 headerGroupComponentFramework: HeaderButtonComponent,
                 children: [
                     { headerName: "地点编码", field:"addressId", width: 150, editable: true,
-                        cellEditor: "cellSearchInput",
+                        cellEditor: "editorSearchInput",
                         cellEditorParams: {
                             value: {
                                 value: '',
@@ -97,7 +100,7 @@ export class Demo2Component implements OnInit {
                     },
                     { headerName: "地点名称", field: "addressNames", width: 170, editable: true, },
                     { headerName: "公司编码", field: "companyId", width: 150, editable: true,
-                        cellEditor: "cellSearchInput",
+                        cellEditor: "editorSearchInput",
                         cellEditorParams: {
                             value: {
                                 value: '',
@@ -128,7 +131,6 @@ export class Demo2Component implements OnInit {
                         }
                     },
                     { headerName: "合作方式", field: "cooperationMethod", width: 150, editable: true,
-                        // cellEditor: "agRichSelect",
                         cellEditor: "agSelectCellEditor",
                         cellEditorParams: {
                             values: ["AAA", "BBB", "CCC", "DDD"]
@@ -137,7 +139,21 @@ export class Demo2Component implements OnInit {
                     { headerName: "销售件数", field: "saleNumber", width: 170, editable: true, valueParser: numberValueParser,
                         valueFormatter: formatNumber,
                     },
-                    { headerName: "操作", field:"", editable: false, cellRendererFramework: CellButtonComponent}
+                    { headerName: "仓库类型", field: "warehouseType", width: 170, editable: true,
+                        cellEditor: 'editorSelect',
+                        cellEditorParams: {
+                            value: {
+                                label:"",
+                                value: "",
+                                options:[
+                                    {label: '中心仓', value : 1},
+                                    {label: '区域中心仓', value: 2},
+                                    {label: '门店仓库', value : 3}
+                                ]
+                            }
+                        },
+                    },
+                    { headerName: "操作", field:"", editable: false, cellRendererFramework: RenderButtonComponent}
                 ]
             }
         ];

@@ -11,6 +11,7 @@ import {BaseDialog} from '@shared/dialog/base-dialog';
 import {EditorCheckboxComponent} from '@shared/grid/editor-render/editor-checkbox.component';
 import {RenderCheckboxComponent} from '@shared/grid/cell-render/render-checkbox.component';
 import {EditorSelectComponent} from "@shared/grid/editor-render/editor-select.component";
+import {RenderSelectComponent} from "@shared/grid/cell-render/render-select.component";
 
 @Component({
   selector: 'app-demo2',
@@ -52,6 +53,7 @@ export class Demo2Component implements OnInit {
             editorSelect: EditorSelectComponent,
 
             renderCheckBox: RenderCheckboxComponent,
+            renderSelect: RenderSelectComponent,
         };
 
         this.initColumnDefs();
@@ -139,11 +141,11 @@ export class Demo2Component implements OnInit {
                     { headerName: "销售件数", field: "saleNumber", width: 170, editable: true, valueParser: numberValueParser,
                         valueFormatter: formatNumber,
                     },
-                    { headerName: "仓库类型", field: "warehouseType", width: 170, editable: true,
+                    { headerName: "仓库类型", field: "warehouseType", width: 170, editable: true, cellRenderer: "renderSelect",
                         cellEditor: 'editorSelect',
                         cellEditorParams: {
                             value: {
-                                label:"",
+                                label:"",   //用于 grid 显示使用
                                 value: "",
                                 options:[
                                     {label: '中心仓', value : 1},

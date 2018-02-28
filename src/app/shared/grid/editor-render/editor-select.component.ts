@@ -12,7 +12,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular";
                 [nzDisabled]="option.disabled">
             </nz-option>
         </nz-select>
-  `,
+    `,
     styles: []
 })
 export class EditorSelectComponent implements ICellEditorAngularComp {
@@ -31,9 +31,16 @@ export class EditorSelectComponent implements ICellEditorAngularComp {
     }
 
     getValue(): any {
-        debugger;
-        let result = {label: this.selectedOption.label, value: this.selectedOption.value};
-        this.params.value.value = this.selectedOption.value;
+        let result ;
+        if ( !this.selectedOption || !this.selectedOption.value ){
+            result = "";
+            this.params.value.value = "";
+            this.params.value.label = "";
+        }else {
+            result = this.selectedOption.value;
+            this.params.value.value = this.selectedOption.value;
+            this.params.value.label = this.selectedOption.label;
+        }
         return result;
     }
 

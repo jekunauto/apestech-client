@@ -65,10 +65,10 @@ import { HeaderComponent } from '../routes/demo/gridComponent/header-component/h
 import { HeaderGroupComponent} from '@shared/grid/header-group/header-group.component';
 import { HeaderButtonComponent } from './grid/header-button/header-button.component';
 
-import { CellSearchInputComponent } from './grid/cell-editor-render/cell-search-input.component';
-import { CellButtonComponent} from '@shared/grid/cell-editor-render/cell-button.component';
-import { CellDateInputComponent} from '@shared/grid/cell-editor-render/cell-date-input.component';
-import {CellCheckboxComponent} from "@shared/grid/cell-editor-render/cell-checkbox.component";
+import { EditorSearchInputComponent } from './grid/editor-render/editor-search-input.component';
+import { RenderButtonComponent } from '@shared/grid/cell-render/render-button.component';
+import { EditorDateInputComponent} from '@shared/grid/editor-render/editor-date-input.component';
+import { EditorCheckboxComponent} from "@shared/grid/editor-render/editor-checkbox.component";
 import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.component";
 
 @NgModule({
@@ -80,11 +80,12 @@ import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.
         HeaderGroupComponent,
         HeaderButtonComponent,
 
-        CellButtonComponent,
-        CellSearchInputComponent,
-        CellDateInputComponent,
-        CellCheckboxComponent,
+        RenderButtonComponent,
         RenderCheckboxComponent,
+
+        EditorSearchInputComponent,
+        EditorDateInputComponent,
+        EditorCheckboxComponent,
     ],
     imports: [
         CommonModule,
@@ -143,11 +144,13 @@ import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.
             HeaderComponent,
             HeaderGroupComponent,
             HeaderButtonComponent,
-            CellButtonComponent,
-            CellSearchInputComponent,
-            CellDateInputComponent,
-            CellCheckboxComponent,
+
+            RenderButtonComponent,
             RenderCheckboxComponent,
+
+            EditorSearchInputComponent,
+            EditorDateInputComponent,
+            EditorCheckboxComponent,
         ]),
 
     ],

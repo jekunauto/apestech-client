@@ -12,7 +12,7 @@ import {NzMessageService} from "ng-zorro-antd";
     `,
     styles: []
 })
-export class CellSearchInputComponent implements ICellEditorAngularComp {
+export class EditorSearchInputComponent implements ICellEditorAngularComp {
     value: any;
     url: any;
     private params: ICellEditorParams;

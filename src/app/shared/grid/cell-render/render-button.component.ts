@@ -13,7 +13,7 @@ import {ICellRendererParams} from 'ag-grid';
   `,
   styles: []
 })
-export class CellButtonComponent implements AgRendererComponent {
+export class RenderButtonComponent implements AgRendererComponent {
 
     params: ICellRendererParams;
 

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import {ICellEditorAngularComp} from "ag-grid-angular";
+import {ICellEditorAngularComp} from 'ag-grid-angular';
 
 @Component({
-  selector: 'app-cell-search-input',
-  template: `
-      <nz-datepicker [(ngModel)]="value" [nzFormat]="'YYYY-MM-DD'"></nz-datepicker>
-  `,
-  styles: []
+    selector: 'app-cell-search-input',
+    template: `
+        <label nz-checkbox [(ngModel)]="value"></label>
+    `,
+    styles: []
 })
-export class CellDateInputComponent implements ICellEditorAngularComp {
+export class EditorCheckboxComponent implements ICellEditorAngularComp {
 
-    private value: any = null;
+    private value: boolean;
     private params: any;
 
     constructor() { }
@@ -20,7 +20,7 @@ export class CellDateInputComponent implements ICellEditorAngularComp {
         this.value = params.value.value;
     }
 
-    getValue(): any {
+    getValue(): boolean {
         this.params.value.value = this.value;
         return this.value;
     }

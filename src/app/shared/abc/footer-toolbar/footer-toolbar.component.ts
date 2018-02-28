@@ -8,8 +8,8 @@ const CLS = 'footer-toolbar';
 @Component({
     selector: 'footer-toolbar',
     template: `
-    <div class="left"><ng-container *ngIf="extra" [ngTemplateOutlet]="extra"></ng-container></div>
-    <div class="right">
+    <div class="right"><ng-container *ngIf="extra" [ngTemplateOutlet]="extra"></ng-container></div>
+    <div class="left">
         <error-collect *ngIf="errorCollect"></error-collect>
         <ng-content></ng-content>
     </div>

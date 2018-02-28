@@ -46,7 +46,7 @@ import {
 } from './abc';
 
 // Material UI
-import {MatDialogModule, MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
+import {MatDialogModule, MatToolbarModule,MatCard, MatCardModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 // dialog
 import { BaseDialog } from '../shared/dialog/base-dialog';
@@ -100,7 +100,7 @@ import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.
         MatDialogModule,
         MatIconModule,
         MatButtonModule,
-
+        MatToolbarModule,
         // abc
         AdErrorCollectModule.forRoot(),
         AdFooterToolbarModule.forRoot(),
@@ -166,6 +166,7 @@ import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.
         TranslateModule,
         // Material UI
         MatDialogModule,
+        MatToolbarModule,
         MatButtonModule,
         AdReuseTabModule,
         AdAvatarListModule,

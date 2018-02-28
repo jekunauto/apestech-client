@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
             map(() => this.router.url)
         )
         .subscribe(url => {
-            this.titleSrv.setTitle(url);
+            this.titleSrv.setTitle();
         });
   }
 }

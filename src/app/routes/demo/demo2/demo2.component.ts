@@ -178,7 +178,6 @@ export class Demo2Component implements OnInit {
         this.gridOptions.api.forEachNode((node)=> {
             rowData.push(node.data);
         });
-
         return rowData;
     }
 }

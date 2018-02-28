@@ -19,7 +19,6 @@ export class EditorSelectComponent implements ICellEditorAngularComp {
 
     options = [];
     selectedOption: any;
-
     private params: any;
 
     constructor() { }

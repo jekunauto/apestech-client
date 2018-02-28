@@ -12,7 +12,7 @@ export class RenderSelectComponent implements ICellRendererAngularComp {
     private value: any;
     private params: any;
 
-    constructor(){ }
+    constructor(){}
 
     agInit(params: any): void {
 

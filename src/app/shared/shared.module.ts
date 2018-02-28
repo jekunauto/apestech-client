@@ -71,6 +71,7 @@ import { EditorDateInputComponent} from '@shared/grid/editor-render/editor-date-
 import { EditorCheckboxComponent} from "@shared/grid/editor-render/editor-checkbox.component";
 import {RenderCheckboxComponent} from "@shared/grid/cell-render/render-checkbox.component";
 import {EditorSelectComponent} from "@shared/grid/editor-render/editor-select.component";
+import {RenderSelectComponent} from "@shared/grid/cell-render/render-select.component";
 
 @NgModule({
     declarations: [
@@ -83,6 +84,7 @@ import {EditorSelectComponent} from "@shared/grid/editor-render/editor-select.co
 
         RenderButtonComponent,
         RenderCheckboxComponent,
+        RenderSelectComponent,
 
         EditorSearchInputComponent,
         EditorDateInputComponent,
@@ -149,6 +151,7 @@ import {EditorSelectComponent} from "@shared/grid/editor-render/editor-select.co
 
             RenderButtonComponent,
             RenderCheckboxComponent,
+            RenderSelectComponent,
 
             EditorSearchInputComponent,
             EditorDateInputComponent,

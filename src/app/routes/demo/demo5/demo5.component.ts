@@ -76,13 +76,6 @@ export class Demo5Component implements OnInit {
     get feild9() { return this.formGroupModel.controls.feild9; }
     get feild10() { return this.formGroupModel.controls.feild10; }
     get feild11() { return this.formGroupModel.controls.feild11; }
-    get Test1() { return this.formGroupModel.controls.Test1; }
-    get Test2() { return this.formGroupModel.controls.Test2; }
-    get Test3() { return this.formGroupModel.controls.Test3; }
-    get Test4() { return this.formGroupModel.controls.Test4; }
-    get Test5() { return this.formGroupModel.controls.Test5; }
-    get Test6() { return this.formGroupModel.controls.Test6; }
-    get Test7() { return this.formGroupModel.controls.Test7; }
 
     get companyId() { return this.formGroupModel.controls.companyId; }
     get companyName() { return this.formGroupModel.controls.companyName; }

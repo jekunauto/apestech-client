@@ -89,7 +89,10 @@
             [rowSelection]="rowSelection"
             [frameworkComponents]="frameworkComponents"
 
-            (selectionChanged)="onSelectionChanged()">
+            (selectionChanged)="onSelectionChanged()"
+            (cellValueChanged)="onCellValueChanged($event)"
+
+        >
         </ag-grid-angular>
     </nz-card>
 

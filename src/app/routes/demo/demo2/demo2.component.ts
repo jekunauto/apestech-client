@@ -85,6 +85,15 @@ export class Demo2Component implements OnInit {
         this.gridOptions.localeText = gridConfigService.getLocaleText();
     }
 
+    // 检查grid行数据变化时对这一行的数据做修改
+    onCellValueChanged($event){
+        let fieldId = $event.colDef.field;
+        if( fieldId == "companyId"){
+            console.log("onCellValueChanged --------------->");
+            console.log('onCellValueChanged: ' + $event.oldValue + ' to ' + $event.newValue);
+        }
+    }
+
     ngOnInit() {
         this.form  = this.fb.group({
             addressId: ['', [Validators.required] ],

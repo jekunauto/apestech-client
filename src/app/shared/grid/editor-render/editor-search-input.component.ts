@@ -50,7 +50,6 @@ export class EditorSearchInputComponent implements ICellEditorAngularComp {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            debugger;
             if (result) {
                 /** 遇到的问题记录：
                  * 1.需要给 当前的 value 赋值，不然 grid 中的当前的 value 没有值

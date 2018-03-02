@@ -7,7 +7,7 @@ import {ICellRendererParams} from 'ag-grid';
   template: `
       <div>
           <button nz-button [nzSize]="small" style="height: 24px;" ><span>编辑</span></button>
-          <button nz-button [nzSize]="small" style="height: 24px;" ><span>新增</span></button>
+          <button nz-button [nzSize]="small" style="height: 24px;" (click)="_onAdd()"><span>新增</span></button>
           <button nz-button [nzSize]="small" style="height: 24px;" (click)="_onDelete()"><span>删除</span></button>
       </div>
   `,
@@ -27,8 +27,18 @@ export class RenderButtonComponent implements AgRendererComponent {
         this.params = params;
     }
 
+    _onAdd(){
+        let modal = {};
+        let dataModal = this.params.data;
+
+        for(let key in dataModal){
+            modal[key] = "";
+        }
+
+        this.params.api.updateRowData({add: [modal]});
+    }
+
     _onDelete(){
-        debugger;
         let currentData = this.params.data;
         this.params.api.updateRowData({ remove: [currentData] });
     }

@@ -30,11 +30,9 @@ export class RenderButtonComponent implements AgRendererComponent {
     _onAdd(){
         let modal = {};
         let dataModal = this.params.data;
-
         for(let key in dataModal){
             modal[key] = "";
         }
-
         this.params.api.updateRowData({add: [modal]});
     }
 

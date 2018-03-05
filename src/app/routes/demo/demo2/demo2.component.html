@@ -64,6 +64,21 @@
         </div>
     </nz-card>
 
+    <nz-card>
+        <div class="clearfix">
+            <nz-upload class="upload-list-inline"
+                       nzAction="https://127.0.0.1/yyerp/"
+                       nzListType="picture"
+                       [(nzFileList)]="fileList1"
+                       [nzSize]="fileSize"
+                       [nzBeforeUpload]="_fileBeforeUpload">
+                <button nz-button>
+                    <span><i class="anticon anticon-upload"></i>选择图片</span>
+                </button>
+            </nz-upload>
+        </div>
+    </nz-card>
+
     <nz-card nzType="inner">
         <ag-grid-angular
             #grid
@@ -74,7 +89,10 @@
             [rowSelection]="rowSelection"
             [frameworkComponents]="frameworkComponents"
 
-            (selectionChanged)="onSelectionChanged()">
+            (selectionChanged)="onSelectionChanged()"
+            (cellValueChanged)="onCellValueChanged($event)"
+
+        >
         </ag-grid-angular>
     </nz-card>
 

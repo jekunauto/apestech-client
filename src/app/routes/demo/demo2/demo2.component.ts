@@ -16,9 +16,34 @@ import {RenderSelectComponent} from "@shared/grid/cell-render/render-select.comp
 @Component({
   selector: 'app-demo2',
   templateUrl: './demo2.component.html',
-  styles: []
+  styles: [`
+      :host ::ng-deep .upload-list-inline .ant-upload-list-item {
+          float: left;
+          width: 200px;
+          margin-right: 8px;
+      }
+  `]
 })
 export class Demo2Component implements OnInit {
+
+    //image
+
+    fileSize= 500;  //文件的大小 单位 KB
+
+    defaultFileList = [{
+        uid: -1,
+        name: 'xxx.png',
+        status: 'done',
+        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    }, {
+        uid: -2,
+        name: 'yyy.png',
+        status: 'done',
+        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    }];
+    fileList1 = [...this.defaultFileList];
 
     form: FormGroup;
 
@@ -58,6 +83,15 @@ export class Demo2Component implements OnInit {
 
         this.initColumnDefs();
         this.gridOptions.localeText = gridConfigService.getLocaleText();
+    }
+
+    // 检查grid行数据变化时对这一行的数据做修改
+    onCellValueChanged($event){
+        let fieldId = $event.colDef.field;
+        if( fieldId == "companyId"){
+            console.log("onCellValueChanged --------------->");
+            console.log('onCellValueChanged: ' + $event.oldValue + ' to ' + $event.newValue);
+        }
     }
 
     ngOnInit() {
@@ -181,5 +215,11 @@ export class Demo2Component implements OnInit {
             rowData.push(node.data);
         });
         return rowData;
+    }
+
+    //  文件上传的之前调用 返回一个 false就会终止上传
+    _fileBeforeUpload = (file, fileList) => {
+        console.log(file);
+        console.log(fileList);
     }
 }

@@ -1,21 +1,21 @@
-<div style="border: #9c9c9c;position: fixed;
-    top: 100px;
-    display: block;
-    float: left;
-    right: 8px;
-    height: 48px;
-    line-height: 48px;
-    z-index: 999;
-    background-color: #d9d9d9;
-    width: calc(100% - 216px);">
-    <button mat-button (click)="_onEditClick()" [disabled]="'true'"><mat-icon>edit</mat-icon> 编辑</button>
-    <button mat-button (click)="_onAddClick()"><mat-icon>add</mat-icon> 创建</button>
-    <button mat-button (click)="_onDeleteClick()"><mat-icon>delete</mat-icon> 删除</button>
-    <button mat-button><mat-icon>content_copy</mat-icon> 复制</button>
-    <button mat-button><mat-icon>content_paste</mat-icon> 粘帖</button>
-    <button mat-button><mat-icon>file_download</mat-icon> 下载</button>
-    <button mat-button><mat-icon>print</mat-icon> 打印</button>
-</div>
+<!--<div style="border: #9c9c9c;position: fixed;-->
+    <!--top: 100px;-->
+    <!--display: block;-->
+    <!--float: left;-->
+    <!--right: 8px;-->
+    <!--height: 48px;-->
+    <!--line-height: 48px;-->
+    <!--z-index: 999;-->
+    <!--background-color: #d9d9d9;-->
+    <!--width: calc(100% - 216px);">-->
+    <!--<button mat-button (click)="_onEditClick()" [disabled]="'true'"><mat-icon>edit</mat-icon> 编辑</button>-->
+    <!--<button mat-button (click)="_onAddClick()"><mat-icon>add</mat-icon> 创建</button>-->
+    <!--<button mat-button (click)="_onDeleteClick()"><mat-icon>delete</mat-icon> 删除</button>-->
+    <!--<button mat-button><mat-icon>content_copy</mat-icon> 复制</button>-->
+    <!--<button mat-button><mat-icon>content_paste</mat-icon> 粘帖</button>-->
+    <!--<button mat-button><mat-icon>file_download</mat-icon> 下载</button>-->
+    <!--<button mat-button><mat-icon>print</mat-icon> 打印</button>-->
+<!--</div>-->
 <form nz-form [formGroup]="form" (ngSubmit)="_submit()">
     <nz-card>
         <div nz-row [nzGutter]="8">
